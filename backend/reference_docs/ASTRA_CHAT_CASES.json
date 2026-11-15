@@ -1,0 +1,75 @@
+{
+  "scope": "offline educational simulation; source-linked, not a validated diagnostic protocol",
+  "cases": {
+    "headache": {
+      "candidate": "headache with an as yet unspecified cause",
+      "source_urls": [
+        "https://www.nhs.uk/symptoms/headaches/"
+      ],
+      "severe_source_urls": [
+        "https://www.nhs.uk/symptoms/headaches/",
+        "https://www.nhs.uk/conditions/subarachnoid-haemorrhage/",
+        "https://www.nhs.uk/conditions/meningitis/"
+      ],
+      "severe_differential": "Headache 9–10/10 requires urgent in-person evaluation. Possible explanations: migraine (often throbbing pain, nausea or light sensitivity), infection/meningitis (especially if fever and neck stiffness are present), intracranial hemorrhage (especially if the pain is sudden and extremely severe). Swelling of the neck is not equal to neck stiffness and by itself does not prove any of these causes; separately clarify trauma, suddenness, fever, neck stiffness, and neurological symptoms. Do not consider the fact of bleeding as established without user report.",
+      "support": "The headache itself does not indicate a specific cause. For evaluation, the time of onset, suddenness, intensity of pain, and associated symptoms are important.",
+      "actions": "For a usual moderate headache, you can take a break, drink water, and if a meal was missed, eat something.",
+      "red_flags": "Sudden extremely severe pain, new weakness, speech disturbance, or confusion require immediate assistance."
+    },
+    "food": {
+      "candidate": "possible food poisoning (food infection)",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/",
+        "https://www.nhs.uk/conditions/food-poisoning/"
+      ],
+      "support": "Spasms and abdominal pain after suspicious food are compatible with food poisoning. Based on a single time interval after eating, it is not possible to determine the causative agent or prove that the cause was exactly this food.",
+      "actions": "As long as the condition allows, drink water in small amounts, do not eat suspicious food, and note the onset of symptoms, temperature, stool, and vomiting.",
+      "red_flags": "If the pain is severe or increasing, there is blood in the stool, multiple episodes of vomiting, inability to drink, marked weakness, or signs of dehydration, immediately involve the onboard medical officer."
+    },
+    "bleeding": {
+      "candidate": "possible dangerous external bleeding from a wound on a limb",
+      "source_urls": [
+        "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+        "https://www.redcross.org/take-a-class/resources/articles/how-to-apply-a-tourniquet"
+      ],
+      "minor_source_url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
+      "minor_actions": "If the cut is minor and the bleeding is almost nonexistent: wash your hands; when the bleeding stops, rinse the wound with water and cover it with a clean bandage or adhesive strip. If the bleeding increases, the wound is deep, or sensation or movement of the finger is lost, an in-person evaluation is needed. Severe bleeding cannot be assumed from the word 'cut' alone.",
+      "support": "Continuous stream or blood spurting like a fountain is a sign of potentially life-threatening bleeding. A small visible depth of the wound and absence of numbness do not negate this assessment.",
+      "actions": "Immediately inform the responsible person and the person nearby. Press the wound firmly and continuously with a clean bandage or cloth. If the bandage becomes soaked, do not remove the first layer; continue direct pressure. If there is severe bleeding from an arm or leg and a suitable tourniquet is available, a trained person may apply it above the wound, not on a joint, and not loosen it until medical help arrives.",
+      "red_flags": "If the blood continues to spurt, help is needed immediately; do not wait for clarifying questions in the chat. Monitor consciousness, breathing, skin color, and temperature. If help is already en route, inform them that the bleeding is severe and what measures have already been taken.",
+      "conversation_rule": "Do not repeat the introductory instruction during the continuation. Acknowledge new facts: spurting blood, already applied bandage, help en route, absence of numbness. Update urgency and give the next specific step."
+    },
+    "head": {
+      "candidate": "possible concussion after head impact",
+      "source_urls": [
+        "https://www.nhs.uk/conditions/head-injury-and-concussion/",
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "support": "Headache and dizziness after a head impact may indicate a concussion; the absence of blood outside does not rule it out. Confirmation of concussion cannot be done via text.",
+      "actions": "Stop work and physical activity, inform the person nearby and the onboard responsible for medical assistance. Do not be alone and monitor changes in condition.",
+      "red_flags": "If the pain increases, repeated vomiting, confusion, drowsiness, loss of consciousness, weakness, or changes in vision occur, immediate medical evaluation is needed."
+    },
+    "fever_headache": {
+      "temperature_reference": "General guideline for high temperature in adults — 38 °C. Associated symptoms and their severity are important regardless of any value. The threshold does not establish the cause or urgency.",
+      "candidate": "possible acute infectious condition with headache and fever; cause is not yet established",
+      "source_urls": [
+        "https://www.nhs.uk/symptoms/fever-in-adults/",
+        "https://www.nhs.uk/symptoms/headaches/",
+        "https://www.cdc.gov/meningococcal/symptoms/"
+      ],
+      "support": "Feeling of elevated temperature together with headache is compatible with an acute infectious condition, but without current temperature measurement and additional symptoms, the cause cannot be determined. An old normal temperature record does not contradict a new complaint.",
+      "actions": "Measure temperature now and record the time, delay activity, rest, and drink water in small amounts if there is no fluid restriction. Note the onset and intensity of the headache, chills, sore throat, cough, nausea, and contact with sick people.",
+      "red_flags": "If there is very severe or sudden headache, neck stiffness, confusion, marked drowsiness, seizures, repeated vomiting, rash, weakness, speech or vision disturbance, immediate help is needed.",
+      "conversation_rule": "Do not refer to the previous normal temperature as evidence of the current norm. If there is no number, request a new measurement, but already in the first response provide actions and warning signs."
+    },
+    "fever": {
+      "candidate": "Feeling of heat without current numerical measurement",
+      "source_urls": [
+        "https://www.nhs.uk/symptoms/fever-in-adults/"
+      ],
+      "support": "The feeling of heat may accompany an elevated temperature, but the number is determined by a thermometer. A recent minor cut on its own does not establish the cause of the heat.",
+      "actions": "Measure the temperature with a thermometer and state the value. Note other symptoms and overall condition. While you determine the cause, rest and drink water if there are no fluid restrictions.",
+      "red_flags": "In case of confusion, marked weakness, or rapid deterioration, an in-person medical evaluation is required."
+    }
+  }
+}

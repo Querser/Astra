@@ -1,0 +1,14 @@
+ASTRA
+Copyright 2026 ASTRA project author
+
+Original ASTRA project materials are made available under the Apache License,
+Version 2.0, as described in LICENSE. This copyright notice identifies the
+project author's original contribution; it does not claim ownership of external
+libraries, model weights, source publications, or research data.
+
+The anatomical illustration at frontend/src/assets/astra-anatomy-atlas.png was
+created with generative artificial intelligence from a reference image supplied
+by the project author. The reference image is not distributed with ASTRA. This
+notice does not grant rights in that separate reference image.
+
+See THIRD_PARTY_NOTICES.md for external components and research sources.

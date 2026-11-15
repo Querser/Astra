@@ -1,0 +1,102 @@
+{
+  "version": "1.2",
+  "status": "general_information_for_fictional_demo",
+  "by_candidate": {
+    "D.POSSIBLE_HYPOXEMIA": {
+      "actions": [
+        {
+          "statement": "Check the pulse oximeter placement, immobility of the hand, and signal quality; repeat the measurement if it does not delay receiving help.",
+          "source_url": "https://www.fda.gov/consumers/consumer-updates/pulse-oximeter-basics"
+        },
+        {
+          "statement": "If repeated SpO₂ is around 91% or breathing is difficult, urgent evaluation by a responsible medical specialist is needed; the cause cannot be determined by the sensor.",
+          "source_url": "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+        }
+      ],
+      "follow": "Checking the sensor will differentiate possible error from sustained low reading and allow faster assessment of the cause; improvement in SpO₂ is not guaranteed in advance.",
+      "ignore": "If the low reading is real, delay may leave hypoxemia without evaluation and assistance.",
+      "horizon": "now and the next few hours",
+      "source_url": "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+    },
+    "D.POSSIBLE_HYPERTENSION": {
+      "actions": [
+        {
+          "statement": "Measure blood pressure with the cuff after at least 5 minutes of rest; do not smoke, consume caffeine, or exercise 30 minutes before measurement, record both values.",
+          "source_url": "https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings/monitoring-your-blood-pressure-at-home"
+        },
+        {
+          "statement": "Discuss with the responsible specialist the confirmation of repeated values and the necessity of treatment; do not choose a medication or dose on your own based on this screen.",
+          "source_url": "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+        },
+        {
+          "statement": "If there are no contraindications, study the DASH diet, reduce salt intake, and engage in regular moderate activity in accordance with the mission plan. Complete cessation of physical activity in the case of usual hypertension is not recommended by AHA.",
+          "source_url": "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+        }
+      ],
+      "follow": "In the case of confirmed hypertension, control of blood pressure and recommended measures may lower blood pressure and long-term cardiovascular risk; the magnitude and duration of individual effect are unknown.",
+      "ignore": "If high blood pressure persists without control, the risk of stroke, heart disease, kidney disease, and vision problems increases over time.",
+      "horizon": "weeks–years; individual numerical prediction is not calculated",
+      "source_url": "https://www.heart.org/en/health-topics/high-blood-pressure/health-threats-from-high-blood-pressure"
+    },
+    "D.SLEEP_DEFICIENCY_PATTERN": {
+      "actions": [
+        {
+          "statement": "Record the duration and time of sleep, daytime sleepiness, and sleep schedule; try to align a regular sleep window with the mission schedule.",
+          "source_url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/diagnosis-treatment"
+        },
+        {
+          "statement": "For adults 18–60 years old, the general guideline is at least 7 hours of sleep per day; assess the possibility of increasing sleep time without disrupting mission duties.",
+          "source_url": "https://www.cdc.gov/sleep/about/index.html/"
+        }
+      ],
+      "follow": "If the cause is insufficient time for sleep, increasing sleep opportunity may reduce sleepiness; individual improvement needs to be checked through subsequent records.",
+      "ignore": "If sleep deprivation persists, fatigue and reduced attention may persist; specific outcome for this profile is unknown.",
+      "horizon": "subsequent days and weeks",
+      "source_url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/diagnosis-treatment"
+    },
+    "D.POSSIBLE_SLEEP_APNEA": {
+      "actions": [
+        {
+          "statement": "Record who observed the breathing stops, how often this occurs, snoring, and daytime sleepiness; keep a sleep diary.",
+          "source_url": "https://www.nhlbi.nih.gov/health/sleep-apnea/diagnosis"
+        },
+        {
+          "statement": "Discuss the availability of a sleep study: it is needed to confirm apnea and determine its type. CPAP and other treatments are prescribed after the diagnosis is confirmed.",
+          "source_url": "https://www.nhlbi.nih.gov/health/sleep-apnea/diagnosis"
+        }
+      ],
+      "follow": "Clarifying symptoms and conducting a sleep study may confirm or rule out apnea; if confirmed, the specialist will be able to select a treatment that may reduce sleepiness.",
+      "ignore": "If apnea is confirmed and remains untreated, sleepiness and associated risks may persist.",
+      "horizon": "Days–months; numerical individual effect is unknown",
+      "source_url": "https://www.nhlbi.nih.gov/health/sleep-apnea/treatment"
+    },
+    "D.POSSIBLE_HEAD_INJURY": {
+      "actions": [
+        {
+          "statement": "If the injury is current, stop work or training. Remain in a safe position, call a crew member, and report to the flight medical officer.",
+          "source_url": "https://www.nhs.uk/conditions/head-injury-and-concussion/"
+        },
+        {
+          "statement": "Report to the flight medic when and how the head struck, what is hurting, nausea, and bleeding. Request that a prompt face-to-face evaluation be organized according to the approved mission procedure.",
+          "source_url": "https://www.nhs.uk/conditions/head-injury-and-concussion/"
+        },
+        {
+          "statement": "Determine where the bleeding is coming from. If a bleeding skin wound is visible and there is no object in it, apply a clean cloth and hold pressure until bleeding stops or help arrives. If there is a head bump or an object in the wound, do not press on that area.",
+          "source_url": "https://www.redcross.org/content/dam/redcross/delta/EMR_InstructorsManual_2017_LoRes_111017.pdf"
+        },
+        {
+          "statement": "If blood or clear fluid is coming from the ear or nose, bleeding is severe or does not stop, pain increases, repeated vomiting, confusion, sleepiness, weakness, or seizures occur — immediately call the flight medic and act according to the mission procedure; if communication is available, connect to ground medical support.",
+          "source_url": "https://www.redcross.org/take-a-class/resources/learn-first-aid/head-neck-spinal-injury"
+        },
+        {
+          "statement": "Do not return to dangerous work or allow another head strike until examined. Request an assistant to monitor changes in condition.",
+          "source_url": "https://www.cdc.gov/traumatic-brain-injury/response/index.html"
+        }
+      ],
+      "follow": "Timely examination will allow assessment of the wound and neurological signs, decide on further observation, and avoid missing a dangerous deterioration; the outcome is not known in advance.",
+      "ignore": "After the injury, symptoms may worsen in the next hours or days; without evaluation, a rare but dangerous complication may be missed, including intracranial hemorrhage. This is a possibility, not a confirmed outcome.",
+      "horizon": "now and the next few hours–days",
+      "source_url": "https://www.cdc.gov/traumatic-brain-injury/signs-symptoms/index.html"
+    }
+  }
+}

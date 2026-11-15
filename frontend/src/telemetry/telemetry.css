@@ -1,0 +1,699 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* ASTRA dark palette for the adapted interface.                       */
+/* :root and .dark share values; this screen always uses dark mode.    */
+/* ------------------------------------------------------------------ */
+
+:root,
+.dark {
+  color-scheme: dark;
+
+  /* shadcn-compatible tokens used by utility classes. */
+  --background: 219 45% 4%;
+  --foreground: 210 40% 94%;
+  --card: 220 40% 6%;
+  --card-foreground: 210 40% 94%;
+  --popover: 220 40% 6%;
+  --popover-foreground: 210 40% 94%;
+  --primary: 205 90% 62%;
+  --primary-foreground: 220 45% 6%;
+  --secondary: 218 32% 14%;
+  --secondary-foreground: 210 40% 94%;
+  --muted: 218 32% 12%;
+  --muted-foreground: 213 20% 62%;
+  --accent: 218 32% 14%;
+  --accent-foreground: 210 40% 94%;
+  --destructive: 0 66% 56%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 216 32% 20%;
+  --input: 216 32% 20%;
+  --ring: 205 90% 62%;
+  --radius: 0.75rem;
+
+  /* Prototype tokens */
+  --t-bg0: #04070d;
+  --t-bg1: #080e1a;
+  --t-panel-hi: rgba(14, 22, 40, 0.85);
+  --t-panel-lo: rgba(7, 12, 23, 0.8);
+  --t-line: rgba(126, 166, 224, 0.16);
+  --t-line-strong: rgba(126, 166, 224, 0.34);
+  --t-text: #e6edf7;
+  --t-mid: #9db0ca;
+  --t-low: #5e7290;
+  --t-blue: #4d9dff;
+  --t-teal: #38c8b4;
+  --t-ok: #41c99a;
+  --t-warn: #e2a63d;
+  --t-crit: #e4574f;
+  --t-glow: rgba(77, 157, 255, 0.35);
+  --font-geist-mono: Consolas, ui-monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground;
+    background-color: var(--t-bg0);
+    background-image:
+      radial-gradient(900px 480px at 14% -8%, rgba(38, 84, 168, 0.16), transparent 70%),
+      radial-gradient(760px 520px at 88% 108%, rgba(21, 118, 126, 0.11), transparent 70%),
+      linear-gradient(rgba(126, 166, 224, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(126, 166, 224, 0.028) 1px, transparent 1px);
+    background-size: auto, auto, 44px 44px, 44px 44px;
+    background-attachment: fixed;
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--t-blue);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Panels and typography                                              */
+/* ------------------------------------------------------------------ */
+
+.panel {
+  position: relative;
+  background: linear-gradient(180deg, var(--t-panel-hi), var(--t-panel-lo));
+  border: 1px solid var(--t-line);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(168, 206, 255, 0.05),
+    0 14px 34px rgba(2, 6, 14, 0.4);
+}
+
+.panel-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--t-line);
+}
+
+.t-label {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t-low);
+}
+
+.num {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.t-hint {
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: var(--t-low);
+}
+
+.divider-v {
+  width: 1px;
+  align-self: stretch;
+  background: var(--t-line);
+}
+
+/* Corner brackets on the scanning frame */
+.panel--scan::before,
+.panel--scan::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  border-color: var(--t-line-strong);
+  border-style: solid;
+}
+.panel--scan::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1.5px 0 0 1.5px;
+  border-top-left-radius: 14px;
+}
+.panel--scan::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1.5px 1.5px 0;
+  border-bottom-right-radius: 14px;
+}
+
+/* ------------------------------------------------------------------ */
+/* States: normal / watch / alert                                     */
+/* ------------------------------------------------------------------ */
+
+.st-ok    { --st: var(--t-ok);   --st-bg: rgba(65, 201, 154, 0.1);  --st-line: rgba(65, 201, 154, 0.42); }
+.st-watch { --st: var(--t-warn); --st-bg: rgba(226, 166, 61, 0.1);  --st-line: rgba(226, 166, 61, 0.45); }
+.st-alert { --st: var(--t-crit); --st-bg: rgba(228, 87, 79, 0.12);  --st-line: rgba(228, 87, 79, 0.48); }
+.st-unknown { --st: #7086a5; --st-bg: rgba(112, 134, 165, 0.08); --st-line: rgba(112, 134, 165, 0.28); }
+
+.hud-button {
+  border: 1px solid rgba(77, 157, 255, 0.5);
+  background: rgba(77, 157, 255, 0.14);
+  color: var(--t-text);
+  border-radius: 8px;
+  padding: 7px 11px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.hud-button:hover { border-color: var(--t-blue); background: rgba(77, 157, 255, 0.25); }
+.hud-button-subtle { border-color: var(--t-line-strong); background: rgba(126, 166, 224, 0.05); color: var(--t-mid); }
+
+.state-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--st, var(--t-mid));
+  background: var(--st-bg, transparent);
+  border: 1px solid var(--st-line, var(--t-line));
+}
+
+.state-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--st, var(--t-low));
+  box-shadow: 0 0 6px var(--st, transparent);
+  flex: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Metrics summary                                                    */
+/* ------------------------------------------------------------------ */
+
+.vital-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(126, 166, 224, 0.08);
+  border-left: 2px solid transparent;
+  transition: border-color 0.35s ease, background-color 0.35s ease;
+}
+.vital-row:last-child {
+  border-bottom: none;
+}
+.vital-row.vital-related {
+  border-left-color: var(--t-blue);
+  background: rgba(77, 157, 255, 0.06);
+}
+
+.vital-bar {
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(126, 166, 224, 0.14);
+  overflow: hidden;
+}
+.vital-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--st, var(--t-blue));
+  box-shadow: 0 0 8px var(--st, transparent);
+  transition: width 0.6s cubic-bezier(0.3, 0.7, 0.2, 1), background-color 0.4s ease;
+}
+
+/* ------------------------------------------------------------------ */
+/* Crew selector                                                      */
+/* ------------------------------------------------------------------ */
+
+.crew-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--t-mid);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+.crew-item:hover {
+  background: rgba(126, 166, 224, 0.07);
+  color: var(--t-text);
+}
+.crew-item[aria-pressed="true"] {
+  background: rgba(77, 157, 255, 0.09);
+  border-color: rgba(77, 157, 255, 0.38);
+  color: var(--t-text);
+}
+
+/* ------------------------------------------------------------------ */
+/* Observations                                                       */
+/* ------------------------------------------------------------------ */
+
+.obs-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(126, 166, 224, 0.08);
+}
+.obs-item:last-child {
+  border-bottom: none;
+}
+.obs-mark {
+  width: 8px;
+  height: 8px;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: var(--st, var(--t-low));
+  box-shadow: 0 0 7px var(--st, transparent);
+  flex: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Anatomy scene                                                      */
+/* ------------------------------------------------------------------ */
+
+.anatomy-atlas {
+  display: block;
+  filter: saturate(0.9) contrast(1.04);
+}
+.atlas-region { cursor: pointer; outline: none; }
+.atlas-hit { fill: transparent; stroke: none; }
+.atlas-highlight {
+  fill: var(--organ-fill-hi);
+  stroke: var(--organ-line);
+  stroke-width: 2.5;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  filter: drop-shadow(0 0 10px var(--organ-line));
+}
+.atlas-region:hover .atlas-highlight,
+.atlas-region:focus-visible .atlas-highlight,
+.atlas-region.is-selected .atlas-highlight { opacity: 0.78; }
+.atlas-dot {
+  fill: var(--organ-line);
+  stroke: rgba(5, 12, 24, 0.85);
+  stroke-width: 3;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 7px var(--organ-line));
+}
+.atlas-region:focus-visible .atlas-highlight { stroke: var(--t-blue); stroke-width: 5; }
+
+.organ--ok {
+  --organ-line: #41c99a;
+  --organ-fill: rgba(65, 201, 154, 0.1);
+  --organ-fill-hi: rgba(65, 201, 154, 0.24);
+}
+.organ--watch {
+  --organ-line: #e2a63d;
+  --organ-fill: rgba(226, 166, 61, 0.13);
+  --organ-fill-hi: rgba(226, 166, 61, 0.28);
+}
+.organ--alert {
+  --organ-line: #e4574f;
+  --organ-fill: rgba(228, 87, 79, 0.16);
+  --organ-fill-hi: rgba(228, 87, 79, 0.32);
+}
+.organ--unknown {
+  --organ-line: #7292b5;
+  --organ-fill: rgba(95, 135, 181, 0.14);
+  --organ-fill-hi: rgba(106, 153, 204, 0.25);
+}
+
+.organ-tip {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.organ-tip.is-visible {
+  opacity: 1;
+}
+.organ-tip-box {
+  fill: rgba(8, 14, 26, 0.96);
+  stroke: rgba(126, 166, 224, 0.35);
+  stroke-width: 1;
+}
+.organ-tip-accent {
+  fill: var(--organ-line);
+}
+
+/* ------------------------------------------------------------------ */
+/* Charts                                                             */
+/* ------------------------------------------------------------------ */
+
+.chart-grid line {
+  stroke: rgba(126, 166, 224, 0.1);
+}
+.chart-grid text,
+.chart-x text {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  fill: #5e7290;
+}
+.chart-line {
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: chart-draw 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.15s forwards;
+}
+.chart-point {
+  opacity: 0;
+  animation: point-in 0.45s ease-out 0.6s forwards;
+}
+
+@keyframes chart-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes point-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Entrance and live indicator animations                             */
+/* ------------------------------------------------------------------ */
+
+/* Halo around the selected organ */
+@keyframes halo-pulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.14);
+  }
+}
+
+/* Active telemetry channel dot in the header */
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--t-ok);
+  animation: live-pulse 2.4s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(65, 201, 154, 0.45);
+  }
+  50% {
+    opacity: 0.65;
+    box-shadow: 0 0 0 5px rgba(65, 201, 154, 0);
+  }
+}
+
+/* Smooth screen entrance on load */
+.rise-in {
+  animation: rise-in 0.65s cubic-bezier(0.3, 0.7, 0.2, 1) both;
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Smooth data change when switching profiles or organs by key */
+.fade-key {
+  animation: fade-key 0.45s ease both;
+}
+@keyframes fade-key {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex: none;
+}
+
+/* Thin column scrollbars */
+.col-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(126, 166, 224, 0.25) transparent;
+}
+.col-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.col-scroll::-webkit-scrollbar-thumb {
+  background: rgba(126, 166, 224, 0.22);
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .chart-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+  .chart-point,
+  .rise-in,
+  .fade-key {
+    animation: none;
+    opacity: 1;
+  }
+  .live-dot,
+  .organ.is-selected .organ-halo {
+    animation: none;
+  }
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  flex: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Charts                                                             */
+/* ------------------------------------------------------------------ */
+
+.chart-line {
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.chart-animated .chart-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: chart-draw 1.2s cubic-bezier(0.4, 0.1, 0.2, 1) forwards;
+}
+.chart-area {
+  opacity: 0;
+  animation: fade-in 0.9s ease 0.45s forwards;
+}
+.chart-grid line {
+  stroke: rgba(126, 166, 224, 0.12);
+  stroke-width: 1;
+}
+.chart-grid text,
+.chart-x text {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 8.5px;
+  fill: var(--t-low);
+  letter-spacing: 0.04em;
+}
+.chart-point {
+  transition: r 0.2s ease;
+}
+
+/* ------------------------------------------------------------------ */
+/* Entrance and utility animations                                    */
+/* ------------------------------------------------------------------ */
+
+.boot {
+  animation: rise 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.boot-1 { animation-delay: 0.05s; }
+.boot-2 { animation-delay: 0.14s; }
+.boot-3 { animation-delay: 0.22s; }
+.boot-4 { animation-delay: 0.3s; }
+
+.fade-key {
+  animation: fade-swap 0.45s ease both;
+}
+
+.sync-dot {
+  animation: sync-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes chart-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes halo-pulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.72);
+  }
+  75% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes sync-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .chart-animated .chart-line {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+  .chart-area {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Screen layout                                                      */
+/* ------------------------------------------------------------------ */
+
+.hud-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 372px;
+  gap: 14px;
+  align-items: stretch;
+}
+
+@media (max-width: 1279px) {
+  .hud-grid {
+    grid-template-columns: 264px minmax(0, 1fr);
+    grid-template-areas:
+      "left center"
+      "right right";
+  }
+  .hud-col-left { grid-area: left; }
+  .hud-col-center { grid-area: center; }
+  .hud-col-right { grid-area: right; }
+}
+
+@media (max-width: 899px) {
+  .hud-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "left"
+      "center"
+      "right";
+  }
+}
+
+@media (min-width: 1280px) {
+  .hud-shell {
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+  }
+  .hud-col {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(126, 166, 224, 0.25) transparent;
+    min-height: 0;
+  }
+}

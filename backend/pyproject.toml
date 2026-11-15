@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astra-api"
+version = "0.1.0"
+license = "Apache-2.0"
+description = "Local-first ASTRA demonstration API"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "alembic==1.20.1",
+  "fastapi==0.162.0",
+  "SQLAlchemy==2.0.57",
+  "uvicorn==0.54.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx==0.28.1",
+  "pytest==9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.setuptools.packages.find]
+include = ["app*"]

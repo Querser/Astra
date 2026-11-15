@@ -1,0 +1,4003 @@
+{
+  "status": "unadjudicated_model_disagreements",
+  "note": "Model disagreement is not evidence that either label is correct.",
+  "total_cases": 240,
+  "cases_with_any_disagreement": 176,
+  "cases": [
+    {
+      "id": "HC.BLEEDING.stopped.01",
+      "messages": [
+        "На мкс слегка поцарапал запястье; кровотечение остановилось через 1 минуту после повязки, сейчас крови нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Описание раны не поддерживает текущую версию опасного кровотечения.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или не прекращается. Важно оценить ситуацию и принять необходимые меры для предотвращения возможных негативных последствий."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.negated.01",
+      "messages": [
+        "На мкс ушиб запястье; кожи не повредил, пореза и крови нет, движение сохранено."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Не превращать отрицание кровотечения в симптом.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отсутствие повреждений кожи не исключают серьёзного внутреннего кровотечения."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.stopped.02",
+      "messages": [
+        "На лунной базе слегка поцарапал предплечье; кровотечение остановилось через 2 минуту после повязки, сейчас крови нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Описание раны не поддерживает текущую версию опасного кровотечения.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Кровотечение остановилось через 2 минуты после повязки, но важно проверить наличие других симптомов и убедиться в целостности повязки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.negated.02",
+      "messages": [
+        "На лунной базе ушиб предплечье; кожи не повредил, пореза и крови нет, движение сохранено."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Не превращать отрицание кровотечения в симптом.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отсутствие повреждений кожи не исключают серьёзного внутреннего кровотечения."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.stopped.03",
+      "messages": [
+        "В марсианском корабле слегка поцарапал голень; кровотечение остановилось через 3 минуту после повязки, сейчас крови нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Описание раны не поддерживает текущую версию опасного кровотечения.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть вызвано серьёзным повреждением сосудов, которое необходимо немедленно оценить и лечить."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.negated.03",
+      "messages": [
+        "В марсианском корабле ушиб голень; кожи не повредил, пореза и крови нет, движение сохранено."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Не превращать отрицание кровотечения в симптом.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отрицание симптома исключают серьёзное кровотечение."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.stopped.04",
+      "messages": [
+        "На орбитальной станции слегка поцарапал бедро; кровотечение остановилось через 4 минуту после повязки, сейчас крови нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Описание раны не поддерживает текущую версию опасного кровотечения.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или усиливается. Важно оценить ситуацию и принять меры для предотвращения возможных негативных последствий."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.negated.04",
+      "messages": [
+        "На орбитальной станции ушиб бедро; кожи не повредил, пореза и крови нет, движение сохранено."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Не превращать отрицание кровотечения в симптом.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или не прекращается."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.stopped.05",
+      "messages": [
+        "Во время дальнего перелёта слегка поцарапал ладонь; кровотечение остановилось через 5 минуту после повязки, сейчас крови нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Описание раны не поддерживает текущую версию опасного кровотечения.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или не прекращается. Важно оценить ситуацию и принять меры для предотвращения возможных негативных последствий."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.negated.05",
+      "messages": [
+        "Во время дальнего перелёта ушиб ладонь; кожи не повредил, пореза и крови нет, движение сохранено."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Не превращать отрицание кровотечения в симптом.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие симптомов болезни и единичный выброс не поддерживают кандидата."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.stopped.06",
+      "messages": [
+        "В жилом модуле слегка поцарапал плечо; кровотечение остановилось через 6 минуту после повязки, сейчас крови нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Описание раны не поддерживает текущую версию опасного кровотечения.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, поэтому необходимо оперативно оценить ситуацию."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BLEEDING.negated.06",
+      "messages": [
+        "В жилом модуле ушиб плечо; кожи не повредил, пореза и крови нет, движение сохранено."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Не превращать отрицание кровотечения в симптом.",
+      "source_urls": [
+        "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отрицание симптома исключают серьёзное кровотечение."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.red_flag.01",
+      "messages": [
+        "На мкс ударился затылком о поручень 2 минут назад.",
+        "После удара дважды вырвало; состояние меняется."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "author_urgency": "emergency",
+      "author_note": "Тревожный новый симптом после удара требует срочной оценки.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей головной болью и дважды вырвало, что может указывать на возможное сотрясение."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.no_impact.01",
+      "messages": [
+        "На мкс после 4 часов работы ноет голова. Удара не было, тошноты и рвоты нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Головная боль без травмы не поддерживает карточку травмы головы.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.01",
+      "messages": [
+        "На мкс слегка коснулся головой мягкого борта 1 час назад. Боли, головокружения, тошноты и изменений сознания нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "При отсутствии симптомов карточка не становится диагностической версией.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты могут указывать на возможное сотрясение головы, но отрицание симптомов исключает это."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.red_flag.02",
+      "messages": [
+        "На лунной базе ударился затылком о поручень 3 минут назад.",
+        "После удара стал путаться в словах; состояние меняется."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "author_urgency": "emergency",
+      "author_note": "Тревожный новый симптом после удара требует срочной оценки.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "После удара стал путаться в словах; состояние меняется."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.no_impact.02",
+      "messages": [
+        "На лунной базе после 5 часов работы ноет голова. Удара не было, тошноты и рвоты нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Головная боль без травмы не поддерживает карточку травмы головы.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.02",
+      "messages": [
+        "На лунной базе слегка коснулся головой мягкого борта 2 час назад. Боли, головокружения, тошноты и изменений сознания нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "При отсутствии симптомов карточка не становится диагностической версией.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицательно подтверждают травму головы."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.red_flag.03",
+      "messages": [
+        "В марсианском корабле ударился затылком о поручень 4 минут назад.",
+        "После удара нарастает сонливость; состояние меняется."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "author_urgency": "emergency",
+      "author_note": "Тревожный новый симптом после удара требует срочной оценки.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар затылком о поручень может привести к травме головы, особенно если отрицается наличие симптомов."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.no_impact.03",
+      "messages": [
+        "В марсианском корабле после 6 часов работы ноет голова. Удара не было, тошноты и рвоты нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Головная боль без травмы не поддерживает карточку травмы головы.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.03",
+      "messages": [
+        "В марсианском корабле слегка коснулся головой мягкого борта 3 час назад. Боли, головокружения, тошноты и изменений сознания нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "При отсутствии симптомов карточка не становится диагностической версией.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицаются, что может указывать на возможное сотрясение."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.red_flag.04",
+      "messages": [
+        "На орбитальной станции ударился затылком о поручень 5 минут назад.",
+        "После удара потерял сознание на минуту; состояние меняется."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "author_urgency": "emergency",
+      "author_note": "Тревожный новый симптом после удара требует срочной оценки.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар затылком о поручень вызвал потери сознания, что требует оперативной оценки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.no_impact.04",
+      "messages": [
+        "На орбитальной станции после 7 часов работы ноет голова. Удара не было, тошноты и рвоты нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Головная боль без травмы не поддерживает карточку травмы головы.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.04",
+      "messages": [
+        "На орбитальной станции слегка коснулся головой мягкого борта 4 час назад. Боли, головокружения, тошноты и изменений сознания нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "При отсутствии симптомов карточка не становится диагностической версией.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицательно подтверждают травму головы."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.red_flag.05",
+      "messages": [
+        "Во время дальнего перелёта ударился затылком о поручень 6 минут назад.",
+        "После удара возникла слабость в руке; состояние меняется."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "author_urgency": "emergency",
+      "author_note": "Тревожный новый симптом после удара требует срочной оценки.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей слабостью в руке может указывать на возможное сотрясение, которое требует немедленной оценки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.no_impact.05",
+      "messages": [
+        "Во время дальнего перелёта после 8 часов работы ноет голова. Удара не было, тошноты и рвоты нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Головная боль без травмы не поддерживает карточку травмы головы.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.05",
+      "messages": [
+        "Во время дальнего перелёта слегка коснулся головой мягкого борта 5 час назад. Боли, головокружения, тошноты и изменений сознания нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "При отсутствии симптомов карточка не становится диагностической версией.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицательно подтверждают наличие травмы головы."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.red_flag.06",
+      "messages": [
+        "В жилом модуле ударился затылком о поручень 7 минут назад.",
+        "После удара боль быстро усиливается; состояние меняется."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "author_urgency": "emergency",
+      "author_note": "Тревожный новый симптом после удара требует срочной оценки.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "После удара головы боль быстро усиливается, что может указывать на возможное сотрясение мозга."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.no_impact.06",
+      "messages": [
+        "В жилом модуле после 9 часов работы ноет голова. Удара не было, тошноты и рвоты нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Головная боль без травмы не поддерживает карточку травмы головы.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.06",
+      "messages": [
+        "В жилом модуле слегка коснулся головой мягкого борта 6 час назад. Боли, головокружения, тошноты и изменений сознания нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "При отсутствии симптомов карточка не становится диагностической версией.",
+      "source_urls": [
+        "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты могут быть симптомами травмы головы или сотрясения мозга."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.01",
+      "messages": [
+        "На мкс съел пасту с подозрительным запахом; через 2 часов начались спазмы живота и жидкий стул 1 раз."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Пищевая инфекция возможна, но конкретный продукт и возбудитель не доказаны.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "При наличии симптомов пищевой инфекции, необходимо провести дополнительное обследование и уточнить признаки обезвоживания."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_severe.01",
+      "messages": [
+        "На мкс после подозрительного пасту болит живот и есть диарея; теперь кровь в стуле."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть дополнительный признак тяжёлого течения; не угадывать причину.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Болит живот и есть диарея, теперь кровь в стуле. Это может указывать на серьезное заболевание."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.other_cause.01",
+      "messages": [
+        "На мкс живот болит после удара о поручень в области левого бока; подозрительной еды не было, диареи нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травматическая история не поддерживает пищевую инфекцию.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боль в животе после удара о поручень может быть связано с пищевой инфекцией, но отрицание рвоты и диареи указывает на необходимость проверки других возможных причин."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.01",
+      "messages": [
+        "На мкс Пасту показался странным, но уже 6 часов нет боли в животе, рвоты, температуры или диареи."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Подозрение на продукт без симптомов не является болезнью.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов не исключает ее. Необходимо уточнить наличие температуры и признаки обезвоживания."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.02",
+      "messages": [
+        "На лунной базе съел рыбу с подозрительным запахом; через 3 часов начались спазмы живота и жидкий стул 2 раз."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Пищевая инфекция возможна, но конкретный продукт и возбудитель не доказаны.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Симптомы, указанные в карточке (спазмы живота и жидкий стул) могут быть признаком пищевой инфекции. Однако отрицание симптомов рвоты или диареи может свидетельствовать против подозрения на пищевую инфекцию."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.other_cause.02",
+      "messages": [
+        "На лунной базе живот болит после удара о поручень в области правого бока; подозрительной еды не было, диареи нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травматическая история не поддерживает пищевую инфекцию.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не исключает других возможных причин."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.02",
+      "messages": [
+        "На лунной базе Рыбу показался странным, но уже 7 часов нет боли в животе, рвоты, температуры или диареи."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Подозрение на продукт без симптомов не является болезнью.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов делает это менее вероятным."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.03",
+      "messages": [
+        "В марсианском корабле съел яйцо с подозрительным запахом; через 4 часов начались спазмы живота и жидкий стул 3 раз."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Пищевая инфекция возможна, но конкретный продукт и возбудитель не доказаны.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможная пищевая инфекция, но отрицание симптомов и единичный выброс не поддерживают кандидата."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.other_cause.03",
+      "messages": [
+        "В марсианском корабле живот болит после удара о поручень в области левого бока; подозрительной еды не было, диареи нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травматическая история не поддерживает пищевую инфекцию.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но отсутствие рвоты и диареи делает это менее вероятным. Необходимо уточнить наличие других симптомов и признаков обезвоживания."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.03",
+      "messages": [
+        "В марсианском корабле Яйцо показался странным, но уже 8 часов нет боли в животе, рвоты, температуры или диареи."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Подозрение на продукт без симптомов не является болезнью.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие боли в животе не является достаточным основанием для диагноза пищевой инфекции, так как отсутствие рвоты и диареи может указывать на другие причины. Необходимо провести дополнительный обследование."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.04",
+      "messages": [
+        "На орбитальной станции съел салат с подозрительным запахом; через 5 часов начались спазмы живота и жидкий стул 4 раз."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Пищевая инфекция возможна, но конкретный продукт и возбудитель не доказаны.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Симптомы, указанные в карточке (спазмы живота и жидкий стул) совпадают с данными о симптомах пищевой инфекции."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.other_cause.04",
+      "messages": [
+        "На орбитальной станции живот болит после удара о поручень в области правого бока; подозрительной еды не было, диареи нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травматическая история не поддерживает пищевую инфекцию.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не является основанием для диагноза. Необходимо уточнить наличие других симптомов."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.04",
+      "messages": [
+        "На орбитальной станции Салат показался странным, но уже 9 часов нет боли в животе, рвоты, температуры или диареи."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Подозрение на продукт без симптомов не является болезнью.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов делает это менее вероятным."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.05",
+      "messages": [
+        "Во время дальнего перелёта съел рис с подозрительным запахом; через 6 часов начались спазмы живота и жидкий стул 5 раз."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Пищевая инфекция возможна, но конкретный продукт и возбудитель не доказаны.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможно, это пищевая инфекция. Однако отрицание симптомов (недостаточность рвоты и диареи) может указывать на другие причины."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.other_cause.05",
+      "messages": [
+        "Во время дальнего перелёта живот болит после удара о поручень в области левого бока; подозрительной еды не было, диареи нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травматическая история не поддерживает пищевую инфекцию.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не обязательно указывает на пищевую инфекцию."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.05",
+      "messages": [
+        "Во время дальнего перелёта Рис показался странным, но уже 10 часов нет боли в животе, рвоты, температуры или диареи."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Подозрение на продукт без симптомов не является болезнью.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "RIS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Во время дальнего перелёта Рис показался странным, но уже 10 часов нет боли в животе, рвоты, температуры или диареи."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.06",
+      "messages": [
+        "В жилом модуле съел молочный продукт с подозрительным запахом; через 7 часов начались спазмы живота и жидкий стул 6 раз."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Пищевая инфекция возможна, но конкретный продукт и возбудитель не доказаны.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "В жилом модуле съел молочный продукт с подозрительным запахом; через 7 часов начались спазмы живота и жидкий стул 6 раз."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.gi_severe.06",
+      "messages": [
+        "В жилом модуле после подозрительного молочный продукт болит живот и есть диарея; теперь температура 39,2 °C."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть дополнительный признак тяжёлого течения; не угадывать причину.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Температура 39,2 °C указывает на возможную пищевую инфекцию."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.other_cause.06",
+      "messages": [
+        "В жилом модуле живот болит после удара о поручень в области правого бока; подозрительной еды не было, диареи нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травматическая история не поддерживает пищевую инфекцию.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не исключает других возможных причин."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.06",
+      "messages": [
+        "В жилом модуле Молочный продукт показался странным, но уже 11 часов нет боли в животе, рвоты, температуры или диареи."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Подозрение на продукт без симптомов не является болезнью.",
+      "source_urls": [
+        "https://www.cdc.gov/food-safety/signs-symptoms/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов не исключает ее. Необходимо уточнить наличие других симптомов и признаков обезвоживания."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.single_low.01",
+      "messages": [
+        "На мкс SpO₂ за неделю: 97, 98, 89 , 98, 97, 99, 98%. Жалоб нет; низкая точка была одна."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одиночная аномалия не равна устойчивой гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.artifact.01",
+      "messages": [
+        "На мкс прибор на холодном пальце показал 86%, после согревания три повторения 97%. Одышки нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Качество измерения изменилось; низкая точка требует проверки, не диагноза.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышка одновременно со снижением SpO₂ может указывать на гипоксемию, но повторные качественные показания вернулись к исходному уровню после одиночного выброса. Необходимо оценить симптомы и среду."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.stable.01",
+      "messages": [
+        "На мкс сопоставимые SpO₂ за 5 дней 97–99%, дыхание обычное, личная серия такая же."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающего признака гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.single_low.02",
+      "messages": [
+        "На лунной базе SpO₂ за неделю: 97, 98, 90 , 98, 97, 99, 98%. Жалоб нет; низкая точка была одна."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одиночная аномалия не равна устойчивой гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, особенно если они повторяются. Необходимо оценить симптомы и среду для уточнения ситуации."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.artifact.02",
+      "messages": [
+        "На лунной базе прибор на холодном пальце показал 87%, после согревания три повторения 98%. Одышки нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Качество измерения изменилось; низкая точка требует проверки, не диагноза.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышки нет, но повторные низкие показания SpO₂ могут указывать на гипоксемию. Необходимо оценить симптомы и среду."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.stable.02",
+      "messages": [
+        "На лунной базе сопоставимые SpO₂ за 6 дней 97–99%, дыхание обычное, личная серия такая же."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающего признака гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.single_low.03",
+      "messages": [
+        "В марсианском корабле SpO₂ за неделю: 97, 98, 91 , 98, 97, 99, 98%. Жалоб нет; низкая точка была одна."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одиночная аномалия не равна устойчивой гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Необходимо оперативно оценить ситуацию и принять меры."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.artifact.03",
+      "messages": [
+        "В марсианском корабле прибор на холодном пальце показал 88%, после согревания три повторения 97%. Одышки нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Качество измерения изменилось; низкая точка требует проверки, не диагноза.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышка одновременно со снижением SpO₂ может указывать на гипоксемию, но повторные качественные показания вернулись к исходному уровню после одиночного выброса. Необходимо оценить симптомы и среду."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.stable.03",
+      "messages": [
+        "В марсианском корабле сопоставимые SpO₂ за 7 дней 97–99%, дыхание обычное, личная серия такая же."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающего признака гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.single_low.04",
+      "messages": [
+        "На орбитальной станции SpO₂ за неделю: 97, 98, 92 , 98, 97, 99, 98%. Жалоб нет; низкая точка была одна."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одиночная аномалия не равна устойчивой гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Необходимо оценить симптомы и среду."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.artifact.04",
+      "messages": [
+        "На орбитальной станции прибор на холодном пальце показал 89%, после согревания три повторения 98%. Одышки нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Качество измерения изменилось; низкая точка требует проверки, не диагноза.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышка не отмечена, но повторные низкие показания SpO₂ могут указывать на гипоксемию. Необходимо оценить симптомы и среду."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.stable.04",
+      "messages": [
+        "На орбитальной станции сопоставимые SpO₂ за 8 дней 97–99%, дыхание обычное, личная серия такая же."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающего признака гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.single_low.05",
+      "messages": [
+        "Во время дальнего перелёта SpO₂ за неделю: 97, 98, 93 , 98, 97, 99, 98%. Жалоб нет; низкая точка была одна."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одиночная аномалия не равна устойчивой гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.artifact.05",
+      "messages": [
+        "Во время дальнего перелёта прибор на холодном пальце показал 90%, после согревания три повторения 97%. Одышки нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Качество измерения изменилось; низкая точка требует проверки, не диагноза.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночное низкое значение SpO₂ не является критерием для диагноза гипоксемии, но требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.stable.05",
+      "messages": [
+        "Во время дальнего перелёта сопоставимые SpO₂ за 9 дней 97–99%, дыхание обычное, личная серия такая же."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающего признака гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.single_low.06",
+      "messages": [
+        "В жилом модуле SpO₂ за неделю: 97, 98, 94 , 98, 97, 99, 98%. Жалоб нет; низкая точка была одна."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одиночная аномалия не равна устойчивой гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Необходимо оперативно оценить ситуацию и принять меры."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.artifact.06",
+      "messages": [
+        "В жилом модуле прибор на холодном пальце показал 91%, после согревания три повторения 98%. Одышки нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Качество измерения изменилось; низкая точка требует проверки, не диагноза.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одно измерение SpO₂ на холодном пальце показало низкое значение, что может указывать на гипоксемию. Необходимо оценить симптомы и среду в связи с возможной устойчивой гипоксемией."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.OXYGEN.stable.06",
+      "messages": [
+        "В жилом модуле сопоставимые SpO₂ за 10 дней 97–99%, дыхание обычное, личная серия такая же."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающего признака гипоксемии.",
+      "source_urls": [
+        "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.stable.01",
+      "messages": [
+        "На мкс три одинаково проведённых теста зрения: 1.0, 1.0, 1.0; новых жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильная серия не поддерживает ухудшение.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует оперативной оценки для убедительности."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.uncalibrated.01",
+      "messages": [
+        "На мкс сегодня на новом экране тест вышел хуже; расстояние и освещение изменились, исходных данных нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Несопоставимый тест не доказывает динамику.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.stable.02",
+      "messages": [
+        "На лунной базе три одинаково проведённых теста зрения: 0.9, 0.9, 0.9; новых жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильная серия не поддерживает ухудшение.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует дополнительной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.uncalibrated.02",
+      "messages": [
+        "На лунной базе сегодня на новом экране тест вышел хуже; расстояние и освещение изменились, исходных данных нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Несопоставимый тест не доказывает динамику.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.stable.03",
+      "messages": [
+        "В марсианском корабле три одинаково проведённых теста зрения: 1.0, 1.0, 1.0; новых жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильная серия не поддерживает ухудшение.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест (одинаковые результаты) не подтверждает наличие SANS."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.uncalibrated.03",
+      "messages": [
+        "В марсианском корабле сегодня на новом экране тест вышел хуже; расстояние и освещение изменились, исходных данных нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Несопоставимый тест не доказывает динамику.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.stable.04",
+      "messages": [
+        "На орбитальной станции три одинаково проведённых теста зрения: 0.8, 0.8, 0.8; новых жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильная серия не поддерживает ухудшение.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует проверки динамики и передачи на очную оценку."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.uncalibrated.04",
+      "messages": [
+        "На орбитальной станции сегодня на новом экране тест вышел хуже; расстояние и освещение изменились, исходных данных нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Несопоставимый тест не доказывает динамику.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.stable.05",
+      "messages": [
+        "Во время дальнего перелёта три одинаково проведённых теста зрения: 1.0, 1.0, 1.0; новых жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильная серия не поддерживает ухудшение.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.uncalibrated.05",
+      "messages": [
+        "Во время дальнего перелёта сегодня на новом экране тест вышел хуже; расстояние и освещение изменились, исходных данных нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Несопоставимый тест не доказывает динамику.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс экранного теста не подтверждает SANS, но требует оперативной оценки для убедительности."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.stable.06",
+      "messages": [
+        "В жилом модуле три одинаково проведённых теста зрения: 0.9, 0.9, 0.9; новых жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильная серия не поддерживает ухудшение.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует дополнительной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SANS.uncalibrated.06",
+      "messages": [
+        "В жилом модуле сегодня на новом экране тест вышел хуже; расстояние и освещение изменились, исходных данных нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Несопоставимый тест не доказывает динамику.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс экранного теста не подтверждает наличие SANS, но требует оперативной оценки для убедительности."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.long_low_load.01",
+      "messages": [
+        "На мкс идёт 120-й день; силовые тренировки пропускал 8 недель, жалуюсь на слабость ног. Денситометрии нет."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Есть факторы костного риска и мышечной функции; плотность костей неизвестна.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180",
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног могут указывать на снижение силы/функции, что подтверждается длительным полётом и снижением тренировочной нагрузки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.bone_measurement.01",
+      "messages": [
+        "На мкс после 150 дней есть два сопоставимых исследования костей до и после миссии с зафиксированным снижением; функциональный тест мышц стабилен."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть прямой сигнал изменения костной ткани, величина и метод должны быть проверены.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.steps_only.01",
+      "messages": [
+        "На мкс сегодня сделал 2000 шагов; данных костного исследования и личной динамики нет. Можно ли назвать остеопороз?"
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Шаги не являются измерением плотности костей.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани. Данные о количестве шагов не являются достаточным основанием для диагноза остеопороза."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.short_stable.01",
+      "messages": [
+        "На мкс 7 дней; тренировки по плану, функциональные тесты неизменны, костных жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "По доступным данным конкретный костный риск не выявлен.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональные тесты неизменны, костных жалоб нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.long_low_load.02",
+      "messages": [
+        "На лунной базе идёт 145-й день; силовые тренировки пропускал 9 недель, жалуюсь на слабость ног. Денситометрии нет."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Есть факторы костного риска и мышечной функции; плотность костей неизвестна.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180",
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног могут указывать на снижение силы/функции, что подтверждается тренировочными данными и отсутствием дэнситометрии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.bone_measurement.02",
+      "messages": [
+        "На лунной базе после 170 дней есть два сопоставимых исследования костей до и после миссии с зафиксированным снижением; функциональный тест мышц стабилен."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть прямой сигнал изменения костной ткани, величина и метод должны быть проверены.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и мышц показывают снижение функциональности, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.steps_only.02",
+      "messages": [
+        "На лунной базе сегодня сделал 2350 шагов; данных костного исследования и личной динамики нет. Можно ли назвать остеопороз?"
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Шаги не являются измерением плотности костей.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани, а не по количеству шагов или жалобам."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.short_stable.02",
+      "messages": [
+        "На лунной базе 8 дней; тренировки по плану, функциональные тесты неизменны, костных жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "По доступным данным конкретный костный риск не выявлен.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.long_low_load.03",
+      "messages": [
+        "В марсианском корабле идёт 170-й день; силовые тренировки пропускал 10 недель, жалуюсь на слабость ног. Денситометрии нет."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Есть факторы костного риска и мышечной функции; плотность костей неизвестна.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180",
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног и отсутствие дэнситометрии могут указывать на снижение силы/функции, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.bone_measurement.03",
+      "messages": [
+        "В марсианском корабле после 190 дней есть два сопоставимых исследования костей до и после миссии с зафиксированным снижением; функциональный тест мышц стабилен."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть прямой сигнал изменения костной ткани, величина и метод должны быть проверены.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.steps_only.03",
+      "messages": [
+        "В марсианском корабле сегодня сделал 2700 шагов; данных костного исследования и личной динамики нет. Можно ли назвать остеопороз?"
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Шаги не являются измерением плотности костей.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани, а не по количеству шагов."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.short_stable.03",
+      "messages": [
+        "В марсианском корабле 9 дней; тренировки по плану, функциональные тесты неизменны, костных жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "По доступным данным конкретный костный риск не выявлен.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.long_low_load.04",
+      "messages": [
+        "На орбитальной станции идёт 195-й день; силовые тренировки пропускал 11 недель, жалуюсь на слабость ног. Денситометрии нет."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Есть факторы костного риска и мышечной функции; плотность костей неизвестна.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180",
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног могут быть связаны с костными изменениями, несмотря на отсутствие денситометрии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.bone_measurement.04",
+      "messages": [
+        "На орбитальной станции после 210 дней есть два сопоставимых исследования костей до и после миссии с зафиксированным снижением; функциональный тест мышц стабилен."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть прямой сигнал изменения костной ткани, величина и метод должны быть проверены.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.steps_only.04",
+      "messages": [
+        "На орбитальной станции сегодня сделал 3050 шагов; данных костного исследования и личной динамики нет. Можно ли назвать остеопороз?"
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Шаги не являются измерением плотности костей.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани, а не по количеству шагов или жалобам."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.short_stable.04",
+      "messages": [
+        "На орбитальной станции 10 дней; тренировки по плану, функциональные тесты неизменны, костных жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "По доступным данным конкретный костный риск не выявлен.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональные тесты неизменны, костных жалоб нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.long_low_load.05",
+      "messages": [
+        "Во время дальнего перелёта идёт 220-й день; силовые тренировки пропускал 12 недель, жалуюсь на слабость ног. Денситометрии нет."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Есть факторы костного риска и мышечной функции; плотность костей неизвестна.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180",
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног и снижение силы/функции при сопоставимых тестах могут указывать на риск костных изменений или снижение физической функции, но без исходного обследования костей или тренировочной истории трудно сделать окончательный вывод."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.bone_measurement.05",
+      "messages": [
+        "Во время дальнего перелёта после 230 дней есть два сопоставимых исследования костей до и после миссии с зафиксированным снижением; функциональный тест мышц стабилен."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть прямой сигнал изменения костной ткани, величина и метод должны быть проверены.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "кандидат"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение силы/функции при сопоставимых тестах может указывать на риск костных изменений или снижение физической функции, но без дополнительного исследования костей и тренировочной истории трудно сделать окончательный вывод."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.steps_only.05",
+      "messages": [
+        "Во время дальнего перелёта сегодня сделал 3400 шагов; данных костного исследования и личной динамики нет. Можно ли назвать остеопороз?"
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Шаги не являются измерением плотности костей.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть связан с длительным полётом и снижением доступной нагрузки, но отсутствие данных костного исследования не исключает его. Необходимо уточнить личную историю тренировок и результаты функциональных тестов."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.short_stable.05",
+      "messages": [
+        "Во время дальнего перелёта 11 дней; тренировки по плану, функциональные тесты неизменны, костных жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "По доступным данным конкретный костный риск не выявлен.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.long_low_load.06",
+      "messages": [
+        "В жилом модуле идёт 245-й день; силовые тренировки пропускал 13 недель, жалуюсь на слабость ног. Денситометрии нет."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Есть факторы костного риска и мышечной функции; плотность костей неизвестна.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180",
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног и отсутствие денситометрии могут указывать на снижение силы/функции, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.bone_measurement.06",
+      "messages": [
+        "В жилом модуле после 250 дней есть два сопоставимых исследования костей до и после миссии с зафиксированным снижением; функциональный тест мышц стабилен."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.BONE"
+      ],
+      "author_urgency": "prompt_review",
+      "author_note": "Есть прямой сигнал изменения костной ткани, величина и метод должны быть проверены.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.steps_only.06",
+      "messages": [
+        "В жилом модуле сегодня сделал 3750 шагов; данных костного исследования и личной динамики нет. Можно ли назвать остеопороз?"
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Шаги не являются измерением плотности костей.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после проведения костного исследования. Данные о количестве шагов не являются достаточным основанием для диагноза остеопороза."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BONE.short_stable.06",
+      "messages": [
+        "В жилом модуле 12 дней; тренировки по плану, функциональные тесты неизменны, костных жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "По доступным данным конкретный костный риск не выявлен.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.01",
+      "messages": [
+        "На мкс при одинаковой нагрузке и методе тест силы снизился с 18 до 9 повторений за 20 дней."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Сопоставимый функциональный спад поддерживает версию снижения функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.01",
+      "messages": [
+        "На мкс последние 3 недель почти нет тренировок; раньше поднимал стандартный груз легко, теперь жалуюсь на слабость рук."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Жалоба и снижение нагрузки требуют повторного стандартизированного теста.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие тренировочных данных и жалоб на слабость рук указывают на возможный риск мышечного заболевания, требующий оперативной оценки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.stable.01",
+      "messages": [
+        "На мкс функциональный тест за три месяца 18, 18, 18 повторений при одинаковой нагрузке, слабости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильный тест не поддерживает снижение функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение функционального теста может указывать на мышечный риск, но без дополнительных данных сложно определить причину. Необходимо провести более детальный анализ индивидуальной функции и тренировочной истории."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.01",
+      "messages": [
+        "На мкс после ушиба кисти сделал лишь 9 повторений вместо 18; боль мешала движению, повторного теста после восстановления нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травма делает функциональный тест несопоставимым.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб межпозвоночного диска может привести к снижению функции мышц, что подтверждается уменьшенным количеством повторений после травмы. Однако отсутствие повторных тестов после восстановления не позволяет сделать окончательный вывод о состоянии пациента."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.02",
+      "messages": [
+        "На лунной базе при одинаковой нагрузке и методе тест силы снизился с 20 до 10 повторений за 30 дней."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Сопоставимый функциональный спад поддерживает версию снижения функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.02",
+      "messages": [
+        "На лунной базе последние 4 недель почти нет тренировок; раньше поднимал стандартный груз легко, теперь жалуюсь на слабость рук."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Жалоба и снижение нагрузки требуют повторного стандартизированного теста.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие жалоб на слабость рук и ухудшение тренировочной нагрузки указывают на возможный риск снижения физической функции при полёте."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.stable.02",
+      "messages": [
+        "На лунной базе функциональный тест за три месяца 20, 20, 20 повторений при одинаковой нагрузке, слабости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильный тест не поддерживает снижение функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может быть связано с различными факторами, включая тренировочную нагрузку и возможные заболевания. Необходимо провести дополнительный анализ для уточнения ситуации."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.02",
+      "messages": [
+        "На лунной базе после ушиба кисти сделал лишь 10 повторений вместо 20; боль мешала движению, повторного теста после восстановления нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травма делает функциональный тест несопоставимым.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и ухудшению функционального теста."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.03",
+      "messages": [
+        "В марсианском корабле при одинаковой нагрузке и методе тест силы снизился с 22 до 11 повторений за 40 дней."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Сопоставимый функциональный спад поддерживает версию снижения функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных о тренировочной истории и индивидуальных показателях трудно сделать окончательный вывод."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.03",
+      "messages": [
+        "В марсианском корабле последние 5 недель почти нет тренировок; раньше поднимал стандартный груз легко, теперь жалуюсь на слабость рук."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Жалоба и снижение нагрузки требуют повторного стандартизированного теста.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие тренировочного риска и жалоб на слабость рук указывают на необходимость оперативной оценки состояния здоровья."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.stable.03",
+      "messages": [
+        "В марсианском корабле функциональный тест за три месяца 22, 22, 22 повторений при одинаковой нагрузке, слабости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильный тест не поддерживает снижение функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональный тест повторяется за три месяца, что может указывать на возможное снижение физической функции. Однако отсутствие жалоб на слабость и стабильная функциональная серия при сопоставимых условиях могут свидетельствовать против этого."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.03",
+      "messages": [
+        "В марсианском корабле после ушиба кисти сделал лишь 11 повторений вместо 22; боль мешала движению, повторного теста после восстановления нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травма делает функциональный тест несопоставимым.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и ухудшению функционального теста."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.04",
+      "messages": [
+        "На орбитальной станции при одинаковой нагрузке и методе тест силы снизился с 24 до 12 повторений за 50 дней."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Сопоставимый функциональный спад поддерживает версию снижения функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может быть связано с различными факторами, включая ухудшение стандартного функционального теста и снижение тренировочной нагрузки. Однако стабильная функциональная серия при сопоставимых условиях указывает на то, что это не является подтверждённым заболеванием."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.04",
+      "messages": [
+        "На орбитальной станции последние 6 недель почти нет тренировок; раньше поднимал стандартный груз легко, теперь жалуюсь на слабость рук."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Жалоба и снижение нагрузки требуют повторного стандартизированного теста.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие жалоб на слабость рук и ухудшение функционального теста указывают на возможный риск снижения физической функции при полёте."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.stable.04",
+      "messages": [
+        "На орбитальной станции функциональный тест за три месяца 24, 24, 24 повторений при одинаковой нагрузке, слабости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильный тест не поддерживает снижение функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может быть связано с различными факторами, включая тренировочную нагрузку и условия. Необходимо оценить индивидуальную функцию и тренировочную историю для выявления мышечного риска или подтверждённого заболевания."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.04",
+      "messages": [
+        "На орбитальной станции после ушиба кисти сделал лишь 12 повторений вместо 24; боль мешала движению, повторного теста после восстановления нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травма делает функциональный тест несопоставимым.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и жалобе на слабость. Сопоставимые условия не указаны."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.05",
+      "messages": [
+        "Во время дальнего перелёта при одинаковой нагрузке и методе тест силы снизился с 26 до 13 повторений за 60 дней."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Сопоставимый функциональный спад поддерживает версию снижения функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировочного процесса."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.05",
+      "messages": [
+        "Во время дальнего перелёта последние 7 недель почти нет тренировок; раньше поднимал стандартный груз легко, теперь жалуюсь на слабость рук."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Жалоба и снижение нагрузки требуют повторного стандартизированного теста.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие жалоб на слабость рук и ухудшение функционального теста указывают на возможный риск мышечного заболевания, особенно при длительной тренировочной нагрузке."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.stable.05",
+      "messages": [
+        "Во время дальнего перелёта функциональный тест за три месяца 26, 26, 26 повторений при одинаковой нагрузке, слабости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильный тест не поддерживает снижение функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональный тест показал ухудшение, что может указывать на мышечный риск."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.05",
+      "messages": [
+        "Во время дальнего перелёта после ушиба кисти сделал лишь 13 повторений вместо 26; боль мешала движению, повторного теста после восстановления нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травма делает функциональный тест несопоставимым.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб кисти и снижение тренировочной нагрузки могут указывать на мышечный риск, но без дополнительных данных сложно определить наличие заболевания."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.06",
+      "messages": [
+        "В жилом модуле при одинаковой нагрузке и методе тест силы снизился с 28 до 14 повторений за 70 дней."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Сопоставимый функциональный спад поддерживает версию снижения функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировочного процесса."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.06",
+      "messages": [
+        "В жилом модуле последние 8 недель почти нет тренировок; раньше поднимал стандартный груз легко, теперь жалуюсь на слабость рук."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Жалоба и снижение нагрузки требуют повторного стандартизированного теста.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие тренировочного отрицательного сдвига и жалоб на слабость рук указывают на возможный риск снижения физической функции."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.stable.06",
+      "messages": [
+        "В жилом модуле функциональный тест за три месяца 28, 28, 28 повторений при одинаковой нагрузке, слабости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Стабильный тест не поддерживает снижение функции.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональный тест показал ухудшение, что может указывать на мышечный риск. Необходимо оценить сопоставимость условий и метода для точного диагноза."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.06",
+      "messages": [
+        "В жилом модуле после ушиба кисти сделал лишь 14 повторений вместо 28; боль мешала движению, повторного теста после восстановления нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "prompt_review",
+      "author_note": "Травма делает функциональный тест несопоставимым.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и ухудшению функционального теста."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": false,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.01",
+      "messages": [
+        "На мкс голова болит после 4 часов работы; радиационных событий не зарегистрировано, дозиметр без тревоги."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна головная боль не поддерживает радиационную экспозицию.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без зарегистрированного события и дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.01",
+      "messages": [
+        "На мкс проверяю журнал за 2 недели: событий нет, дозиметр работает, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет события или симптомов, требующих версии воздействия.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.02",
+      "messages": [
+        "На лунной базе голова болит после 5 часов работы; радиационных событий не зарегистрировано, дозиметр без тревоги."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна головная боль не поддерживает радиационную экспозицию.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без доказательств регистрации событий или данных дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.02",
+      "messages": [
+        "На лунной базе проверяю журнал за 3 недели: событий нет, дозиметр работает, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет события или симптомов, требующих версии воздействия.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.03",
+      "messages": [
+        "В марсианском корабле голова болит после 6 часов работы; радиационных событий не зарегистрировано, дозиметр без тревоги."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна головная боль не поддерживает радиационную экспозицию.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Болезнь может быть связана с радиационной экспозицией, но без доказательств этого, не угадывайте заболевание."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.03",
+      "messages": [
+        "В марсианском корабле проверяю журнал за 4 недели: событий нет, дозиметр работает, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет события или симптомов, требующих версии воздействия.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие дозиметра и отсутствие событий не исключает возможную радиационную экспозицию, особенно в условиях марсианского корабля."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.04",
+      "messages": [
+        "На орбитальной станции голова болит после 7 часов работы; радиационных событий не зарегистрировано, дозиметр без тревоги."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна головная боль не поддерживает радиационную экспозицию.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли головы могут быть связаны с радиационной экспозицией, но без доказательств этого, не следует делать выводы."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.04",
+      "messages": [
+        "На орбитальной станции проверяю журнал за 5 недели: событий нет, дозиметр работает, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет события или симптомов, требующих версии воздействия.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.05",
+      "messages": [
+        "Во время дальнего перелёта голова болит после 8 часов работы; радиационных событий не зарегистрировано, дозиметр без тревоги."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна головная боль не поддерживает радиационную экспозицию.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без доказательств регистрации событий или данных дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.05",
+      "messages": [
+        "Во время дальнего перелёта проверяю журнал за 6 недели: событий нет, дозиметр работает, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет события или симптомов, требующих версии воздействия.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Персональная дозиметрия или зарегистрированное радиационное событие не подтверждают отсутствие экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.06",
+      "messages": [
+        "В жилом модуле голова болит после 9 часов работы; радиационных событий не зарегистрировано, дозиметр без тревоги."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна головная боль не поддерживает радиационную экспозицию.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без доказательств регистрации событий или данных дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.06",
+      "messages": [
+        "В жилом модуле проверяю журнал за 7 недели: событий нет, дозиметр работает, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет события или симптомов, требующих версии воздействия.",
+      "source_urls": [
+        "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.01",
+      "messages": [
+        "На мкс личная исходная серия сна 7,5–8 часов; последние 5 ночей по 4.5 часа, днём засыпаю."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Устойчивое сокращение сна относительно себя и дневной симптом.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической готовности экипажа, что требует оперативной оценки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.shift_change.01",
+      "messages": [
+        "На мкс после смены графика уже 7 дней засыпаю на три часа позже и сплю меньше обычного, на смене сонливость."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Расписание и повторные жалобы поддерживают проверку циркадного сдвига.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость могут указывать на недостаток сна или циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.one_night.01",
+      "messages": [
+        "На мкс одну ночь спал 4.0 часа, остальные шесть ночей 7,5–8; сегодня сонливости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна короткая ночь не равна устойчивому дефициту.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость может быть следствием недостаточного сна, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.stable.01",
+      "messages": [
+        "На мкс последние 8 ночей сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет данных за дефицит сна или сдвиг.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг может привести к ухудшению физической и психической выносливости, что является серьезной проблемой для экипажа."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.02",
+      "messages": [
+        "На лунной базе личная исходная серия сна 7,5–8 часов; последние 6 ночей по 4.7 часа, днём засыпаю."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Устойчивое сокращение сна относительно себя и дневной симптом.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может указывать на циркадный сдвиг или недостаток сна, что важно учитывать при оценке нагрузки и режима."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.shift_change.02",
+      "messages": [
+        "На лунной базе после смены графика уже 8 дней засыпаю на три часа позже и сплю меньше обычного, на смене сонливость."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Расписание и повторные жалобы поддерживают проверку циркадного сдвига.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость при этом могут указывать на недостаток сна или циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.one_night.02",
+      "messages": [
+        "На лунной базе одну ночь спал 4.3 часа, остальные шесть ночей 7,5–8; сегодня сонливости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна короткая ночь не равна устойчивому дефициту.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна может указывать на циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.stable.02",
+      "messages": [
+        "На лунной базе последние 9 ночей сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет данных за дефицит сна или сдвиг.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Повторное сокращение сна относительно личной серии, что может указывать на циркадный сдвиг."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.03",
+      "messages": [
+        "В марсианском корабле личная исходная серия сна 7,5–8 часов; последние 7 ночей по 4.9 часа, днём засыпаю."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Устойчивое сокращение сна относительно себя и дневной симптом.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической выносливости, что является важным фактором для миссии на Марсе."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.shift_change.03",
+      "messages": [
+        "В марсианском корабле после смены графика уже 9 дней засыпаю на три часа позже и сплю меньше обычного, на смене сонливость."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Расписание и повторные жалобы поддерживают проверку циркадного сдвига.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость при этом могут указывать на циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.one_night.03",
+      "messages": [
+        "В марсианском корабле одну ночь спал 4.6 часа, остальные шесть ночей 7,5–8; сегодня сонливости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна короткая ночь не равна устойчивому дефициту.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна может указывать на циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.stable.03",
+      "messages": [
+        "В марсианском корабле последние 10 ночей сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет данных за дефицит сна или сдвиг.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Повторное сокращение сна относительно личной серии, что может указывать на циркадный сдвиг."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.04",
+      "messages": [
+        "На орбитальной станции личная исходная серия сна 7,5–8 часов; последние 8 ночей по 5.1 часа, днём засыпаю."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Устойчивое сокращение сна относительно себя и дневной симптом.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической выносливости, что требует оперативной оценки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.shift_change.04",
+      "messages": [
+        "На орбитальной станции после смены графика уже 10 дней засыпаю на три часа позже и сплю меньше обычного, на смене сонливость."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Расписание и повторные жалобы поддерживают проверку циркадного сдвига.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость при изменении графика может указывать на циркадный сдвиг или недостаток сна, но без дополнительных данных сложно определить точную причину."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.one_night.04",
+      "messages": [
+        "На орбитальной станции одну ночь спал 4.9 часа, остальные шесть ночей 7,5–8; сегодня сонливости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна короткая ночь не равна устойчивому дефициту.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может указывать на циркадный сдвиг или недостаток сна, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.stable.04",
+      "messages": [
+        "На орбитальной станции последние 11 ночей сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет данных за дефицит сна или сдвиг.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.05",
+      "messages": [
+        "Во время дальнего перелёта личная исходная серия сна 7,5–8 часов; последние 9 ночей по 5.3 часа, днём засыпаю."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Устойчивое сокращение сна относительно себя и дневной симптом.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической готовности, что требует оперативной оценки."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.shift_change.05",
+      "messages": [
+        "Во время дальнего перелёта после смены графика уже 11 дней засыпаю на три часа позже и сплю меньше обычного, на смене сонливость."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Расписание и повторные жалобы поддерживают проверку циркадного сдвига.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость при изменении графика может указывать на циркадный сдвиг, который требует внимания к динамике сна и расписания."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.one_night.05",
+      "messages": [
+        "Во время дальнего перелёта одну ночь спал 5.2 часа, остальные шесть ночей 7,5–8; сегодня сонливости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна короткая ночь не равна устойчивому дефициту.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость может быть следствием циркадного сдвига, но не исключает наличие апноэ. Необходимо оценить динамику сна и расписания для уточнения."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.stable.05",
+      "messages": [
+        "Во время дальнего перелёта последние 12 ночей сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет данных за дефицит сна или сдвиг.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг может привести к ухудшению физической и психической выносливости, что является серьезной угрозой для выполнения задачи."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.06",
+      "messages": [
+        "В жилом модуле личная исходная серия сна 7,5–8 часов; последние 10 ночей по 5.5 часа, днём засыпаю."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Устойчивое сокращение сна относительно себя и дневной симптом.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической готовности экипажа."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.shift_change.06",
+      "messages": [
+        "В жилом модуле после смены графика уже 12 дней засыпаю на три часа позже и сплю меньше обычного, на смене сонливость."
+      ],
+      "author_candidate_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "author_urgency": "routine",
+      "author_note": "Расписание и повторные жалобы поддерживают проверку циркадного сдвига.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость могут указывать на недостаток сна или циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "candidate_disagreement": false,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.one_night.06",
+      "messages": [
+        "В жилом модуле одну ночь спал 5.5 часа, остальные шесть ночей 7,5–8; сегодня сонливости нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Одна короткая ночь не равна устойчивому дефициту.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость может быть следствием циркадного сдвига, но не исключает наличие апноэ. Необходимо оценить динамику сна и расписания для точной диагностики."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.SLEEP.stable.06",
+      "messages": [
+        "В жилом модуле последние 13 ночей сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет данных за дефицит сна или сдвиг.",
+      "source_urls": [
+        "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Повторное сокращение сна относительно личной серии, что может указывать на циркадный сдвиг."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.single_after_exercise.01",
+      "messages": [
+        "На мкс сразу после тренировки одна запись АД 145/91; после отдыха и раньше 117–122/75–80, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Единичное несопоставимое измерение не поддерживает устойчивую гипертензию.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.stable.01",
+      "messages": [
+        "На мкс АД в сопоставимых условиях семь дней 116–123/74–80, личная серия такая же, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающей серии повышенного давления.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.single_after_exercise.02",
+      "messages": [
+        "На лунной базе сразу после тренировки одна запись АД 148/92; после отдыха и раньше 117–122/75–80, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Единичное несопоставимое измерение не поддерживает устойчивую гипертензию.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.stable.02",
+      "messages": [
+        "На лунной базе АД в сопоставимых условиях семь дней 116–123/74–80, личная серия такая же, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающей серии повышенного давления.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.single_after_exercise.03",
+      "messages": [
+        "В марсианском корабле сразу после тренировки одна запись АД 151/93; после отдыха и раньше 117–122/75–80, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Единичное несопоставимое измерение не поддерживает устойчивую гипертензию.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.stable.03",
+      "messages": [
+        "В марсианском корабле АД в сопоставимых условиях семь дней 116–123/74–80, личная серия такая же, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающей серии повышенного давления.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.single_after_exercise.04",
+      "messages": [
+        "На орбитальной станции сразу после тренировки одна запись АД 154/94; после отдыха и раньше 117–122/75–80, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Единичное несопоставимое измерение не поддерживает устойчивую гипертензию.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии по одному измерению."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.stable.04",
+      "messages": [
+        "На орбитальной станции АД в сопоставимых условиях семь дней 116–123/74–80, личная серия такая же, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающей серии повышенного давления.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.single_after_exercise.05",
+      "messages": [
+        "Во время дальнего перелёта сразу после тренировки одна запись АД 157/95; после отдыха и раньше 117–122/75–80, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Единичное несопоставимое измерение не поддерживает устойчивую гипертензию.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии по одному измерению."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.stable.05",
+      "messages": [
+        "Во время дальнего перелёта АД в сопоставимых условиях семь дней 116–123/74–80, личная серия такая же, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающей серии повышенного давления.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повышенное артериальное давление в сопоставимых условиях не является устойчивым состоянием, требующим немедленного внимания."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.single_after_exercise.06",
+      "messages": [
+        "В жилом модуле сразу после тренировки одна запись АД 160/96; после отдыха и раньше 117–122/75–80, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Единичное несопоставимое измерение не поддерживает устойчивую гипертензию.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    },
+    {
+      "id": "HC.BP.stable.06",
+      "messages": [
+        "В жилом модуле АД в сопоставимых условиях семь дней 116–123/74–80, личная серия такая же, жалоб нет."
+      ],
+      "author_candidate_ids": [],
+      "author_urgency": "routine",
+      "author_note": "Нет поддерживающей серии повышенного давления.",
+      "source_urls": [
+        "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      ],
+      "blind_model_review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "candidate_disagreement": true,
+      "urgency_disagreement": true,
+      "adjudication_status": "pending_independent_human_review"
+    }
+  ]
+}

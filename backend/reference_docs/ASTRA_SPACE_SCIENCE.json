@@ -1,0 +1,791 @@
+{
+  "schema_version": "1.0",
+  "retrieved_at": "2026-11-14",
+  "kind": "general_scientific_reference",
+  "cards": [
+    {
+      "id": "HRP.HAZARD.RADIATION",
+      "topic": "radiation",
+      "title_ru": "Cosmic radiation",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "5 Hazards of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/hazards/",
+        "published_at": null,
+        "version": null,
+        "section": "Space Radiation"
+      },
+      "evidence_population": "human_spaceflight_and_ground_research",
+      "observations": [
+        "history of radiation measurements in the environment"
+      ],
+      "required_inputs": [
+        "instrument",
+        "location of measurement",
+        "time",
+        "physical quantity",
+        "unit"
+      ],
+      "units": [
+        "µGy/hour",
+        "µSv/hour"
+      ],
+      "measurement_conditions": [
+        "geometry and shielding of the device"
+      ],
+      "supported_interpretation": "Cosmic radiation belongs to five flight hazards; the device's row describes the conditions around it.",
+      "missing_inputs": [
+        "personal dosimeter",
+        "time spent",
+        "human shielding"
+      ],
+      "practical_actions": [
+        "Keep the location, device, and time of each record; compare only compatible rows."
+      ],
+      "limitations": "It is not possible to calculate an individual dose from environmental measurements without additional data and methodology.",
+      "keywords": [
+        "radiation",
+        "dose",
+        "radlab",
+        "радиация",
+        "излучение",
+        "облучение",
+        "доза",
+        "нейтрон"
+      ]
+    },
+    {
+      "id": "HRP.RISK.RADIATION_CANCER",
+      "topic": "radiation",
+      "title_ru": "Long-term risk of radiation exposure",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "Risks of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/risks/",
+        "published_at": "2026-07-21",
+        "version": null,
+        "section": "Risk of Radiation-Induced Cancers"
+      },
+      "evidence_population": "human_spaceflight_risk_research",
+      "observations": [
+        "radiation measurements of the environment",
+        "personal dosimetry",
+        "duration of stay"
+      ],
+      "required_inputs": [
+        "personal accumulated dose",
+        "duration of exposure",
+        "location and shielding"
+      ],
+      "units": [
+        "µSv",
+        "mSv"
+      ],
+      "measurement_conditions": [
+        "personal dosimetry or documented model of individual exposure"
+      ],
+      "supported_interpretation": "Exposure to cosmic radiation may increase the probability of developing cancer; it is not possible to determine the individual risk magnitude for one row of equipment.",
+      "missing_inputs": [
+        "personal accumulated dose",
+        "approved model of individual risk"
+      ],
+      "practical_actions": [
+        "Separate environmental measurements from personal dose; use onboard radiation control procedures and personal dosimeter data if available."
+      ],
+      "limitations": "The card describes the general long-term risk and does not provide a numerical probability for the selected profile.",
+      "keywords": [
+        "radiation",
+        "impact",
+        "harm",
+        "health",
+        "risk",
+        "cancer",
+        "dose",
+        "радиация",
+        "излучение",
+        "облучение",
+        "доза",
+        "нейтрон"
+      ]
+    },
+    {
+      "id": "HRP.HAZARD.ISOLATION",
+      "topic": "behavior",
+      "title_ru": "Isolation and limited space",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "5 Hazards of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/hazards/",
+        "published_at": null,
+        "version": null,
+        "section": "Isolation and Confinement"
+      },
+      "evidence_population": "human_spaceflight_and_ground_analog",
+      "observations": [
+        "mood self-assessment",
+        "sleep",
+        "reports of fatigue"
+      ],
+      "required_inputs": [
+        "duration and context of changes"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "subjective self-assessment or the specified method"
+      ],
+      "supported_interpretation": "Isolation and confined environment are associated with crew behavioral workload.",
+      "missing_inputs": [
+        "validated crew assessment and workload"
+      ],
+      "practical_actions": [
+        "Note changes in sleep and well-being over time, discuss workload with the crew."
+      ],
+      "limitations": "A single self-assessment does not establish a psychiatric diagnosis.",
+      "keywords": [
+        "isolation",
+        "stress",
+        "mood",
+        "crew",
+        "behavior",
+        "изоляция",
+        "стресс",
+        "настроение",
+        "экипаж"
+      ]
+    },
+    {
+      "id": "HRP.HAZARD.DISTANCE",
+      "topic": "autonomy",
+      "title_ru": "Distance from Earth",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "5 Hazards of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/hazards/",
+        "published_at": null,
+        "version": null,
+        "section": "Distance from Earth"
+      },
+      "evidence_population": "mission_planning",
+      "observations": [
+        "mission type",
+        "communication availability"
+      ],
+      "required_inputs": [
+        "mission location",
+        "access to assistance"
+      ],
+      "units": [],
+      "measurement_conditions": [],
+      "supported_interpretation": "On long-range missions, the delay in receiving instructions, resupply, and medical aid requires greater autonomy.",
+      "missing_inputs": [
+        "real plan of communication and medical operations for a specific mission"
+      ],
+      "practical_actions": [
+        "Maintain local knowledge and explicit questions for transmission to the responsible specialist when communication is available."
+      ],
+      "limitations": "Documentation does not replace procedures for a specific mission.",
+      "keywords": [
+        "Mars",
+        "Moon",
+        "communication",
+        "autonomy",
+        "Earth",
+        "Марс",
+        "Луна",
+        "связь",
+        "автономия",
+        "Земля"
+      ]
+    },
+    {
+      "id": "HRP.HAZARD.GRAVITY",
+      "topic": "musculoskeletal",
+      "title_ru": "Gravity change",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "5 Hazards of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/hazards/",
+        "published_at": null,
+        "version": null,
+        "section": "Gravity Fields"
+      },
+      "evidence_population": "human_spaceflight",
+      "observations": [
+        "mission phase",
+        "load",
+        "functional changes"
+      ],
+      "required_inputs": [
+        "gravitational environment",
+        "personal baseline series"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "exercise type",
+        "mission phase"
+      ],
+      "supported_interpretation": "Muscles, bones, vestibular system, and organs adapt to changes in gravity.",
+      "missing_inputs": [
+        "measurement of bone density or structure",
+        "measurement of muscular function"
+      ],
+      "practical_actions": [
+        "Compare comparable measurements across mission phases."
+      ],
+      "limitations": "Steps and subjective fatigue do not measure bone density.",
+      "keywords": [
+        "bones",
+        "muscles",
+        "load",
+        "microgravity",
+        "gravity",
+        "кости",
+        "мышцы",
+        "нагрузка",
+        "микрогравитация",
+        "остеопороз"
+      ]
+    },
+    {
+      "id": "HRP.HAZARD.HABITAT",
+      "topic": "environment",
+      "title_ru": "closed habitat",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "5 Hazards of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/hazards/",
+        "published_at": null,
+        "version": null,
+        "section": "Hostile/Closed Environments"
+      },
+      "evidence_population": "mission_engineering",
+      "observations": [
+        "environmental temperature",
+        "environmental pressure",
+        "illumination",
+        "noise"
+      ],
+      "required_inputs": [
+        "location",
+        "time",
+        "sensor",
+        "unit"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "inside the habitable volume or at the device"
+      ],
+      "supported_interpretation": "Temperature, pressure, illumination, noise and microbial environment influence habitability.",
+      "missing_inputs": [
+        "specific environmental readings and measurement conditions"
+      ],
+      "practical_actions": [
+        "Separate environmental conditions from personal medical indicators."
+      ],
+      "limitations": "Without specific readings of a compartment, you cannot assess its current state.",
+      "keywords": [
+        "environment",
+        "cabin",
+        "temperature",
+        "pressure",
+        "co2",
+        "illumination",
+        "среда",
+        "кабина",
+        "атмосфера",
+        "телеметрия",
+        "скафандр",
+        "углекислый газ"
+      ]
+    },
+    {
+      "id": "HRP.SLEEP.ARCHeR",
+      "topic": "sleep",
+      "title_ru": "Sleep, activity, and light",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "Ongoing HRP Research in Space",
+        "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/",
+        "published_at": null,
+        "version": null,
+        "section": "ARCHeR"
+      },
+      "evidence_population": "human_spaceflight",
+      "observations": [
+        "duration of sleep",
+        "activity",
+        "illumination",
+        "well-being"
+      ],
+      "required_inputs": [
+        "sleep time series",
+        "assessment method",
+        "mission phase"
+      ],
+      "units": [
+        "hour"
+      ],
+      "measurement_conditions": [
+        "actigraphy or diary, distinguish the source"
+      ],
+      "supported_interpretation": "ARCHeR links sleep observation, activity, light, and well-being during a lunar mission; personal series allows noticing changes.",
+      "missing_inputs": [
+        "sleep onset and awakening time",
+        "illumination",
+        "load",
+        "personal baseline level"
+      ],
+      "practical_actions": [
+        "Record sleep time, assessment method, and compare several days with the baseline series."
+      ],
+      "limitations": "Duration and self-assessment of sleep themselves do not establish a sleep disturbance.",
+      "keywords": [
+        "sleep",
+        "fatigue",
+        "circadian",
+        "ARCHeR",
+        "archer",
+        "light",
+        "сон",
+        "усталость",
+        "циркадный",
+        "актиграфия",
+        "свет"
+      ]
+    },
+    {
+      "id": "HRR.SLEEP.METHODS",
+      "topic": "sleep",
+      "title_ru": "Limitations of sleep measurement methods",
+      "source": {
+        "organization": "NASA HRP Human Research Roadmap",
+        "title": "Risk of Performance Decrements and Adverse Health Outcomes Resulting from Sleep Loss, Circadian Desynchronization, and Work Overload",
+        "url": "https://humanresearchroadmap.nasa.gov/evidence/reports/Sleep.pdf",
+        "published_at": "2016-04-11",
+        "version": null,
+        "section": "Appendix A: Measurement of Sleep, Circadian Phase and Workload"
+      },
+      "evidence_population": "human_spaceflight_and_ground_analog",
+      "observations": [
+        "actigraphy",
+        "sleep diary",
+        "subjective sleepiness"
+      ],
+      "required_inputs": [
+        "method",
+        "time",
+        "series"
+      ],
+      "units": [
+        "hour"
+      ],
+      "measurement_conditions": [
+        "actigraphy assesses sleep based on activity; sleep diary is subjective"
+      ],
+      "supported_interpretation": "Actigraphy is useful for sleep duration, sleep diary records subjective assessment; methods are not equivalent.",
+      "missing_inputs": [
+        "sleep stages without EEG",
+        "confirmation of circadian phase"
+      ],
+      "practical_actions": [
+        "Sign the method of sleep measurement in the history and chart."
+      ],
+      "limitations": "Actigraphy does not measure sleep stages; diary may overestimate duration.",
+      "keywords": [
+        "sleep",
+        "actigraphy",
+        "diary",
+        "sleep stages",
+        "fatigue",
+        "сон",
+        "усталость",
+        "циркадный",
+        "актиграфия",
+        "свет"
+      ]
+    },
+    {
+      "id": "HRP.RISK.CARDIO",
+      "topic": "cardiovascular",
+      "title_ru": "Cardiovascular adaptation",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "Risks of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/risks/",
+        "published_at": null,
+        "version": null,
+        "section": "Risk of Cardiovascular Adaptations"
+      },
+      "evidence_population": "human_spaceflight",
+      "observations": [
+        "pulse",
+        "blood pressure",
+        "well-being"
+      ],
+      "required_inputs": [
+        "time",
+        "body position",
+        "rest or load",
+        "method",
+        "series"
+      ],
+      "units": [
+        "bpm",
+        "mmHg"
+      ],
+      "measurement_conditions": [
+        "compare similar postures and load phases"
+      ],
+      "supported_interpretation": "Weightlessness changes circulation and heart and vessel function; changes in pulse and pressure require context of measurement.",
+      "missing_inputs": [
+        "initial series under comparable conditions",
+        "clinical evaluation of causes"
+      ],
+      "practical_actions": [
+        "Repeat measurements under comparable conditions, record position and activity."
+      ],
+      "limitations": "It is not possible to determine the adaptation mechanism or specific disease from a single value.",
+      "keywords": [
+        "pressure",
+        "pulse",
+        "heart",
+        "vessels",
+        "cardio",
+        "давление",
+        "пульс",
+        "сердце",
+        "сосуды"
+      ]
+    },
+    {
+      "id": "HRP.RISK.BONE",
+      "topic": "musculoskeletal",
+      "title_ru": "Loss of bone and muscle function",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "Risks of Human Spaceflight",
+        "url": "https://www.nasa.gov/hrp/risks/",
+        "published_at": null,
+        "version": null,
+        "section": "Risk of Spaceflight-Induced Bone Changes; Risk of Reduced Cardiorespiratory and Musculoskeletal Fitness"
+      },
+      "evidence_population": "human_spaceflight",
+      "observations": [
+        "load and exercise",
+        "muscle function",
+        "bone density and structure when measurement is available"
+      ],
+      "required_inputs": [
+        "method of bone or function measurement",
+        "original series",
+        "mission phase"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "the method and instrument should be preserved with the result"
+      ],
+      "supported_interpretation": "In microgravity, there may be losses in bone density and muscle strength; exercise is used as a countermeasure, and the effectiveness of the regimen is under investigation.",
+      "missing_inputs": [
+        "direct bone study",
+        "functional muscle measurement"
+      ],
+      "practical_actions": [
+        "Separately record the completed program of loading and results of available direct measurements."
+      ],
+      "limitations": "Step count, pulse, and fatigue do not confirm the degree of bone tissue loss and do not justify the prescription of medication.",
+      "keywords": [
+        "bones",
+        "osteoporosis",
+        "muscles",
+        "density",
+        "load",
+        "training",
+        "кости",
+        "мышцы",
+        "нагрузка",
+        "микрогравитация",
+        "остеопороз"
+      ]
+    },
+    {
+      "id": "HRP.RISK.VISION",
+      "topic": "vision",
+      "title_ru": "Changes in vision and eyes during flight",
+      "source": {
+        "organization": "NASA HRP",
+        "title": "Ongoing HRP Research in Space",
+        "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/",
+        "published_at": null,
+        "version": null,
+        "section": "B-Complex; Brain Fluid Pressure"
+      },
+      "evidence_population": "human_spaceflight",
+      "observations": [
+        "change in vision",
+        "result of the screen test",
+        "OCT if available"
+      ],
+      "required_inputs": [
+        "personal initial test",
+        "same device and distance",
+        "symptoms"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "calibrated screen test under the same conditions"
+      ],
+      "supported_interpretation": "Repeating the test may show a change compared to the individual's initial result; specialized studies include OCT and assessment of other mechanisms.",
+      "missing_inputs": [
+        "OCT",
+        "eye exam",
+        "refraction"
+      ],
+      "practical_actions": [
+        "Repeat the test under the same conditions and note the change for further evaluation."
+      ],
+      "limitations": "Screen test does not confirm SANS and does not replace eye examination.",
+      "keywords": [
+        "vision",
+        "eyes",
+        "sans",
+        "oct",
+        "retina",
+        "зрение",
+        "глаза",
+        "сетчатка"
+      ]
+    },
+    {
+      "id": "CSA.RADIATION.CANS",
+      "topic": "radiation",
+      "title_ru": "Independent observation of neutron radiation",
+      "source": {
+        "organization": "Canadian Space Agency",
+        "title": "Monitoring radiation for astronaut health",
+        "url": "https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp",
+        "published_at": "2026-02-26",
+        "version": null,
+        "section": "article"
+      },
+      "evidence_population": "instrument_development",
+      "observations": [
+        "neutron radiation environment"
+      ],
+      "required_inputs": [
+        "confirmed instrument flux and its data schema"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "autonomous instrument under development"
+      ],
+      "supported_interpretation": "Development of a compact autonomous CANS continues for measuring neutron radiation in space.",
+      "missing_inputs": [
+        "public CANS flux",
+        "documented CANS schema and units"
+      ],
+      "practical_actions": [
+        "Leave the adapter of the future instrument as a separate integration point; show only real archival measurements of another instrument."
+      ],
+      "limitations": "The article does not provide live CANS telemetry.",
+      "keywords": [
+        "radiation",
+        "neutron",
+        "cans",
+        "dosimeter",
+        "adapter",
+        "радиация",
+        "излучение",
+        "облучение",
+        "доза",
+        "нейтрон"
+      ]
+    },
+    {
+      "id": "CSA.AUTONOMY.DEEP_SPACE",
+      "topic": "autonomy",
+      "title_ru": "Medical Autonomy of the Further Mission",
+      "source": {
+        "organization": "Canadian Space Agency",
+        "title": "Why do we conduct science experiments in space?",
+        "url": "https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp",
+        "published_at": "2025-10-28",
+        "version": null,
+        "section": "Preparing for deep-space destinations"
+      },
+      "evidence_population": "mission_planning",
+      "observations": [
+        "mission type",
+        "communication availability"
+      ],
+      "required_inputs": [
+        "mission plan and communication limitations"
+      ],
+      "units": [],
+      "measurement_conditions": [],
+      "supported_interpretation": "Long-range mission is accompanied by greater isolation, radiation exposure, communication delay, and less possibility of quickly obtaining help from Earth.",
+      "missing_inputs": [
+        "specific communication delay and onboard resources"
+      ],
+      "practical_actions": [
+        "Store observations and reference materials locally, preserve questions and changes for communication when available."
+      ],
+      "limitations": "General conditions do not define the available procedures for a specific crew.",
+      "keywords": [
+        "Mars",
+        "Moon",
+        "autonomy",
+        "communication delay",
+        "help",
+        "Марс",
+        "Луна",
+        "связь",
+        "автономия",
+        "Земля"
+      ]
+    },
+    {
+      "id": "STD3001.V2.6001",
+      "topic": "environment",
+      "title_ru": "Time series of environmental conditions",
+      "source": {
+        "organization": "NASA OCHMO",
+        "title": "NASA-STD-3001 Volume 2: Human Factors, Habitability, and Environmental Health",
+        "url": "https://standards.nasa.gov/system/files/tmp/NASA-STD-3001%20Vol%202%20Rev%20F.pdf",
+        "published_at": "2026-07-14",
+        "version": "Rev F",
+        "section": "6.1 [V2 6001]"
+      },
+      "evidence_population": "engineering_requirement",
+      "observations": [
+        "environmental and suit parameters over time"
+      ],
+      "required_inputs": [
+        "physical quantity",
+        "unit",
+        "sensor",
+        "location",
+        "time"
+      ],
+      "units": [],
+      "measurement_conditions": [
+        "real frequency is determined by the specific instrument"
+      ],
+      "supported_interpretation": "The standard requires presenting environmental and suit monitoring data in a format suitable for analyzing time trends.",
+      "missing_inputs": [
+        "series of a specific mission"
+      ],
+      "practical_actions": [
+        "Store timestamps and original units without mixing data from different instruments."
+      ],
+      "limitations": "Requirement for the system, not an individual medical threshold.",
+      "keywords": [
+        "environment",
+        "trend",
+        "telemetry",
+        "spacesuit",
+        "standard",
+        "среда",
+        "кабина",
+        "атмосфера",
+        "телеметрия",
+        "скафандр",
+        "углекислый газ"
+      ]
+    },
+    {
+      "id": "STD3001.V2.6004",
+      "topic": "environment",
+      "title_ru": "Hourly average partial pressure of CO₂ in the inhabited volume",
+      "source": {
+        "organization": "NASA OCHMO",
+        "title": "NASA-STD-3001 Volume 2: Human Factors, Habitability, and Environmental Health",
+        "url": "https://standards.nasa.gov/system/files/tmp/NASA-STD-3001%20Vol%202%20Rev%20F.pdf",
+        "published_at": "2026-07-14",
+        "version": "Rev F",
+        "section": "6.2.1.3 [V2 6004]"
+      },
+      "evidence_population": "engineering_requirement",
+      "observations": [
+        "ppCO₂ of the inhabited volume"
+      ],
+      "required_inputs": [
+        "partial pressure of CO₂",
+        "continuous or sufficiently frequent series",
+        "one hour",
+        "location"
+      ],
+      "units": [
+        "mmHg"
+      ],
+      "measurement_conditions": [
+        "hourly average in the inhabited volume"
+      ],
+      "supported_interpretation": "For the given application, the standard establishes an average hourly ppCO₂ not exceeding 3 mmHg.",
+      "missing_inputs": [
+        "overall pressure for converting ppm to ppCO₂",
+        "data for the full hour"
+      ],
+      "practical_actions": [
+        "Compare only the average within the compatible hourly window in mmHg; indicate edition and location."
+      ],
+      "limitations": "Instantaneous ppm and personal diagnosis cannot be directly compared with this engineering requirement.",
+      "keywords": [
+        "co2",
+        "carbon dioxide",
+        "ppco2",
+        "environment",
+        "pressure",
+        "cabin",
+        "среда",
+        "кабина",
+        "атмосфера",
+        "телеметрия",
+        "скафандр",
+        "углекислый газ"
+      ]
+    },
+    {
+      "id": "HIDH.DESIGN.RATIONALE",
+      "topic": "environment",
+      "title_ru": "Engineering explanations to the habitability standard",
+      "source": {
+        "organization": "NASA OCHMO",
+        "title": "Human Integration Design Handbook",
+        "url": "https://www.nasa.gov/human-integration-design-handbook/",
+        "published_at": null,
+        "version": "Revision 1",
+        "section": "Handbook overview"
+      },
+      "evidence_population": "engineering_design_reference",
+      "observations": [
+        "environmental conditions and interface data"
+      ],
+      "required_inputs": [
+        "applicable engineering requirement"
+      ],
+      "units": [],
+      "measurement_conditions": [],
+      "supported_interpretation": "HIDH provides a history and engineering rationale for the design of human-machine systems as a reference to the current standard.",
+      "missing_inputs": [
+        "specific HIDH section for numerical comparison"
+      ],
+      "practical_actions": [
+        "Use the requirements of the current edition of the standard for numerical evaluation of the environment."
+      ],
+      "limitations": "The HIDH overview page itself does not set a new threshold.",
+      "keywords": [
+        "interface",
+        "habitability",
+        "standard",
+        "environment",
+        "hidh",
+        "среда",
+        "кабина",
+        "атмосфера",
+        "телеметрия",
+        "скафандр",
+        "углекислый газ"
+      ]
+    }
+  ]
+}

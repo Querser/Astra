@@ -1,0 +1,266 @@
+{
+  "version": "0.1.0-research",
+  "status": "draft_not_loaded_by_product",
+  "reviewed_on": "2026-11-09",
+  "purpose": "Local, source-traceable retrieval cards for offline evaluation; not a validated protocol",
+  "cards": [
+    {
+      "id": "ASTRA.K.BLEEDING",
+      "name_ru": "Dangerous external hemorrhage",
+      "domain": "acute",
+      "evidence_for": [
+        "blood spurts or gushes in a jet",
+        "hemorrhage does not stop",
+        "blood quickly soaks through the dressing"
+      ],
+      "evidence_against": [
+        "it is reported that the hemorrhage has stopped"
+      ],
+      "ask_if_unknown": [
+        "where is the wound located",
+        "is the hemorrhage ongoing now",
+        "what has already been done"
+      ],
+      "action_scope": "In case of severe hemorrhage, urgently involve a person nearby and the person responsible for medical assistance; direct pressure on the wound, without delaying action for the sake of chat.",
+      "do_not_infer": [
+        "Shallow-looking wound excludes serious bleeding",
+        "Absence of numbness excludes vessel injury"
+      ],
+      "source": {
+        "title": "American Red Cross: Life-Threatening External Bleeding",
+        "url": "https://production.redcross.org/take-a-class/learn-fa-bleeding-life-threatening-external.html"
+      }
+    },
+    {
+      "id": "ASTRA.K.HEAD",
+      "name_ru": "Head trauma; possible concussion",
+      "domain": "acute",
+      "evidence_for": [
+        "Head impact with subsequent headache",
+        "Dizziness or nausea after impact"
+      ],
+      "evidence_against": [
+        "Head impact is clearly denied"
+      ],
+      "ask_if_unknown": [
+        "Was there loss of consciousness",
+        "Is there repeated vomiting or increasing pain",
+        "Are anticoagulants being taken"
+      ],
+      "action_scope": "Stop work, report to the medical aid responsible person and observe symptom changes; urgent evaluation is needed if alarming signs are present.",
+      "do_not_infer": [
+        "Absence of external blood excludes trauma",
+        "Concussion confirmed by correspondence"
+      ],
+      "source": {
+        "title": "NICE NG232: Head injury assessment and early management",
+        "url": "https://www.nice.org.uk/guidance/NG232/chapter/recommendations"
+      }
+    },
+    {
+      "id": "ASTRA.K.FOOD",
+      "name_ru": "Possible foodborne infection",
+      "domain": "acute",
+      "evidence_for": [
+        "abdominal pain or cramps after suspicious food",
+        "vomiting or diarrhea"
+      ],
+      "evidence_against": [
+        "no gastrointestinal symptoms"
+      ],
+      "ask_if_unknown": [
+        "is there vomiting and diarrhea",
+        "is there a fever",
+        "can the person drink fluids",
+        "is the pain worsening or localized"
+      ],
+      "action_scope": "Clarify symptoms and signs of dehydration; do not declare the pathogen or product as the cause only after the interval following eating.",
+      "do_not_infer": [
+        "specific pathogen by time of symptom onset",
+        "any abdominal pain means foodborne infection"
+      ],
+      "source": {
+        "title": "CDC: Food Poisoning Symptoms",
+        "url": "https://www.cdc.gov/food-safety/signs-symptoms/"
+      }
+    },
+    {
+      "id": "ASTRA.K.OXYGEN",
+      "name_ru": "Possible hypoxemia / low SpO₂",
+      "domain": "acute_space",
+      "evidence_for": [
+        "repeated low SpO₂ readings",
+        "dyspnea occurring simultaneously with a decrease in SpO₂"
+      ],
+      "evidence_against": [
+        "repeated qualitative readings returned to the original level after a single spike"
+      ],
+      "ask_if_unknown": [
+        "signal quality and measurement conditions",
+        "is there dyspnea",
+        "how SpO₂ changed over time",
+        "what are the atmospheric conditions"
+      ],
+      "action_scope": "Repeat correct measurement, assess symptoms and environment; persistently low values require prompt evaluation by the responsible party.",
+      "do_not_infer": [
+        "cause of low SpO₂ from a single pulse oximeter",
+        "a single 91% followed by 97–99% indicates persistent hypoxemia"
+      ],
+      "source": {
+        "title": "NIH MedlinePlus: Pulse Oximetry",
+        "url": "https://medlineplus.gov/lab-tests/pulse-oximetry/"
+      }
+    },
+    {
+      "id": "ASTRA.K.SANS",
+      "name_ru": "Change in vision; risk of SANS",
+      "domain": "space",
+      "evidence_for": [
+        "reproducible worsening of repeated vision tests relative to the individual's original series during flight",
+        "new visual complaints"
+      ],
+      "evidence_against": [
+        "stable comparable test results and absence of complaints"
+      ],
+      "ask_if_unknown": [
+        "are the device, distance, and lighting the same",
+        "what are the baseline results",
+        "are there new visual symptoms"
+      ],
+      "action_scope": "Record the dynamics and forward for in-person evaluation via an available procedure; the screen test detects a change but does not confirm SANS.",
+      "do_not_infer": [
+        "SANS based on one screen test",
+        "eye structure density based on subjective complaints"
+      ],
+      "source": {
+        "title": "NASA Human Research Roadmap: SANS Risk",
+        "url": "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105"
+      }
+    },
+    {
+      "id": "ASTRA.K.BONE",
+      "name_ru": "Risk of bone changes during flight",
+      "domain": "space",
+      "evidence_for": [
+        "long flight and reduction in available load",
+        "reduction in strength/function with comparable tests"
+      ],
+      "evidence_against": [],
+      "ask_if_unknown": [
+        "mission duration",
+        "training load",
+        "is there an initial and repeated bone examination"
+      ],
+      "action_scope": "Note the risk factor and functional test status; do not equate steps or complaints with bone mineral density measurement.",
+      "do_not_infer": [
+        "osteoporosis without bone tissue examination",
+        "quantitative loss of bone mass from the number of steps"
+      ],
+      "source": {
+        "title": "NASA Human Research Roadmap: Bone Fracture Risk",
+        "url": "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=77"
+      }
+    },
+    {
+      "id": "ASTRA.K.MUSCLE",
+      "name_ru": "reduced physical function during flight",
+      "domain": "space",
+      "evidence_for": [
+        "deterioration of standardized functional test",
+        "reduced training load and complaints of weakness"
+      ],
+      "evidence_against": [
+        "stable functional series under comparable conditions"
+      ],
+      "ask_if_unknown": [
+        "what is the individual initial test",
+        "are the conditions and method comparable",
+        "what is the training history"
+      ],
+      "action_scope": "Compare individual function and training history; differentiate between muscular risk and confirmed disease.",
+      "do_not_infer": [
+        "muscle mass reduction only by number of steps"
+      ],
+      "source": {
+        "title": "NASA Human Research Roadmap: Reduced Fitness Risk",
+        "url": "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=180"
+      }
+    },
+    {
+      "id": "ASTRA.K.RADIATION",
+      "name_ru": "Radiation exposure",
+      "domain": "space",
+      "evidence_for": [
+        "personal dosimetry or registered radiation event"
+      ],
+      "evidence_against": [
+        "no registered exposure in available data; this does not prove absence of exposure"
+      ],
+      "ask_if_unknown": [
+        "are there dosimeter data",
+        "was there an event and when",
+        "what is the context of protection"
+      ],
+      "action_scope": "Compare registered dose and event with specific mission rules; do not guess dose by symptoms.",
+      "do_not_infer": [
+        "radiation sickness from fatigue or headache",
+        "individual dose without dosimetry"
+      ],
+      "source": {
+        "title": "NASA: Space Radiation Hazard",
+        "url": "https://www.nasa.gov/hrp/hazard-space-radiation/"
+      }
+    },
+    {
+      "id": "ASTRA.K.SLEEP",
+      "name_ru": "Lack of sleep / circadian shift",
+      "domain": "space",
+      "evidence_for": [
+        "reduction of sleep relative to personal series",
+        "sleepiness with change in schedule"
+      ],
+      "evidence_against": [
+        "stable sufficient series and absence of daytime complaints"
+      ],
+      "ask_if_unknown": [
+        "how many days does the change last",
+        "what is the original series",
+        "is there daytime sleepiness and change in schedule"
+      ],
+      "action_scope": "Describe the dynamics of sleep and schedule, propose an assessment of workload and routine; do not mention apnea based on sleep duration.",
+      "do_not_infer": [
+        "sleep apnea due to one short night",
+        "universal norm for any crew member"
+      ],
+      "source": {
+        "title": "NASA Human Research Roadmap: Sleep, Circadian and Workload Risk",
+        "url": "https://humanresearchroadmap.nasa.gov/risks/risk.aspx?i=100"
+      }
+    },
+    {
+      "id": "ASTRA.K.BP",
+      "name_ru": "Elevated arterial blood pressure; possible hypertension",
+      "domain": "cardiovascular",
+      "evidence_for": [
+        "repeated correctly measured elevated BP on different days"
+      ],
+      "evidence_against": [
+        "single reading with stable personal series"
+      ],
+      "ask_if_unknown": [
+        "conditions and measurement method",
+        "how many repetitions and on which days",
+        "symptoms and mission phase"
+      ],
+      "action_scope": "Show the series, ground reference, and measurement conditions; do not automatically transfer the clinical classification for the astronaut.",
+      "do_not_infer": [
+        "persistent hypertension based on one measurement",
+        "medication assignment without a protocol"
+      ],
+      "source": {
+        "title": "AHA/ACC: 2025 High Blood Pressure Guideline",
+        "url": "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know"
+      }
+    }
+  ]
+}

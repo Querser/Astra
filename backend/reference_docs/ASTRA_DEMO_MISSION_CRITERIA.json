@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "status": "educational_configured_screen_only",
+  "scope_ru": "Internal criteria of the educational screen of ASTRA; not the organizer's requirements, not medical clearance, and not the assessment of suitability for a specific job.",
+  "criteria": [
+    {
+      "id": "mission_context",
+      "description_ru": "The location, phase, and living module of the mission are indicated."
+    },
+    {
+      "id": "observation_present",
+      "description_ru": "There is at least one applicable current measurement from the active area of ASTRA."
+    },
+    {
+      "id": "input_quality",
+      "description_ru": "There are no declared inaccurate, outdated, or conflicting values in the current measurements."
+    },
+    {
+      "id": "urgent_pattern",
+      "description_ru": "There is no unresolved urgent diagnostic version in the current records."
+    },
+    {
+      "id": "reported_bleeding",
+      "description_ru": "There is no message about a cut with bleeding without a recorded approval of the event."
+    },
+    {
+      "id": "other_candidate",
+      "description_ru": "There are no other unresolved preliminary diagnostic versions."
+    }
+  ]
+}

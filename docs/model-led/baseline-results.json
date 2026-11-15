@@ -1,0 +1,852 @@
+{
+  "run_at_utc": "2026-11-09T06:40:28.723815+00:00",
+  "model": "qwen3:8b",
+  "knowledge_version": "0.1.0-research",
+  "cases_version": "0.1.1-pilot",
+  "purpose": "pilot only; provisional labels, not clinical accuracy",
+  "metrics": {
+    "parse_ok": {
+      "passed": 24,
+      "total": 24
+    },
+    "ids_exact": {
+      "passed": 14,
+      "total": 24
+    },
+    "urgency_ok": {
+      "passed": 16,
+      "total": 24
+    },
+    "mentions_ok": {
+      "passed": 19,
+      "total": 24
+    },
+    "exclusions_ok": {
+      "passed": 24,
+      "total": 24
+    },
+    "grounding_ok": {
+      "passed": 24,
+      "total": 24
+    },
+    "retrieval_hit": {
+      "passed": 24,
+      "total": 24
+    },
+    "emergency_recall": {
+      "passed": 0,
+      "total": 2
+    }
+  },
+  "cases": [
+    {
+      "case_id": "bleeding_spurt_followup",
+      "retrieved_ids": [
+        "ASTRA.K.BLEEDING"
+      ],
+      "expected_ids": [
+        "ASTRA.K.BLEEDING"
+      ],
+      "expected_urgency": "emergency",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Кровь бьёт фонтаном, что указывает на опасное наружное кровотечение. Нужно продолжать давление на рану и привлечь помощь. Рана неглубокая, но кровотечение не остановилось, поэтому требуется срочная оценка.",
+        "used_knowledge_ids": [
+          "ASTRA.K.BLEEDING"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.BLEEDING\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Кровь бьёт фонтаном, что указывает на опасное наружное кровотечение. Нужно продолжать давление на рану и привлечь помощь. Рана неглубокая, но кровотечение не остановилось, поэтому требуется срочная оценка.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.BLEEDING\"]\n}",
+      "seconds": 6.77,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": false,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "bleeding_stopped",
+      "retrieved_ids": [
+        "ASTRA.K.BLEEDING",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "routine",
+        "answer_ru": "Ранение пальца не представляет угрозы для жизни. Кровотечение остановлено, чувствительность сохранена. Не требуется дополнительных действий в данном случае.",
+        "used_knowledge_ids": [
+          "ASTRA.K.BLEEDING"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.BLEEDING\"],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"Ранение пальца не представляет угрозы для жизни. Кровотечение остановлено, чувствительность сохранена. Не требуется дополнительных действий в данном случае.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.BLEEDING\"]\n}",
+      "seconds": 2.14,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "bleeding_negated",
+      "retrieved_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [],
+        "urgency": "routine",
+        "answer_ru": "По вашему сообщению, удар пришёлся не на голову, и нет признаков травмы. Однако, если появятся головная боль, головокружение или тошнота, следует сообщить ответственному за медицинскую помощь. В данный момент нет оснований для тревоги.",
+        "used_knowledge_ids": [
+          "ASTRA.K.HEAD"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"По вашему сообщению, удар пришёлся не на голову, и нет признаков травмы. Однако, если появятся головная боль, головокружение или тошнота, следует сообщить ответственному за медицинскую помощь. В данный момент нет оснований для тревоги.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.HEAD\"]\n}",
+      "seconds": 2.09,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "head_new_symptoms",
+      "retrieved_ids": [
+        "ASTRA.K.HEAD",
+        "ASTRA.K.RADIATION"
+      ],
+      "expected_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Симптомы указывают на возможное сотрясение головного мозга. Нужно оценить наличие потери сознания, повторной рвоты или нарастающей боли. Рекомендуется прервать работу и наблюдать за состоянием, сообщив ответственному за медицинскую помощь.",
+        "used_knowledge_ids": [
+          "ASTRA.K.HEAD"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.HEAD\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Симптомы указывают на возможное сотрясение головного мозга. Нужно оценить наличие потери сознания, повторной рвоты или нарастающей боли. Рекомендуется прервать работу и наблюдать за состоянием, сообщив ответственному за медицинскую помощь.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.HEAD\"]\n}",
+      "seconds": 2.41,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": false,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "head_red_flags",
+      "retrieved_ids": [
+        "ASTRA.K.HEAD",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.RADIATION"
+      ],
+      "expected_ids": [
+        "ASTRA.K.HEAD"
+      ],
+      "expected_urgency": "emergency",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Симптомы указывают на возможное сотрясение головного мозга после удара. Нужно немедленно оценить состояние и наблюдать за ухудшением симптомов. Рекомендуется прервать работу и сообщить ответственному за медицинскую помощь.",
+        "used_knowledge_ids": [
+          "ASTRA.K.HEAD"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.HEAD\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Симптомы указывают на возможное сотрясение головного мозга после удара. Нужно немедленно оценить состояние и наблюдать за ухудшением симптомов. Рекомендуется прервать работу и сообщить ответственному за медицинскую помощь.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.HEAD\"]\n}",
+      "seconds": 2.62,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": false,
+        "mentions_ok": false,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "head_negated_impact",
+      "retrieved_ids": [
+        "ASTRA.K.HEAD",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.RADIATION"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "routine",
+        "answer_ru": "Симптомы головной боли после долгой смены без признаков удара, тошноты или головокружения могут быть связаны с усталостью или напряжением. Однако отсутствие явного удара исключает травму головы. Рекомендуется отслеживать изменения в состоянии и сообщить о любых новых симптомах.",
+        "used_knowledge_ids": [
+          "ASTRA.K.HEAD"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.HEAD\"],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"Симптомы головной боли после долгой смены без признаков удара, тошноты или головокружения могут быть связаны с усталостью или напряжением. Однако отсутствие явного удара исключает травму головы. Рекомендуется отслеживать изменения в состоянии и сообщить о любых новых симптомах.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.HEAD\"]\n}",
+      "seconds": 2.86,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "food_pasta",
+      "retrieved_ids": [
+        "ASTRA.K.BP",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Симптомы, такие как боль в животе после употребления подозрительной пищи, указывают на возможную пищевую инфекцию. Однако требуется уточнить, есть ли рвота, диарея или признаки обезвоживания. Необходимо оценить нарастание или локализацию боли для более точной диагностики.",
+        "used_knowledge_ids": [
+          "ASTRA.K.FOOD"
+        ]
+      },
+      "raw_response": "{\"candidate_ids\": [\"ASTRA.K.FOOD\"], \"urgency\": \"prompt_review\", \"answer_ru\": \"Симптомы, такие как боль в животе после употребления подозрительной пищи, указывают на возможную пищевую инфекцию. Однако требуется уточнить, есть ли рвота, диарея или признаки обезвоживания. Необходимо оценить нарастание или локализацию боли для более точной диагностики.\", \"used_knowledge_ids\": [\"ASTRA.K.FOOD\"]}",
+      "seconds": 2.77,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": false,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "food_followup",
+      "retrieved_ids": [
+        "ASTRA.K.FOOD",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [
+        "ASTRA.K.FOOD"
+      ],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Предварительная версия: Возможная пищевая инфекция. Симптомы включают боль в животе после подозрительной еды и жидкий стул. Нет температуры и рвоты, что не исключает пищевую инфекцию, но требует уточнения признаков обезвоживания и нарастания симптомов.",
+        "used_knowledge_ids": [
+          "ASTRA.K.FOOD"
+        ]
+      },
+      "raw_response": "{\"candidate_ids\": [\"ASTRA.K.FOOD\"], \"urgency\": \"prompt_review\", \"answer_ru\": \"Предварительная версия: Возможная пищевая инфекция. Симптомы включают боль в животе после подозрительной еды и жидкий стул. Нет температуры и рвоты, что не исключает пищевую инфекцию, но требует уточнения признаков обезвоживания и нарастания симптомов.\", \"used_knowledge_ids\": [\"ASTRA.K.FOOD\"]}",
+      "seconds": 2.88,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": false,
+        "mentions_ok": false,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "abdomen_other",
+      "retrieved_ids": [
+        "ASTRA.K.FOOD",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Симптомы могут указывать на возможную пищевую инфекцию, но требуется уточнить наличие рвоты, диареи, температуры и возможности пить. Нужно оценить нарастание или локализацию боли.",
+        "used_knowledge_ids": [
+          "ASTRA.K.FOOD"
+        ]
+      },
+      "raw_response": "{\"candidate_ids\": [\"ASTRA.K.FOOD\"], \"urgency\": \"prompt_review\", \"answer_ru\": \"Симптомы могут указывать на возможную пищевую инфекцию, но требуется уточнить наличие рвоты, диареи, температуры и возможности пить. Нужно оценить нарастание или локализацию боли.\", \"used_knowledge_ids\": [\"ASTRA.K.FOOD\"]}",
+      "seconds": 2.28,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "spo2_one_outlier",
+      "retrieved_ids": [
+        "ASTRA.K.BLEEDING"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [],
+        "urgency": "routine",
+        "answer_ru": "SpO2 в норме, самочувствие обычное. Нет признаков опасного наружного кровотечения. Не требуется дополнительных действий.",
+        "used_knowledge_ids": []
+      },
+      "raw_response": "{\"candidate_ids\": [], \"urgency\": \"routine\", \"answer_ru\": \"SpO2 в норме, самочувствие обычное. Нет признаков опасного наружного кровотечения. Не требуется дополнительных действий.\", \"used_knowledge_ids\": []}",
+      "seconds": 1.36,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": false,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "spo2_persistent_low",
+      "retrieved_ids": [
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.BP",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.HEAD"
+      ],
+      "expected_ids": [
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Повторные низкие значения SpO₂ (92, 91, 91, 90%) с одышкой указывают на возможную гипоксемию. Необходимо провести корректное измерение и оценить условия среды. Устойчиво низкие показания требуют оперативной оценки.",
+        "used_knowledge_ids": [
+          "ASTRA.K.OXYGEN"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.OXYGEN\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Повторные низкие значения SpO₂ (92, 91, 91, 90%) с одышкой указывают на возможную гипоксемию. Необходимо провести корректное измерение и оценить условия среды. Устойчиво низкие показания требуют оперативной оценки.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.OXYGEN\"]\n}",
+      "seconds": 2.81,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": false,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "spo2_sensor_issue",
+      "retrieved_ids": [
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.BP",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.BONE",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.SANS"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "routine",
+        "answer_ru": "Показания пульсоксиметра на холодном пальце были ниже нормы, но после согревания и повторных измерений на другом пальце значения вернулись к норме. Одышки нет, что снижает вероятность гипоксемии. Рекомендуется повторить измерения в условиях стабильной температуры и оценить динамику SpO₂.",
+        "used_knowledge_ids": [
+          "ASTRA.K.OXYGEN"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.OXYGEN\"],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"Показания пульсоксиметра на холодном пальце были ниже нормы, но после согревания и повторных измерений на другом пальце значения вернулись к норме. Одышки нет, что снижает вероятность гипоксемии. Рекомендуется повторить измерения в условиях стабильной температуры и оценить динамику SpO₂.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.OXYGEN\"]\n}",
+      "seconds": 3.42,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "vision_decline",
+      "retrieved_ids": [
+        "ASTRA.K.SANS",
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE",
+        "ASTRA.K.BP",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [
+        "ASTRA.K.SANS"
+      ],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Изменение зрения, отмеченное в тестах, может указывать на риск SANS. Однако одиночный тест не подтверждает диагноз. Необходимо зафиксировать динамику и передать на очную оценку. Проверьте, были ли новые зрительные жалобы или изменения в условиях тестирования.",
+        "used_knowledge_ids": [
+          "ASTRA.K.SANS"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.SANS\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Изменение зрения, отмеченное в тестах, может указывать на риск SANS. Однако одиночный тест не подтверждает диагноз. Необходимо зафиксировать динамику и передать на очную оценку. Проверьте, были ли новые зрительные жалобы или изменения в условиях тестирования.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.SANS\"]\n}",
+      "seconds": 2.89,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "vision_bad_method",
+      "retrieved_ids": [
+        "ASTRA.K.SANS",
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.SLEEP"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Изменение зрения может указывать на риск SANS, но требуется уточнить условия тестирования, исходные результаты и наличие новых зрительных симптомов. Экранный тест обнаруживает изменение, но не подтверждает SANS. Рекомендуется провести очную оценку.",
+        "used_knowledge_ids": [
+          "ASTRA.K.SANS"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.SANS\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Изменение зрения может указывать на риск SANS, но требуется уточнить условия тестирования, исходные результаты и наличие новых зрительных симптомов. Экранный тест обнаруживает изменение, но не подтверждает SANS. Рекомендуется провести очную оценку.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.SANS\"]\n}",
+      "seconds": 2.84,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": false,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "vision_stable",
+      "retrieved_ids": [
+        "ASTRA.K.SANS",
+        "ASTRA.K.MUSCLE",
+        "ASTRA.K.BP",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.SLEEP"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "routine",
+        "answer_ru": "Экранный тест зрения показывает стабильные результаты без жалоб, что не подтверждает риск SANS. Однако важно уточнить условия тестирования и исходные показатели для исключения возможных изменений. Рекомендуется зафиксировать динамику и передать на очную оценку.",
+        "used_knowledge_ids": [
+          "ASTRA.K.SANS"
+        ]
+      },
+      "raw_response": "{\"candidate_ids\": [\"ASTRA.K.SANS\"], \"urgency\": \"routine\", \"answer_ru\": \"Экранный тест зрения показывает стабильные результаты без жалоб, что не подтверждает риск SANS. Однако важно уточнить условия тестирования и исходные показатели для исключения возможных изменений. Рекомендуется зафиксировать динамику и передать на очную оценку.\", \"used_knowledge_ids\": [\"ASTRA.K.SANS\"]}",
+      "seconds": 2.77,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "bone_risk_no_scan",
+      "retrieved_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "expected_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE"
+      ],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Жалобы на слабость ног могут указывать на снижение физической функции, но не позволяют диагностировать остеопороз. Количество шагов не является критерием для оценки костной плотности. Необходимо уточнить длительность миссии, тренировочную нагрузку и наличие исходного и повторного обследования костей.",
+        "used_knowledge_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.BONE\", \"ASTRA.K.MUSCLE\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Жалобы на слабость ног могут указывать на снижение физической функции, но не позволяют диагностировать остеопороз. Количество шагов не является критерием для оценки костной плотности. Необходимо уточнить длительность миссии, тренировочную нагрузку и наличие исходного и повторного обследования костей.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.BONE\", \"ASTRA.K.MUSCLE\"]\n}",
+      "seconds": 3.01,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": false,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "muscle_function_decline",
+      "retrieved_ids": [
+        "ASTRA.K.BONE",
+        "ASTRA.K.MUSCLE",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.SANS",
+        "ASTRA.K.BP",
+        "ASTRA.K.HEAD"
+      ],
+      "expected_ids": [
+        "ASTRA.K.MUSCLE"
+      ],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Снижение количества повторений теста подъёма с фиксированной нагрузкой может указывать на ухудшение физической функции и риск костных изменений. Необходимо уточнить длительность миссии, тренировочную нагрузку и наличие исходного и повторного обследования костей. Также важно сравнить индивидуальную функцию и историю тренировок.",
+        "used_knowledge_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.BONE\", \"ASTRA.K.MUSCLE\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Снижение количества повторений теста подъёма с фиксированной нагрузкой может указывать на ухудшение физической функции и риск костных изменений. Необходимо уточнить длительность миссии, тренировочную нагрузку и наличие исходного и повторного обследования костей. Также важно сравнить индивидуальную функцию и историю тренировок.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.BONE\", \"ASTRA.K.MUSCLE\"]\n}",
+      "seconds": 3.72,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": false,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "radiation_no_dosimeter",
+      "retrieved_ids": [
+        "ASTRA.K.RADIATION",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [
+        "ASTRA.K.RADIATION"
+      ],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION",
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Нет данных дозиметра и зарегистрированного радиационного события, поэтому нельзя определить дозу или наличие лучевой болезни. Также отсутствует информация о травме головы, поэтому нельзя исключить травму или сотрясение. Нужно уточнить наличие ударов, потери сознания и другие симптомы.",
+        "used_knowledge_ids": [
+          "ASTRA.K.RADIATION",
+          "ASTRA.K.HEAD"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.RADIATION\", \"ASTRA.K.HEAD\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Нет данных дозиметра и зарегистрированного радиационного события, поэтому нельзя определить дозу или наличие лучевой болезни. Также отсутствует информация о травме головы, поэтому нельзя исключить травму или сотрясение. Нужно уточнить наличие ударов, потери сознания и другие симптомы.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.RADIATION\", \"ASTRA.K.HEAD\"]\n}",
+      "seconds": 3.25,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "radiation_recorded",
+      "retrieved_ids": [
+        "ASTRA.K.RADIATION",
+        "ASTRA.K.BONE",
+        "ASTRA.K.BP",
+        "ASTRA.K.MUSCLE",
+        "ASTRA.K.SANS"
+      ],
+      "expected_ids": [
+        "ASTRA.K.RADIATION"
+      ],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Зарегистрированное радиационное событие и данные персонального дозиметра требуют сопоставления с правилами миссии. Необходимо уточнить, было ли событие, его дату и контекст защиты, чтобы оценить соответствие нормам. Не следует угадывать дозу по симптомам.",
+        "used_knowledge_ids": [
+          "ASTRA.K.RADIATION"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.RADIATION\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Зарегистрированное радиационное событие и данные персонального дозиметра требуют сопоставления с правилами миссии. Необходимо уточнить, было ли событие, его дату и контекст защиты, чтобы оценить соответствие нормам. Не следует угадывать дозу по симптомам.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.RADIATION\"]\n}",
+      "seconds": 3.12,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "sleep_trend",
+      "retrieved_ids": [
+        "ASTRA.K.FOOD",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.SLEEP"
+      ],
+      "expected_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "routine",
+        "answer_ru": "Сокращение сна до 5 часов в ночь в течение 6 дней может указывать на недостаток сна или циркадный сдвиг. Рекомендуется оценить динамику сна и расписания, а также проверить наличие дневной сонливости. Необходимо учитывать нагрузку и режим работы.",
+        "used_knowledge_ids": [
+          "ASTRA.K.SLEEP"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.SLEEP\"],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"Сокращение сна до 5 часов в ночь в течение 6 дней может указывать на недостаток сна или циркадный сдвиг. Рекомендуется оценить динамику сна и расписания, а также проверить наличие дневной сонливости. Необходимо учитывать нагрузку и режим работы.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.SLEEP\"]\n}",
+      "seconds": 2.89,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "sleep_one_night",
+      "retrieved_ids": [
+        "ASTRA.K.SLEEP"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "routine",
+        "answer_ru": "Судя по предоставленной информации, у вас не наблюдается явного недостатка сна или циркадного сдвига. Вы спали 5 часов вчера, но остальную неделю — 7,5–8 часов, и сегодня чувствуетесь нормально. Однако стоит уточнить, сколько дней продолжается изменение графика сна и какова ваша исходная серия, чтобы оценить возможные риски нагрузки и режима.",
+        "used_knowledge_ids": [
+          "ASTRA.K.SLEEP"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.SLEEP\"],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"Судя по предоставленной информации, у вас не наблюдается явного недостатка сна или циркадного сдвига. Вы спали 5 часов вчера, но остальную неделю — 7,5–8 часов, и сегодня чувствуетесь нормально. Однако стоит уточнить, сколько дней продолжается изменение графика сна и какова ваша исходная серия, чтобы оценить возможные риски нагрузки и режима.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.SLEEP\"]\n}",
+      "seconds": 2.94,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "bp_repeated",
+      "retrieved_ids": [
+        "ASTRA.K.BP",
+        "ASTRA.K.SANS"
+      ],
+      "expected_ids": [
+        "ASTRA.K.BP"
+      ],
+      "expected_urgency": "prompt_review",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Повторные измерения артериального давления в разные дни указывают на возможную гипертензию. Необходимо уточнить условия и метод измерения, а также наличие симптомов. Рекомендуется показать серию измерений и провести клиническую оценку.",
+        "used_knowledge_ids": [
+          "ASTRA.K.BP"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.BP\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Повторные измерения артериального давления в разные дни указывают на возможную гипертензию. Необходимо уточнить условия и метод измерения, а также наличие симптомов. Рекомендуется показать серию измерений и провести клиническую оценку.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.BP\"]\n}",
+      "seconds": 2.56,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "bp_single",
+      "retrieved_ids": [
+        "ASTRA.K.BP",
+        "ASTRA.K.OXYGEN",
+        "ASTRA.K.BONE",
+        "ASTRA.K.HEAD",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.MUSCLE"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "answer_ru": "Единичное измерение повышенного давления (147/91) не подтверждает гипертензию, так как стабильная серия показаний составляет 118/76. Необходимо уточнить условия и метод измерения, а также проверить наличие симптомов. Рекомендуется повторить измерение в разные дни для оценки.",
+        "used_knowledge_ids": [
+          "ASTRA.K.BP"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [\"ASTRA.K.BP\"],\n  \"urgency\": \"prompt_review\",\n  \"answer_ru\": \"Единичное измерение повышенного давления (147/91) не подтверждает гипертензию, так как стабильная серия показаний составляет 118/76. Необходимо уточнить условия и метод измерения, а также проверить наличие симптомов. Рекомендуется повторить измерение в разные дни для оценки.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.BP\"]\n}",
+      "seconds": 3.41,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": false,
+        "urgency_ok": false,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    },
+    {
+      "case_id": "healthy_mixed",
+      "retrieved_ids": [
+        "ASTRA.K.MUSCLE",
+        "ASTRA.K.SANS",
+        "ASTRA.K.SLEEP",
+        "ASTRA.K.BP",
+        "ASTRA.K.FOOD",
+        "ASTRA.K.OXYGEN"
+      ],
+      "expected_ids": [],
+      "expected_urgency": "routine",
+      "response": {
+        "candidate_ids": [],
+        "urgency": "routine",
+        "answer_ru": "Данные показывают стабильные показатели пульса, SpO2, температуры и сна без жалоб, что не указывает на явные признаки снижения физической функции, изменений зрения, недостатка сна или гипертензии. Необходимо уточнить условия измерений и историю тренировок для исключения мышечного риска. Также важно отслеживать динамику сна и расписания.",
+        "used_knowledge_ids": [
+          "ASTRA.K.MUSCLE",
+          "ASTRA.K.SLEEP"
+        ]
+      },
+      "raw_response": "{\n  \"candidate_ids\": [],\n  \"urgency\": \"routine\",\n  \"answer_ru\": \"Данные показывают стабильные показатели пульса, SpO2, температуры и сна без жалоб, что не указывает на явные признаки снижения физической функции, изменений зрения, недостатка сна или гипертензии. Необходимо уточнить условия измерений и историю тренировок для исключения мышечного риска. Также важно отслеживать динамику сна и расписания.\",\n  \"used_knowledge_ids\": [\"ASTRA.K.MUSCLE\", \"ASTRA.K.SLEEP\"]\n}",
+      "seconds": 3.86,
+      "error": null,
+      "checks": {
+        "parse_ok": true,
+        "ids_exact": true,
+        "urgency_ok": true,
+        "mentions_ok": true,
+        "exclusions_ok": true,
+        "grounding_ok": true,
+        "retrieval_hit": true
+      }
+    }
+  ]
+}

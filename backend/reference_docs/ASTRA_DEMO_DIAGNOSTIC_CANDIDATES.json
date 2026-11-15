@@ -1,0 +1,180 @@
+{
+  "version": "1.2",
+  "status": "fictional_demo_only",
+  "description": "Named diagnostic candidates for synthetic demonstrations. Rules identify patterns for review, not confirmed disease or mission medical limits.",
+  "conditions": [
+    {
+      "id": "D.POSSIBLE_HYPOXEMIA",
+      "name_ru": "Possible hypoxemia",
+      "kind": "specific_clinical_condition",
+      "primary_metric": "spo2",
+      "rule": {
+        "type": "repeated_low_spo2",
+        "unit": "%",
+        "typical_lower_bound": 95,
+        "review_at_or_below": 92,
+        "recent_observations": 3,
+        "minimum_below_typical": 2
+      },
+      "explanation_ru": "Recurring low SpO₂ readings may reflect a decrease in blood oxygen saturation. The cause based on these data is unknown.",
+      "missing_ru": [
+        "Confirm the result with a reliable pulse oximeter and assess the signal quality.",
+        "Clarify symptoms, measurement conditions, and the atmosphere of the specific location.",
+        "Obtain an assessment from a responsible medical specialist."
+      ],
+      "sources": [
+        {
+          "title": "NIH MedlinePlus: Pulse Oximetry",
+          "url": "https://medlineplus.gov/lab-tests/pulse-oximetry/",
+          "date": null,
+          "supports": "Definition of hypoxemia, typical SpO2 95–100%, contact provider at 92% or lower; pulse-oximeter limitations."
+        },
+        {
+          "title": "FDA: Pulse Oximeter Basics",
+          "url": "https://www.fda.gov/consumers/consumer-updates/pulse-oximeter-basics",
+          "date": null,
+          "supports": "Typical 95–100% in most healthy people and device limitations."
+        }
+      ],
+      "applicability": "General Earth reference; is not a confirmed threshold for a space mission."
+    },
+    {
+      "id": "D.POSSIBLE_HYPERTENSION",
+      "name_ru": "Possible arterial hypertension (stage 2 range)",
+      "kind": "specific_disease_candidate",
+      "primary_metric": "blood_pressure",
+      "rule": {
+        "type": "repeated_high_blood_pressure",
+        "unit": "mmHg",
+        "systolic_at_or_above": 140,
+        "diastolic_at_or_above": 90,
+        "minimum_days": 2,
+        "minimum_readings_per_day": 2
+      },
+      "explanation_ru": "Repeated pressure values fall within the published range for stage 2 hypertension in adults on Earth. The diagnosis requires correct measurement technique and clinical confirmation.",
+      "missing_ru": [
+        "Confirm the cuff method, cuff size, rest and body position.",
+        "Clarify the phase of flight and applicability of Earth classification.",
+        "Obtain an assessment from a responsible medical specialist."
+      ],
+      "sources": [
+        {
+          "title": "AHA/ACC 2025 High Blood Pressure Guideline",
+          "url": "https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know",
+          "date": "2025-08-14",
+          "supports": "Stage 2 category at systolic >=140 or diastolic >=90 mmHg in adults."
+        },
+        {
+          "title": "AHA/ACC 2017 Hypertension Guideline: measurements",
+          "url": "https://professional.heart.org/en/science-news/2017-hypertension-clinical-guidelines/top-things-to-know",
+          "date": "2017-11-13",
+          "supports": "Average of at least two careful readings on at least two occasions for an individual's BP level."
+        }
+      ],
+      "applicability": "Earth classification for adults; not confirmed for microgravity and does not define crew treatment."
+    },
+    {
+      "id": "D.SLEEP_DEFICIENCY_PATTERN",
+      "name_ru": "Possible sleep deficit",
+      "kind": "specific_health_state",
+      "primary_metric": "sleep_duration",
+      "rule": {
+        "type": "repeated_short_sleep",
+        "unit": "h",
+        "adult_recommendation_hours": 7,
+        "recent_observations": 4,
+        "minimum_below_recommendation": 3
+      },
+      "explanation_ru": "Several recent sleep records are below the general recommendation for adults 18–60 years. This does not establish insomnia or another sleep disorder.",
+      "missing_ru": [
+        "Clarify age, possibility of sleep, shift work and method of assessment of duration.",
+        "Clarify daytime sleepiness and duration of the problem.",
+        "If symptoms persist, discuss them with a specialist."
+      ],
+      "sources": [
+        {
+          "title": "CDC: About Sleep",
+          "url": "https://www.cdc.gov/sleep/about/index.html/",
+          "date": "2024-05-15",
+          "supports": "Adults 18–60 years are recommended at least seven hours per day."
+        },
+        {
+          "title": "NHLBI: Sleep Deprivation and Deficiency Diagnosis",
+          "url": "https://www.nhlbi.nih.gov/health/sleep-deprivation/diagnosis-treatment",
+          "date": "2026-07-30",
+          "supports": "Sleep history, schedule, daytime symptoms and a sleep diary are relevant to assessing sleep deficiency."
+        }
+      ],
+      "applicability": "The \"three out of four\" rule was created for educational demonstration of ASTRA; it is not a clinical criterion."
+    },
+    {
+      "id": "D.POSSIBLE_SLEEP_APNEA",
+      "name_ru": "Possible sleep apnea",
+      "kind": "specific_disease_candidate",
+      "primary_metric": "symptoms",
+      "rule": {
+        "type": "symptom_cluster",
+        "required_symptom_codes": [
+          "loud_snoring",
+          "witnessed_breathing_pauses",
+          "daytime_sleepiness"
+        ]
+      },
+      "explanation_ru": "The combination of reports of loud snoring, observed pauses in breathing during sleep and daytime sleepiness corresponds to the NHLBI described features of sleep apnea. The type and severity cannot be determined by symptoms; a sleep test is needed.",
+      "missing_ru": [
+        "Clarify who and when observed the apnoea, frequency, and duration of symptoms.",
+        "Confirmation requires specialist evaluation and sleep study; availability of such a test in the mission is unknown."
+      ],
+      "sources": [
+        {
+          "title": "NHLBI: Sleep Apnea Symptoms",
+          "url": "https://www.nhlbi.nih.gov/health/sleep-apnea/symptoms",
+          "date": "2025-01-09",
+          "supports": "Loud snoring, observed pauses and daytime sleepiness are symptoms."
+        },
+        {
+          "title": "NHLBI: Sleep Apnea Diagnosis",
+          "url": "https://www.nhlbi.nih.gov/health/sleep-apnea/diagnosis",
+          "date": "2025-01-09",
+          "supports": "Sleep study can help diagnose apnea type and severity; sleep diary is useful."
+        }
+      ],
+      "applicability": "Combination of symptoms in the fabricated mission; apnoea is not confirmed without sleep study."
+    },
+    {
+      "id": "D.POSSIBLE_HEAD_INJURY",
+      "name_ru": "Possible head trauma, including concussion",
+      "kind": "specific_disease_candidate",
+      "primary_metric": "symptoms",
+      "priority": "urgent_review",
+      "rule": {
+        "type": "head_trauma_symptom_cluster",
+        "associated_symptom_codes": [
+          "headache",
+          "nausea",
+          "vomiting",
+          "external_bleeding"
+        ],
+        "minimum_associated_symptoms": 1
+      },
+      "explanation_ru": "After head impact, these symptoms correspond to head trauma; concussion is possible. In-person examination is needed to assess severity and next steps.",
+      "missing_ru": [
+        "Clarify the time and mechanism of the impact, presence of loss of consciousness, confusion, recurrent vomiting, and increasing pain.",
+        "Clarify the location and severity of the bleeding, presence of a wound, use of anticoagulants, and results of in-person examination."
+      ],
+      "sources": [
+        {
+          "title": "CDC: Symptoms of Mild TBI and Concussion",
+          "url": "https://www.cdc.gov/traumatic-brain-injury/signs-symptoms/index.html",
+          "supports": "Headache and nausea or vomiting are symptoms after head injury; danger signs require emergency care."
+        },
+        {
+          "title": "NHS: Head injury and concussion",
+          "url": "https://www.nhs.uk/conditions/head-injury-and-concussion/",
+          "supports": "Symptoms after head injury require medical advice; vomiting and neurological warning signs need urgent assessment."
+        }
+      ],
+      "applicability": "In case of new head trauma, urgent evaluation by a person is required; this is a preliminary version based on self-description, not a confirmed diagnosis."
+    }
+  ]
+}

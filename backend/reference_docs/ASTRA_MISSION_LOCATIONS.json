@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "scope": "general_location_facts_not_personal_exposure",
+  "locations": {
+    "iss": {
+      "name_ru": "ISS, low Earth orbit",
+      "gravity_ru": "Microgravity inside the station",
+      "external_atmosphere_ru": "Outside the sealed module — space vacuum",
+      "radiation_ru": "Cosmic radiation is present; individual dose from the location is not followed",
+      "sources": [
+        {
+          "title": "NASA: Station Science 101",
+          "url": "https://www.nasa.gov/missions/station/iss-research/station-science-101-research-in-microgravity-higher-faster-longer/"
+        },
+        {
+          "title": "NASA: BioSentinel and ISS radiation",
+          "url": "https://www.nasa.gov/centers-and-facilities/ames/what-is-biosentinel/"
+        }
+      ]
+    },
+    "moon": {
+      "name_ru": "Surface of the Moon (fictional mission)",
+      "gravity_ru": "Approximately 1/6 of Earth's gravity",
+      "external_atmosphere_ru": "Extremely thin exosphere; breathing without a sealed environment is not possible",
+      "radiation_ru": "Thin atmosphere does not protect from solar radiation; personal dose is unknown",
+      "sources": [
+        {
+          "title": "NASA Science: Moon Facts",
+          "url": "https://science.nasa.gov/moon/facts/"
+        }
+      ]
+    },
+    "mars": {
+      "name_ru": "Surface of Mars (fictional mission)",
+      "gravity_ru": "Approximately 0.37 of Earth's gravity",
+      "external_atmosphere_ru": "Thin atmosphere predominantly composed of CO₂; breathing without a sealed environment is not possible",
+      "radiation_ru": "Thin atmosphere provides weak shielding from solar radiation; personal dose is unknown",
+      "sources": [
+        {
+          "title": "NASA Glenn: Mars",
+          "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/mars/"
+        }
+      ]
+    }
+  }
+}

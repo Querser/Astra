@@ -1,0 +1,27 @@
+{
+  "retrieved_at": "2026-11-14",
+  "radlab": {
+    "dataset_id": "RadLab-DosTel1-ISS-2022-04-01",
+    "version": "RadLab portal 1.1.2",
+    "file": "radlab_iss_dostel1_2022-04-01.csv",
+    "sha256": "fa5b3a52035ae9d2e9d7117c6eed9821d61d756c3ef3d8bfa7f1c83f0c66bfe4",
+    "source_url": "https://visualization.osdr.nasa.gov/radlab/api/?spacecraft=ISS&instrument_id=DosTel1&timestamp%3E=2022-04-01T23%3A00&timestamp%3C2022-04-02T01%3A05&absorbed_dose_rate&dose_equivalent_rate&module&format=csv",
+    "documentation_url": "https://visualization.osdr.nasa.gov/radlab/gui/data-api/",
+    "instrument_id": "DosTel1",
+    "location": "ISS · Columbus",
+    "time_zone": "not specified in CSV",
+    "unit": {"absorbed_dose_rate": "µGy/hour", "dose_equivalent_rate": "µSv/hour"}
+  },
+  "osd_575": {
+    "dataset_id": "OSD-575",
+    "version": "3",
+    "file": "LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv",
+    "sha256": "5eb1e7f025dd8443a9e70111e62bc32afae3432753024489c5c013e401d709d9",
+    "source_url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-575",
+    "file_url": "https://osdr.nasa.gov/geode-py/ws/studies/OSD-575/download?source=datamanager&file=LSDS-8_Comprehensive_Metabolic_Panel_CMP_TRANSFORMED.csv",
+    "metadata_url": "https://osdr.nasa.gov/osdr/data/osd/meta/575",
+    "specimen": "serum",
+    "assay": "comprehensive metabolic panel",
+    "reference_context": "reported bounds in the transformed OSD-575 CMP file; not astronaut-specific thresholds"
+  }
+}

@@ -1,0 +1,3372 @@
+{
+  "run_at_utc": "2026-11-09T07:09:47.700228+00:00",
+  "model": "qwen2.5vl:3b",
+  "status": "blind_machine_consistency_review_not_clinical_validation",
+  "reviews": [
+    {
+      "id": "HC.BLEEDING.spurting.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение. Кровь бьёт струёй, повязка быстро промокает."
+      },
+      "error": null,
+      "seconds": 1.03,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.continuous.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение. Кровь непрерывно течёт уже 4 минут, давление на рану ещё не применял."
+      },
+      "error": null,
+      "seconds": 0.74,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.stopped.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или не прекращается. Важно оценить ситуацию и принять необходимые меры для предотвращения возможных негативных последствий."
+      },
+      "error": null,
+      "seconds": 1.0,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.negated.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отсутствие повреждений кожи не исключают серьёзного внутреннего кровотечения."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.spurting.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "При сильном кровотечении необходимо немедленно привлечь медицинскую помощь и применить прямое давление на рану."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.continuous.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Кровотечение сильное и непрерывное, требует немедленного вмешательства."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.stopped.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Кровотечение остановилось через 2 минуты после повязки, но важно проверить наличие других симптомов и убедиться в целостности повязки."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.negated.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отсутствие повреждений кожи не исключают серьёзного внутреннего кровотечения."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.spurting.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "При сильном кровотечении необходимо немедленно привлечь медицинскую помощь и применить прямое давление на рану."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.continuous.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение. Кровь непрерывно течёт уже 8 минут, давление на рану ещё не применял."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.stopped.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть вызвано серьёзным повреждением сосудов, которое необходимо немедленно оценить и лечить."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.negated.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отрицание симптома исключают серьёзное кровотечение."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.spurting.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение. Кровь бьёт струёй, повязка быстро промокает."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.continuous.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение. Кровь непрерывно течёт уже 10 минут, давление на рану ещё не применял."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.stopped.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или усиливается. Важно оценить ситуацию и принять меры для предотвращения возможных негативных последствий."
+      },
+      "error": null,
+      "seconds": 1.03,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.negated.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или не прекращается."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.spurting.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение может быть смертельным, если не остановить вовремя."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.continuous.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Кровотечение продолжается уже 12 минут, давление на рану ещё не применял. Это является критическим состоянием, требующим немедленной медицинской помощи."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.stopped.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, особенно если кровотечение продолжается или не прекращается. Важно оценить ситуацию и принять меры для предотвращения возможных негативных последствий."
+      },
+      "error": null,
+      "seconds": 1.03,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.negated.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие симптомов болезни и единичный выброс не поддерживают кандидата."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.spurting.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение может быть смертельным, если не остановить вовремя."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.continuous.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Опасное наружное кровотечение. Кровь непрерывно течёт уже 14 минут, давление на рану ещё не применял."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BLEEDING.stopped.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Опасное наружное кровотечение может быть связано с серьёзными последствиями, поэтому необходимо оперативно оценить ситуацию."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BLEEDING.negated.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BLEEDING"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Отсутствие кровотечения и отрицание симптома исключают серьёзное кровотечение."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.red_flag.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей головной болью и дважды вырвало, что может указывать на возможное сотрясение."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.symptomatic.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей головной болью и головокружением или тошнотой после удара не подтверждается."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.HEAD.no_impact.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "error": null,
+      "seconds": 0.66,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты могут указывать на возможное сотрясение головы, но отрицание симптомов исключает это."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.red_flag.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "После удара стал путаться в словах; состояние меняется."
+      },
+      "error": null,
+      "seconds": 0.62,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.symptomatic.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Травма головы с последующей головной болью и тошнотой может указывать на возможное сотрясение, но отрицание удара и отсутствие рвоты могут свидетельствовать против этого. Необходимо оценить наличие других признаков травмы или сотрясения."
+      },
+      "error": null,
+      "seconds": 1.08,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.HEAD.no_impact.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "error": null,
+      "seconds": 0.62,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицательно подтверждают травму головы."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.red_flag.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар затылком о поручень может привести к травме головы, особенно если отрицается наличие симптомов."
+      },
+      "error": null,
+      "seconds": 0.76,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.symptomatic.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой отрицается, но есть чувствительность к свету и головокружение"
+      },
+      "error": null,
+      "seconds": 0.69,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.HEAD.no_impact.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "error": null,
+      "seconds": 0.66,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицаются, что может указывать на возможное сотрясение."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.red_flag.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар затылком о поручень вызвал потери сознания, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.74,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.symptomatic.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Травма головы может быть подтверждена только после оценки симптомов и проведения медицинского обследования."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.HEAD.no_impact.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "error": null,
+      "seconds": 0.64,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицательно подтверждают травму головы."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.red_flag.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей слабостью в руке может указывать на возможное сотрясение, которое требует немедленной оценки."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.symptomatic.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей головной болью и возможным сотрясением подтверждается, но отрицание симптомов (головокружение или тошнота) может указывать на несоответствие."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.HEAD.no_impact.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "error": null,
+      "seconds": 0.64,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты отрицательно подтверждают наличие травмы головы."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.red_flag.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "После удара головы боль быстро усиливается, что может указывать на возможное сотрясение мозга."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.symptomatic.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удар головой с последующей головной болью и головокружением, отрицание потери сознания и рвоты."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.HEAD.no_impact.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Удара не было, тошноты и рвоты нет."
+      },
+      "error": null,
+      "seconds": 0.66,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.HEAD.asymptomatic_bump.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.HEAD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли, головокружения и тошноты могут быть симптомами травмы головы или сотрясения мозга."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "При наличии симптомов пищевой инфекции, необходимо провести дополнительное обследование и уточнить признаки обезвоживания."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_severe.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Болит живот и есть диарея, теперь кровь в стуле. Это может указывать на серьезное заболевание."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.other_cause.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боль в животе после удара о поручень может быть связано с пищевой инфекцией, но отрицание рвоты и диареи указывает на необходимость проверки других возможных причин."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов не исключает ее. Необходимо уточнить наличие температуры и признаки обезвоживания."
+      },
+      "error": null,
+      "seconds": 1.05,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Симптомы, указанные в карточке (спазмы живота и жидкий стул) могут быть признаком пищевой инфекции. Однако отрицание симптомов рвоты или диареи может свидетельствовать против подозрения на пищевую инфекцию."
+      },
+      "error": null,
+      "seconds": 1.12,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_severe.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможная пищевая инфекция, но не учитывайте болезнь без карточек."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.other_cause.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не исключает других возможных причин."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов делает это менее вероятным."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможная пищевая инфекция, но отрицание симптомов и единичный выброс не поддерживают кандидата."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_severe.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможная пищевая инфекция, но не убедительно подтверждается отсутствием симптомов желудочно-кишечного расстройства."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.other_cause.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но отсутствие рвоты и диареи делает это менее вероятным. Необходимо уточнить наличие других симптомов и признаков обезвоживания."
+      },
+      "error": null,
+      "seconds": 1.12,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие боли в животе не является достаточным основанием для диагноза пищевой инфекции, так как отсутствие рвоты и диареи может указывать на другие причины. Необходимо провести дополнительный обследование."
+      },
+      "error": null,
+      "seconds": 1.02,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Симптомы, указанные в карточке (спазмы живота и жидкий стул) совпадают с данными о симптомах пищевой инфекции."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_severe.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптомов может указывать на пищевую инфекцию, но не исключает других возможных причин."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.other_cause.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не является основанием для диагноза. Необходимо уточнить наличие других симптомов."
+      },
+      "error": null,
+      "seconds": 1.05,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов делает это менее вероятным."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможно, это пищевая инфекция. Однако отрицание симптомов (недостаточность рвоты и диареи) может указывать на другие причины."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_severe.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Возможная пищевая инфекция, но не убедительно подтверждена."
+      },
+      "error": null,
+      "seconds": 0.69,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.other_cause.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не обязательно указывает на пищевую инфекцию."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.05",
+      "review": {
+        "candidate_ids": [
+          "RIS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Во время дальнего перелёта Рис показался странным, но уже 10 часов нет боли в животе, рвоты, температуры или диареи."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_after_food.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "В жилом модуле съел молочный продукт с подозрительным запахом; через 7 часов начались спазмы живота и жидкий стул 6 раз."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.gi_severe.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "emergency",
+        "reason_ru": "Температура 39,2 °C указывает на возможную пищевую инфекцию."
+      },
+      "error": null,
+      "seconds": 0.74,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.FOOD.other_cause.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли в животе после удара о поручень могут быть связаны с пищевой инфекцией, но без рвоты и диареи это не исключает других возможных причин."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.FOOD.no_symptoms.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.FOOD"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие рвоты и диареи может указывать на пищевую инфекцию, но отсутствие этих симптомов не исключает ее. Необходимо уточнить наличие других симптомов и признаков обезвоживания."
+      },
+      "error": null,
+      "seconds": 1.06,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.persistent_low.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.OXYGEN.single_low.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.artifact.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышка одновременно со снижением SpO₂ может указывать на гипоксемию, но повторные качественные показания вернулись к исходному уровню после одиночного выброса. Необходимо оценить симптомы и среду."
+      },
+      "error": null,
+      "seconds": 1.05,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.stable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.76,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.persistent_low.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.OXYGEN.single_low.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, особенно если они повторяются. Необходимо оценить симптомы и среду для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.artifact.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышки нет, но повторные низкие показания SpO₂ могут указывать на гипоксемию. Необходимо оценить симптомы и среду."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.stable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.persistent_low.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Одышка также является симптомом."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.OXYGEN.single_low.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Необходимо оперативно оценить ситуацию и принять меры."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.artifact.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышка одновременно со снижением SpO₂ может указывать на гипоксемию, но повторные качественные показания вернулись к исходному уровню после одиночного выброса. Необходимо оценить симптомы и среду."
+      },
+      "error": null,
+      "seconds": 1.05,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.stable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.76,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.persistent_low.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.OXYGEN.single_low.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Необходимо оценить симптомы и среду."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.artifact.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одышка не отмечена, но повторные низкие показания SpO₂ могут указывать на гипоксемию. Необходимо оценить симптомы и среду."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.stable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.persistent_low.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.OXYGEN.single_low.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.76,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.artifact.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночное низкое значение SpO₂ не является критерием для диагноза гипоксемии, но требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.stable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.persistent_low.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, особенно если они повторяются и сопровождаются одышкой. Необходимо оперативно оценить ситуацию."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.OXYGEN.single_low.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ повторяются, что может указывать на гипоксемию. Необходимо оперативно оценить ситуацию и принять меры."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.artifact.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одно измерение SpO₂ на холодном пальце показало низкое значение, что может указывать на гипоксемию. Необходимо оценить симптомы и среду в связи с возможной устойчивой гипоксемией."
+      },
+      "error": null,
+      "seconds": 1.06,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.OXYGEN.stable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.OXYGEN"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Низкие показания SpO₂ могут указывать на гипоксемию, требующую оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.declining_comparable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов теста зрения не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.stable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует оперативной оценки для убедительности."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.uncalibrated.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.new_symptom.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптома не подтверждает SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.declining_comparable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов теста зрения не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.stable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует дополнительной оценки."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.uncalibrated.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.new_symptom.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптома не подтверждает SANS, но требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.76,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.declining_comparable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов теста на изменение зрения не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.stable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест (одинаковые результаты) не подтверждает наличие SANS."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.uncalibrated.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.new_symptom.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптома не подтверждает SANS, но требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.declining_comparable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение зрения на орбитальной станции может указывать на риск SANS, но одиночный экранный тест не подтверждает это. Необходимо провести дополнительные исследования для уточнения состояния."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.stable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует проверки динамики и передачи на очную оценку."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.uncalibrated.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов экранного теста не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.new_symptom.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптома не подтверждает SANS, но требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.declining_comparable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение зрения на одном экране с одинаковой дистанции и светом может указывать на риск SANS, но одиночный выброс не является достаточным подтверждением. Необходимо провести дополнительные тесты для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 1.03,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.stable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.74,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.uncalibrated.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс экранного теста не подтверждает SANS, но требует оперативной оценки для убедительности."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.new_symptom.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптома не подтверждает SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.declining_comparable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс результатов теста зрения не подтверждает наличие SANS, но требует оперативной оценки для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.SANS.stable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Несопоставимый тест не подтверждает SANS, но требует дополнительной оценки."
+      },
+      "error": null,
+      "seconds": 0.74,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.uncalibrated.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс экранного теста не подтверждает наличие SANS, но требует оперативной оценки для убедительности."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SANS.new_symptom.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SANS"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Одиночный выброс симптома не подтверждает SANS, но требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.74,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.long_low_load.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног могут указывать на снижение силы/функции, что подтверждается длительным полётом и снижением тренировочной нагрузки."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.bone_measurement.01",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.steps_only.01",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани. Данные о количестве шагов не являются достаточным основанием для диагноза остеопороза."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.short_stable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональные тесты неизменны, костных жалоб нет."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.long_low_load.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног могут указывать на снижение силы/функции, что подтверждается тренировочными данными и отсутствием дэнситометрии."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.bone_measurement.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и мышц показывают снижение функциональности, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.steps_only.02",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани, а не по количеству шагов или жалобам."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.short_stable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.long_low_load.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног и отсутствие дэнситометрии могут указывать на снижение силы/функции, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.bone_measurement.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.steps_only.03",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани, а не по количеству шагов."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.short_stable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.long_low_load.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног могут быть связаны с костными изменениями, несмотря на отсутствие денситометрии."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.bone_measurement.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.steps_only.04",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после исследования костной ткани, а не по количеству шагов или жалобам."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.short_stable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональные тесты неизменны, костных жалоб нет."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.long_low_load.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног и снижение силы/функции при сопоставимых тестах могут указывать на риск костных изменений или снижение физической функции, но без исходного обследования костей или тренировочной истории трудно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 1.22,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.bone_measurement.05",
+      "review": {
+        "candidate_ids": [
+          "кандидат"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение силы/функции при сопоставимых тестах может указывать на риск костных изменений или снижение физической функции, но без дополнительного исследования костей и тренировочной истории трудно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 1.08,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.steps_only.05",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть связан с длительным полётом и снижением доступной нагрузки, но отсутствие данных костного исследования не исключает его. Необходимо уточнить личную историю тренировок и результаты функциональных тестов."
+      },
+      "error": null,
+      "seconds": 1.09,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.short_stable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.long_low_load.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Жалобы на слабость ног и отсутствие денситометрии могут указывать на снижение силы/функции, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.bone_measurement.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE",
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Исследования костей и функциональных тестов указывают на снижение силы/функции, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BONE.steps_only.06",
+      "review": {
+        "candidate_ids": [
+          "A"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Остеопороз может быть подтвержден только после проведения костного исследования. Данные о количестве шагов не являются достаточным основанием для диагноза остеопороза."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BONE.short_stable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BONE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Тренировочные нагрузки и функциональные тесты неизменны, костных жалоб нет."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировки."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие тренировочных данных и жалоб на слабость рук указывают на возможный риск мышечного заболевания, требующий оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.stable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение функционального теста может указывать на мышечный риск, но без дополнительных данных сложно определить причину. Необходимо провести более детальный анализ индивидуальной функции и тренировочной истории."
+      },
+      "error": null,
+      "seconds": 1.0,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб межпозвоночного диска может привести к снижению функции мышц, что подтверждается уменьшенным количеством повторений после травмы. Однако отсутствие повторных тестов после восстановления не позволяет сделать окончательный вывод о состоянии пациента."
+      },
+      "error": null,
+      "seconds": 1.14,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировки."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие жалоб на слабость рук и ухудшение тренировочной нагрузки указывают на возможный риск снижения физической функции при полёте."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.stable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может быть связано с различными факторами, включая тренировочную нагрузку и возможные заболевания. Необходимо провести дополнительный анализ для уточнения ситуации."
+      },
+      "error": null,
+      "seconds": 0.97,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и ухудшению функционального теста."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных о тренировочной истории и индивидуальных показателях трудно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.98,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие тренировочного риска и жалоб на слабость рук указывают на необходимость оперативной оценки состояния здоровья."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.stable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональный тест повторяется за три месяца, что может указывать на возможное снижение физической функции. Однако отсутствие жалоб на слабость и стабильная функциональная серия при сопоставимых условиях могут свидетельствовать против этого."
+      },
+      "error": null,
+      "seconds": 1.11,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и ухудшению функционального теста."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может быть связано с различными факторами, включая ухудшение стандартного функционального теста и снижение тренировочной нагрузки. Однако стабильная функциональная серия при сопоставимых условиях указывает на то, что это не является подтверждённым заболеванием."
+      },
+      "error": null,
+      "seconds": 1.22,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие жалоб на слабость рук и ухудшение функционального теста указывают на возможный риск снижения физической функции при полёте."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.stable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может быть связано с различными факторами, включая тренировочную нагрузку и условия. Необходимо оценить индивидуальную функцию и тренировочную историю для выявления мышечного риска или подтверждённого заболевания."
+      },
+      "error": null,
+      "seconds": 1.17,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и жалобе на слабость. Сопоставимые условия не указаны."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировочного процесса."
+      },
+      "error": null,
+      "seconds": 0.98,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие жалоб на слабость рук и ухудшение функционального теста указывают на возможный риск мышечного заболевания, особенно при длительной тренировочной нагрузке."
+      },
+      "error": null,
+      "seconds": 0.97,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.stable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональный тест показал ухудшение, что может указывать на мышечный риск."
+      },
+      "error": null,
+      "seconds": 0.73,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб кисти и снижение тренировочной нагрузки могут указывать на мышечный риск, но без дополнительных данных сложно определить наличие заболевания."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.MUSCLE.functional_decline.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Снижение физической функции при полёте может указывать на мышечный риск, но без дополнительных данных сложно определить, является ли это заболеванием или просто результат тренировочного процесса."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.weakness_low_exercise.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие тренировочного отрицательного сдвига и жалоб на слабость рук указывают на возможный риск снижения физической функции."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.stable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Функциональный тест показал ухудшение, что может указывать на мышечный риск. Необходимо оценить сопоставимость условий и метода для точного диагноза."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.MUSCLE.injury_confounder.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.MUSCLE"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Ушиб мешал движению, что привело к снижению тренировочной нагрузки и ухудшению функционального теста."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.recorded_event.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нужно оценить экспозицию после зарегистрированного радиационного события."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.event_missing_dose.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но не доказывает ее наличие. Необходимо проверить зарегистрированную дозу и событие с правилами конкретной миссии."
+      },
+      "error": null,
+      "seconds": 0.97,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без зарегистрированного события и дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.recorded_event.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нужно оценить экспозицию после солнечного события."
+      },
+      "error": null,
+      "seconds": 0.66,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.event_missing_dose.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но не доказывает ее наличие. Необходимо проверить зарегистрированную дозу и событие с правилами конкретной миссии."
+      },
+      "error": null,
+      "seconds": 0.97,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без доказательств регистрации событий или данных дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "error": null,
+      "seconds": 0.77,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.recorded_event.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нужно оценить экспозицию, поэтому необходимо оперативная оценка."
+      },
+      "error": null,
+      "seconds": 0.7,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.event_missing_dose.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но отсутствие данных дозиметра не исключает ее. Необходимо проверить зарегистрированную дозу и событие в контексте конкретной миссии."
+      },
+      "error": null,
+      "seconds": 1.05,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Болезнь может быть связана с радиационной экспозицией, но без доказательств этого, не угадывайте заболевание."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Наличие дозиметра и отсутствие событий не исключает возможную радиационную экспозицию, особенно в условиях марсианского корабля."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.recorded_event.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нужно оценить экспозицию, поэтому необходимо оперативная оценка."
+      },
+      "error": null,
+      "seconds": 0.72,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.event_missing_dose.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но не доказывает ее наличие. Необходимо проверить зарегистрированную дозу и событие с правилами конкретной миссии."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Боли головы могут быть связаны с радиационной экспозицией, но без доказательств этого, не следует делать выводы."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.recorded_event.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нужно оценить экспозицию, но не угадывать заболевание из симптомов."
+      },
+      "error": null,
+      "seconds": 0.75,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.event_missing_dose.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но не доказывает ее наличие. Необходимо проверить зарегистрированную дозу и событие с правилами конкретной миссии."
+      },
+      "error": null,
+      "seconds": 0.97,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без доказательств регистрации событий или данных дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Персональная дозиметрия или зарегистрированное радиационное событие не подтверждают отсутствие экспозиции."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.recorded_event.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нужно оценить экспозицию после солнечного события."
+      },
+      "error": null,
+      "seconds": 0.67,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.event_missing_dose.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но не доказывает ее наличие. Необходимо проверить зарегистрированную дозу и событие с правилами конкретной миссии."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.RADIATION.symptom_only.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Головная боль может быть симптомом радиационной экспозиции, но без доказательств регистрации событий или данных дозиметра это не подтверждает отсутствие экспозиции."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.RADIATION.stable_monitor.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.RADIATION"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Нет зарегистрированной экспозиции в доступных данных, это не доказывает отсутствия экспозиции."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической готовности экипажа, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.shift_change.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость могут указывать на недостаток сна или циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.one_night.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость может быть следствием недостаточного сна, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.stable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг может привести к ухудшению физической и психической выносливости, что является серьезной проблемой для экипажа."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может указывать на циркадный сдвиг или недостаток сна, что важно учитывать при оценке нагрузки и режима."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.shift_change.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость при этом могут указывать на недостаток сна или циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.94,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.one_night.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна может указывать на циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.stable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Повторное сокращение сна относительно личной серии, что может указывать на циркадный сдвиг."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической выносливости, что является важным фактором для миссии на Марсе."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.shift_change.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость при этом могут указывать на циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.89,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.one_night.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна может указывать на циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.stable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Повторное сокращение сна относительно личной серии, что может указывать на циркадный сдвиг."
+      },
+      "error": null,
+      "seconds": 0.92,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической выносливости, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.shift_change.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость при изменении графика может указывать на циркадный сдвиг или недостаток сна, но без дополнительных данных сложно определить точную причину."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.one_night.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может указывать на циркадный сдвиг или недостаток сна, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.stable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Сплю 7,5–8 часов, расписание прежнее, днём бодр."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической готовности, что требует оперативной оценки."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.shift_change.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость при изменении графика может указывать на циркадный сдвиг, который требует внимания к динамике сна и расписания."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.one_night.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость может быть следствием циркадного сдвига, но не исключает наличие апноэ. Необходимо оценить динамику сна и расписания для уточнения."
+      },
+      "error": null,
+      "seconds": 0.97,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.stable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг может привести к ухудшению физической и психической выносливости, что является серьезной угрозой для выполнения задачи."
+      },
+      "error": null,
+      "seconds": 0.98,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.repeated_short.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение сна и расписания может привести к ухудшению физической и психической готовности экипажа."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.shift_change.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Изменение графика и сонливость могут указывать на недостаток сна или циркадный сдвиг, но без дополнительных данных сложно сделать окончательный вывод."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": true,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.one_night.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Сонливость может быть следствием циркадного сдвига, но не исключает наличие апноэ. Необходимо оценить динамику сна и расписания для точной диагностики."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.SLEEP.stable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.SLEEP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Недостаток сна / циркадный сдвиг. Повторное сокращение сна относительно личной серии, что может указывать на циркадный сдвиг."
+      },
+      "error": null,
+      "seconds": 0.91,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.repeated_high.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.repeat_mixed.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "повторные корректно измеренные повышенные АД в разные дни"
+      },
+      "error": null,
+      "seconds": 0.69,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.single_after_exercise.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.83,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.stable.01",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.repeated_high.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.88,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.repeat_mixed.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные измерения артериального давления в разные дни подтверждают возможную гипертензию, но единичное показание не исключает устойчивую гипертонию."
+      },
+      "error": null,
+      "seconds": 0.95,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.single_after_exercise.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.stable.02",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "error": null,
+      "seconds": 0.76,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.repeated_high.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.repeat_mixed.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.single_after_exercise.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.stable.03",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "error": null,
+      "seconds": 0.78,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.repeated_high.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.repeat_mixed.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.single_after_exercise.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.stable.04",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии."
+      },
+      "error": null,
+      "seconds": 0.8,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.repeated_high.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни, но единичное показание при стабильной личной серии."
+      },
+      "error": null,
+      "seconds": 0.81,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.repeat_mixed.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.single_after_exercise.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает наличие устойчивой гипертензии по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.stable.05",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повышенное артериальное давление в сопоставимых условиях не является устойчивым состоянием, требующим немедленного внимания."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.repeated_high.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Повторные корректно измеренные повышенные АД в разные дни не поддерживают устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.86,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.repeat_mixed.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "повторные корректно измеренные повышенные АД в разные дни"
+      },
+      "error": null,
+      "seconds": 0.69,
+      "candidate_agreement": true,
+      "urgency_agreement": true
+    },
+    {
+      "id": "HC.BP.single_after_exercise.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    },
+    {
+      "id": "HC.BP.stable.06",
+      "review": {
+        "candidate_ids": [
+          "ASTRA.K.BP"
+        ],
+        "urgency": "prompt_review",
+        "reason_ru": "Единичное показание при стабильной личной серии не поддерживает устойчивую гипертензию по одному измерению."
+      },
+      "error": null,
+      "seconds": 0.84,
+      "candidate_agreement": false,
+      "urgency_agreement": false
+    }
+  ]
+}
