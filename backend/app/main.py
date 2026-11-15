@@ -18,6 +18,7 @@ from app.db import Database, sqlite_url, upgrade_database
 from app.diagnostics import configure_logger
 from app.research_data import import_packaged_snapshots, router as research_router
 from app.security import ALLOWED_BROWSER_ORIGINS, LocalRequestGuard
+from app.single_profile import ensure_single_profile
 
 
 class HealthResponse(BaseModel):
@@ -36,6 +37,7 @@ def create_app(
     automated_ingestion_enabled: bool | None = None,
     chat_model_enabled: bool | None = None,
     browser_origins: set[str] | None = None,
+    seed_default_profile: bool = False,
 ) -> FastAPI:
     """Construct a local API instance and apply migrations when it starts."""
 
@@ -50,6 +52,8 @@ def create_app(
         application.state.diagnostics = configure_logger(resolved_log_dir)
         with application.state.database.session_factory() as session:
             import_counts = import_packaged_snapshots(session)
+            if seed_default_profile:
+                ensure_single_profile(session)
         application.state.diagnostics.info("research_snapshots_ready", extra=import_counts)
         application.state.diagnostics.info("service_start")
         try:
@@ -135,4 +139,4 @@ def create_app(
     return application
 
 
-app = create_app()
+app = create_app(seed_default_profile=True)

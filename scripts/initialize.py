@@ -11,6 +11,7 @@ sys.path.insert(0, str(BACKEND))
 from app.config import get_settings  # noqa: E402
 from app.db import Database, sqlite_url, upgrade_database  # noqa: E402
 from app.research_data import import_packaged_snapshots  # noqa: E402
+from app.single_profile import ensure_single_profile  # noqa: E402
 
 
 def main() -> int:
@@ -21,10 +22,12 @@ def main() -> int:
     try:
         with database.session_factory() as session:
             counts = import_packaged_snapshots(session)
+            profile = ensure_single_profile(session)
     finally:
         database.dispose()
     print(f"ASTRA database ready: {database_url}")
     print(f"Packaged research snapshots ready: {counts}")
+    print(f"Demo profile ready: {profile['name']} ({profile['observations']} observations added)")
     return 0
 
 
