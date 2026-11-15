@@ -86,6 +86,10 @@ export function AnatomyAtlas({ profile, selected, onSelect, onHoverChange }: Ana
     <div className="min-h-0 flex-1">
       <svg viewBox="0 0 1024 1536" className="anatomy-atlas h-full max-h-[720px] w-full" role="group" aria-label="Anatomical schematic of a human. Select an area to view data." style={{ touchAction: "manipulation" }} onPointerDown={(event) => { if (event.pointerType === "touch" && hoverId !== null) hover(null); }}>
         <image href={anatomyAtlas} x={0} y={0} width={1024} height={1536} preserveAspectRatio="xMidYMid meet" pointerEvents="none" />
+        <g className="atlas-ai-watermark" pointerEvents="none" aria-hidden="true">
+          <rect x={712} y={1450} width={264} height={52} rx={12} />
+          <text x={844} y={1483} textAnchor="middle">AI-GENERATED IMAGE</text>
+        </g>
         {DRAW_ORDER.map((id) => {
           const region = REGIONS[id];
           const organ = profile.organs[id];
@@ -101,7 +105,7 @@ export function AnatomyAtlas({ profile, selected, onSelect, onHoverChange }: Ana
     </div>
     <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t px-3.5 py-2" style={{ borderColor: "var(--t-line)" }}>
       <div className="flex items-center gap-3.5">{(["ok", "watch", "alert", "unknown"] as HealthState[]).map((state) => <span key={state} className="flex items-center gap-1.5"><span className={`legend-dot st-${state}`} style={{ background: "var(--st)" }} /><span className="t-label" style={{ letterSpacing: "0.1em" }}>{STATE_LABELS[state]}</span></span>)}</div>
-      <span className="t-hint">Illustration created with AI · select a body area to view records</span>
+      <span className="t-hint">AI-generated illustration · select a body area to view records</span>
     </div>
   </section>;
 }

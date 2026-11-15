@@ -8,6 +8,20 @@ is in English and accepts symptom reports in English or Russian.
 ASTRA is a hackathon prototype. Its medical assessments and forecasts have not
 been clinically validated and must not be used as a substitute for medical care.
 
+## AI disclosure
+
+ASTRA uses the local **Qwen3-8B** model (`qwen3:8b`), served through Ollama, for
+assistant responses and interpretation of selected profile context and local
+knowledge. The setup process downloads the model separately; its weights are not
+stored in this repository. Statistical forecasts and structured measurements are
+calculated by application code before the model explains them.
+
+Generative AI assisted the project's visual design and the creation of the
+anatomical atlas illustration. The illustration carries an in-product
+`AI-GENERATED IMAGE` watermark. Interface screenshots are ordinary captures of
+the application, not separately generated images. See [AI usage and asset
+provenance](docs/ai-disclosure.md) for the complete disclosure.
+
 ## Quick start
 
 After cloning the repository on Windows, run:
@@ -44,7 +58,7 @@ logs, manual startup and executable-building details.
   selection of profile data, conversation context and relevant knowledge cards.
 - View an anatomical illustration with interactive regions and indicators based
   on available records. The illustration was created with **generative artificial
-  intelligence** using a user-provided reference image; it is marked in the UI.
+  intelligence** using a user-provided reference image; it is watermarked in the UI.
 - Explore mission and environment context, locally packaged research data and
   source links.
 - Review statistical forecasts for 24 hours, 72 hours and 7 days when enough data

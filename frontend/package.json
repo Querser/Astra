@@ -2,8 +2,23 @@
   "name": "astra-web",
   "private": true,
   "version": "0.1.0",
+  "description": "Local-first crew health interface with a Qwen3-8B assistant and AI-assisted visual design.",
   "license": "Apache-2.0",
   "type": "module",
+  "astra": {
+    "localAiModel": {
+      "name": "Qwen3-8B",
+      "ollamaTag": "qwen3:8b",
+      "weightsBundled": false
+    },
+    "generativeAiDisclosure": {
+      "visualDesignAssisted": true,
+      "generatedAssets": [
+        "src/assets/astra-anatomy-atlas.png"
+      ],
+      "disclosureDocument": "../docs/ai-disclosure.md"
+    }
+  },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",

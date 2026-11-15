@@ -55,12 +55,14 @@ republish them. Individual sources, sections and limits are listed in
 
 ## Visual assets and private records
 
-`frontend/src/assets/astra-anatomy-atlas.png` is an AI-generated illustration,
-marked as such in the interface. A user-supplied anatomical image was used as a
-visual reference; the original image is not distributed. The project license
-covers the illustration only to the extent that the project author holds rights
-to grant. Confirm rights in the source reference before redistributing the
-illustration outside the submitted project.
+Generative AI assisted the visual design of the ASTRA interface and presentation.
+`frontend/src/assets/astra-anatomy-atlas.png` is an AI-generated illustration and
+carries an in-product `AI-GENERATED IMAGE` watermark. A user-supplied anatomical
+image was used as a visual reference; the original image is not distributed. The
+project license covers the illustration only to the extent that the project author
+holds rights to grant. Confirm rights in the source reference before redistributing
+the illustration outside the submitted project. The complete disclosure is in
+[`docs/ai-disclosure.md`](docs/ai-disclosure.md).
 
 `docs/astra-chat-forecast-2026-11-08.png` is a screenshot of the ASTRA interface.
 Local SQLite databases, logs and user-entered records are not part of the
