@@ -52,7 +52,7 @@ def cases() -> dict[str, Any]:
 def explicit_topic(message: str) -> str | None:
     text = message.casefold()
     codes = set(symptom_codes(text))
-    if ("external_bleeding" in codes or re.search(r"\b(?:кров\w*\s+(?:бь[её]т|хлещ\w*|фонтан\w*)|кровотеч\w*|порез\w*|ран\w*)\b", text)):
+    if ("external_bleeding" in codes or re.search(r"\b(?:\u043a\u0440\u043e\u0432\w*\s+(?:\u0431\u044c[\u0435\u0451]\u0442|\u0445\u043b\u0435\u0449\w*|\u0444\u043e\u043d\u0442\u0430\u043d\w*)|\u043a\u0440\u043e\u0432\u043e\u0442\u0435\u0447\w*|\u043f\u043e\u0440\u0435\u0437\w*|\u0440\u0430\u043d\w*)\b", text)):
         return "bleeding"
     if "head_impact" in codes:
         return "head"
@@ -60,9 +60,9 @@ def explicit_topic(message: str) -> str | None:
         return "fever_headache"
     if "headache" in codes:
         return "headache"
-    if "abdominal_pain" in codes or (re.search(r"\b(?:тухл\w*|испорч\w*|прокисш\w*)\b", text) and re.search(r"\b(?:ел|съел|ела|съела|поел\w*)\b", text)):
+    if "abdominal_pain" in codes or (re.search(r"\b(?:\u0442\u0443\u0445\u043b\w*|\u0438\u0441\u043f\u043e\u0440\u0447\w*|\u043f\u0440\u043e\u043a\u0438\u0441\u0448\w*)\b", text) and re.search(r"\b(?:\u0435\u043b|\u0441\u044a\u0435\u043b|\u0435\u043b\u0430|\u0441\u044a\u0435\u043b\u0430|\u043f\u043e\u0435\u043b\w*)\b", text)):
         return "food"
-    if any(token in text for token in ("spo2", "spo₂", "сатурац")):
+    if any(token in text for token in ("spo2", "spo₂", "\u0441\u0430\u0442\u0443\u0440\u0430\u0446")):
         return "oxygen"
     return None
 
@@ -111,7 +111,7 @@ class LocalChatModel:
         start = next((i for i, row in enumerate(conversation) if row.get("id") == pressure_note and pressure_note), None)
         bp_requested = start is not None and any(
             row.get("role") == "assistant" and not str(row.get("engine", "")).startswith("local_model_error:")
-            and re.search(r"(?:тонометр|числ[ао]|цифр[ыау]|blood pressure monitor|two numbers|readings?).{0,80}\?", row["content"], re.I)
+            and re.search(r"(?:\u0442\u043e\u043d\u043e\u043c\u0435\u0442\u0440|\u0447\u0438\u0441\u043b[\u0430\u043e]|\u0446\u0438\u0444\u0440[\u044b\u0430\u0443]|blood pressure monitor|two numbers|readings?).{0,80}\?", row["content"], re.I)
             for row in conversation[start + 1:]
         )
         previous_research = next((ref for row in reversed(conversation) if row.get("role") == "assistant"
@@ -123,12 +123,12 @@ class LocalChatModel:
             recent_user = " ".join(str(row.get("content", "")) for row in conversation[-8:]
                                    if row.get("role") == "user").casefold()
             if ("radlab" in recent_user or
-                    re.search(r"радиац\w*.{0,50}(?:данн|измер|запис|покаж|окружающ)|"
-                              r"(?:данн|измер|запис|покаж).{0,50}радиац|"
+                    re.search(r"\u0440\u0430\u0434\u0438\u0430\u0446\w*.{0,50}(?:\u0434\u0430\u043d\u043d|\u0438\u0437\u043c\u0435\u0440|\u0437\u0430\u043f\u0438\u0441|\u043f\u043e\u043a\u0430\u0436|\u043e\u043a\u0440\u0443\u0436\u0430\u044e\u0449)|"
+                              r"(?:\u0434\u0430\u043d\u043d|\u0438\u0437\u043c\u0435\u0440|\u0437\u0430\u043f\u0438\u0441|\u043f\u043e\u043a\u0430\u0436).{0,50}\u0440\u0430\u0434\u0438\u0430\u0446|"
                               r"radiation.{0,50}(?:data|readings?|measurements?|records?|show)|"
                               r"(?:data|readings?|measurements?|records?|show).{0,50}radiation", recent_user)):
                 research_focus = "radlab"
-            elif re.search(r"osd[- ]?575|лаборатор\w*.{0,30}(?:данн|исслед|проб)|laboratory.{0,30}(?:data|study|sample)", recent_user):
+            elif re.search(r"osd[- ]?575|\u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\w*.{0,30}(?:\u0434\u0430\u043d\u043d|\u0438\u0441\u0441\u043b\u0435\u0434|\u043f\u0440\u043e\u0431)|laboratory.{0,30}(?:data|study|sample)", recent_user):
                 research_focus = "osd-575"
         turn = prepare(episode[-1], previous, memory, topic, observations, analysis,
                        bp_requested=bp_requested, research_focus=research_focus)
@@ -186,7 +186,7 @@ class LocalChatModel:
                 answer = answer.replace("**", "")
                 answer = re.sub(r"(?m)^\s{0,3}#{1,4}\s+", "", answer)
                 answer = re.sub(r"(?m)^\s*(?:[-•]|\d+[.)])\s+", "", answer)
-                answer = re.sub(r"^(?:Следующий шаг|Ответ|Next step|Answer)\s*:\s*", "", answer, flags=re.I)
+                answer = re.sub(r"^(?:\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0448\u0430\u0433|\u041e\u0442\u0432\u0435\u0442|Next step|Answer)\s*:\s*", "", answer, flags=re.I)
                 # Source names belong in citations, not in conversational prose.
                 answer = re.sub(r"(?:the )?source URL provided:\s*https?://[^\s)]+",
                                 "the linked source.", answer, flags=re.I)
@@ -196,11 +196,11 @@ class LocalChatModel:
                     "the source", answer, flags=re.I,
                 )
                 if (turn.move == "food_update" and "Signs of dehydration: absent" in turn.user_facts
-                        and not re.search(r"обезвож|dehydrat", answer, re.I)):
+                        and not re.search(r"\u043e\u0431\u0435\u0437\u0432\u043e\u0436|dehydrat", answer, re.I)):
                     answer = "You reported no signs of dehydration. " + answer
                 category = ("generation_truncated" if result.get("done_reason") == "length" else validate(answer, turn))
                 if not category and turn.topic == "bleeding" and _spurting(episode) and not re.search(
-                    r"приж|давлен|давите|press|pressure|compress", answer.casefold()
+                    r"\u043f\u0440\u0438\u0436|\u0434\u0430\u0432\u043b\u0435\u043d|\u0434\u0430\u0432\u0438\u0442\u0435|press|pressure|compress", answer.casefold()
                 ):
                     category = "missing_bleeding_action"
                 if not category and turn.topic == "fever_headache":
@@ -210,7 +210,7 @@ class LocalChatModel:
                             category = "unsupported_temperature"
                 if not category:
                     for number in re.findall(r"\b(10|[0-9])\s*/\s*10\b", answer):
-                        supplied = bool(re.search(rf"\b{number}\s*(?:из\s*10|/\s*10|балл\w*|out of 10|points?)", " ".join(episode), re.I))
+                        supplied = bool(re.search(rf"\b{number}\s*(?:\u0438\u0437\s*10|/\s*10|\u0431\u0430\u043b\u043b\w*|out of 10|points?)", " ".join(episode), re.I))
                         if not supplied and not any(str(f.get("value")) == number and f.get("key") == "pain_score"
                                                      and f.get("status") == "active" and f.get("user_message_id")
                                                      for f in (memory or {}).get("facts", [])):
@@ -285,17 +285,17 @@ def _known_facts(episode: list[str]) -> dict[str, Any]:
     latest = normalize_english(episode[-1])
     codes = set(symptom_codes(joined))
     facts = {key: key in codes for key in ("head_impact", "abdominal_pain", "headache", "dizziness", "nausea", "vomiting", "diarrhea", "fever")}
-    facts["spoiled_food"] = bool(re.search(r"\b(?:тухл\w*|испорч\w*|прокисш\w*|несвеж\w*)\b", joined))
-    facts["bleeding_absent"] = bool(re.search(r"\b(?:кров\w*\s+нет|нет\s+кров\w*|без\s+кров\w*)\b", joined))
-    facts["no_other_symptoms"] = bool(re.search(r"\b(?:больше|других|остальн\w*)\s+(?:ничего|симптом\w*|признак\w*)?.{0,25}\bнет\b|\bничего\s+(?:из\s+перечисленн\w*\s+)?нет\b", latest))
-    severity = re.search(r"\b(10|[0-9])\s*(?:из\s*10|/\s*10|балл\w*|out of 10|points?)\b", latest)
+    facts["spoiled_food"] = bool(re.search(r"\b(?:\u0442\u0443\u0445\u043b\w*|\u0438\u0441\u043f\u043e\u0440\u0447\w*|\u043f\u0440\u043e\u043a\u0438\u0441\u0448\w*|\u043d\u0435\u0441\u0432\u0435\u0436\w*)\b", joined))
+    facts["bleeding_absent"] = bool(re.search(r"\b(?:\u043a\u0440\u043e\u0432\w*\s+\u043d\u0435\u0442|\u043d\u0435\u0442\s+\u043a\u0440\u043e\u0432\w*|\u0431\u0435\u0437\s+\u043a\u0440\u043e\u0432\w*)\b", joined))
+    facts["no_other_symptoms"] = bool(re.search(r"\b(?:\u0431\u043e\u043b\u044c\u0448\u0435|\u0434\u0440\u0443\u0433\u0438\u0445|\u043e\u0441\u0442\u0430\u043b\u044c\u043d\w*)\s+(?:\u043d\u0438\u0447\u0435\u0433\u043e|\u0441\u0438\u043c\u043f\u0442\u043e\u043c\w*|\u043f\u0440\u0438\u0437\u043d\u0430\u043a\w*)?.{0,25}\b\u043d\u0435\u0442\b|\b\u043d\u0438\u0447\u0435\u0433\u043e\s+(?:\u0438\u0437\s+\u043f\u0435\u0440\u0435\u0447\u0438\u0441\u043b\u0435\u043d\u043d\w*\s+)?\u043d\u0435\u0442\b", latest))
+    severity = re.search(r"\b(10|[0-9])\s*(?:\u0438\u0437\s*10|/\s*10|\u0431\u0430\u043b\u043b\w*|out of 10|points?)\b", latest)
     facts["severity"] = int(severity.group(1)) if severity else None
-    delay = re.search(r"\b(?:спустя|через|after|in)\s+(\d+(?:[.,]\d+)?|один|одного|два|две|тр[иеё]х?|четыре|пять|шесть|семь|восемь|девять|десять|двенадцать|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s+(?:час\w*|hours?)", joined)
+    delay = re.search(r"\b(?:\u0441\u043f\u0443\u0441\u0442\u044f|\u0447\u0435\u0440\u0435\u0437|after|in)\s+(\d+(?:[.,]\d+)?|\u043e\u0434\u0438\u043d|\u043e\u0434\u043d\u043e\u0433\u043e|\u0434\u0432\u0430|\u0434\u0432\u0435|\u0442\u0440[\u0438\u0435\u0451]\u0445?|\u0447\u0435\u0442\u044b\u0440\u0435|\u043f\u044f\u0442\u044c|\u0448\u0435\u0441\u0442\u044c|\u0441\u0435\u043c\u044c|\u0432\u043e\u0441\u0435\u043c\u044c|\u0434\u0435\u0432\u044f\u0442\u044c|\u0434\u0435\u0441\u044f\u0442\u044c|\u0434\u0432\u0435\u043d\u0430\u0434\u0446\u0430\u0442\u044c|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s+(?:\u0447\u0430\u0441\w*|hours?)", joined)
     if not delay:
         delay = re.search(r"\b(\d+(?:[.,]\d+)?|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s+hours?\s+(?:after|later)", joined)
-    number_words = {"один": 1, "одного": 1, "два": 2, "две": 2, "три": 3, "трех": 3,
-                    "четыре": 4, "пять": 5, "шесть": 6, "семь": 7, "восемь": 8,
-                    "девять": 9, "десять": 10, "двенадцать": 12,
+    number_words = {"\u043e\u0434\u0438\u043d": 1, "\u043e\u0434\u043d\u043e\u0433\u043e": 1, "\u0434\u0432\u0430": 2, "\u0434\u0432\u0435": 2, "\u0442\u0440\u0438": 3, "\u0442\u0440\u0435\u0445": 3,
+                    "\u0447\u0435\u0442\u044b\u0440\u0435": 4, "\u043f\u044f\u0442\u044c": 5, "\u0448\u0435\u0441\u0442\u044c": 6, "\u0441\u0435\u043c\u044c": 7, "\u0432\u043e\u0441\u0435\u043c\u044c": 8,
+                    "\u0434\u0435\u0432\u044f\u0442\u044c": 9, "\u0434\u0435\u0441\u044f\u0442\u044c": 10, "\u0434\u0432\u0435\u043d\u0430\u0434\u0446\u0430\u0442\u044c": 12,
                     "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
                     "seven": 7, "eight": 8, "nine": 9, "ten": 10, "twelve": 12}
     raw_delay = delay.group(1) if delay else None
@@ -306,7 +306,7 @@ def _known_facts(episode: list[str]) -> dict[str, Any]:
 
 def _spurting(episode: list[str]) -> bool:
     text = " ".join(episode).casefold()
-    return bool(re.search(r"\b(?:фонтан\w*|стру[еёйю]\w*|хлещ\w*|spurting|gushing|squirting)\b", text))
+    return bool(re.search(r"\b(?:\u0444\u043e\u043d\u0442\u0430\u043d\w*|\u0441\u0442\u0440\u0443[\u0435\u0451\u0439\u044e]\w*|\u0445\u043b\u0435\u0449\w*|spurting|gushing|squirting)\b", text))
 
 
 def respond(messages: list[str], observations: list[Observation], analysis: dict[str, Any],
@@ -350,8 +350,8 @@ def respond(messages: list[str], observations: list[Observation], analysis: dict
     if topic == "bleeding" and _spurting(episode):
         card = cases()["bleeding"]
         latest = episode[-1].casefold()
-        already = "You have already applied a bandage. " if re.search(r"\b(?:приложил\w*|прижал\w*|наложил\w*|applied|pressed|bandaged)\b", latest) else ""
-        help_coming = "Help is on the way; keep applying direct pressure until it arrives. " if re.search(r"помощ\w*\s+в\s+пути|help is (?:on the way|coming)", latest) else ""
+        already = "You have already applied a bandage. " if re.search(r"\b(?:\u043f\u0440\u0438\u043b\u043e\u0436\u0438\u043b\w*|\u043f\u0440\u0438\u0436\u0430\u043b\w*|\u043d\u0430\u043b\u043e\u0436\u0438\u043b\w*|applied|pressed|bandaged)\b", latest) else ""
+        help_coming = "Help is on the way; keep applying direct pressure until it arrives. " if re.search(r"\u043f\u043e\u043c\u043e\u0449\w*\s+\u0432\s+\u043f\u0443\u0442\u0438|help is (?:on the way|coming)", latest) else ""
         return (f"This is a severe external bleeding from the hand requiring immediate assistance. {already}{help_coming}"
                 " Continuously and firmly press the bleeding site through the bandage; do not remove the first layer. "
                 "Tell the arriving responders that the blood is spurting. "

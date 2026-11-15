@@ -130,12 +130,12 @@ def test_lab_records_are_not_active_and_context_changes_invalidate_cache(app) ->
 def test_russian_complaint_numbers_and_profile_mission_change_are_used(app) -> None:
     crew_id, _ = setup(app)
     mission = request(app, "PATCH", f"/api/v1/crew/{crew_id}/mission", {
-        "mission_location": "iss", "mission_phase": "orbit", "habitat": "учебный модуль",
+        "mission_location": "iss", "mission_phase": "orbit", "habitat": "\u0443\u0447\u0435\u0431\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c",
     })
     assert mission.status_code == 200, mission.text
     complaint = request(app, "POST", "/api/v1/manual/complaints", {
         "crew_member_id": crew_id,
-        "description": "Болит голова, давление 150/95, пульс 90.",
+        "description": "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0434\u0430\u0432\u043b\u0435\u043d\u0438\u0435 150/95, \u043f\u0443\u043b\u044c\u0441 90.",
         "observed_at": "2030-01-01T00:00:00+00:00",
     })
     assert complaint.status_code == 201, complaint.text
@@ -147,10 +147,10 @@ def test_russian_complaint_numbers_and_profile_mission_change_are_used(app) -> N
     assert pressure["reference"]["status"] == "bp_stage2_range"
     assert any(item.get("kind") == "repeat_blood_pressure" for item in first["integrated_report"]["next_steps"])
     assert first["integrated_report"]["mission_environment_context"]["location"] == "iss"
-    assert first["integrated_report"]["complaint_review"][0]["description"].startswith("Болит голова")
+    assert first["integrated_report"]["complaint_review"][0]["description"].startswith("\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430")
     assert first["integrated_report"]["complaint_review"][0]["source_type"] == "manual"
     mission = request(app, "PATCH", f"/api/v1/crew/{crew_id}/mission", {
-        "mission_location": "moon", "mission_phase": "surface", "habitat": "новый учебный модуль",
+        "mission_location": "moon", "mission_phase": "surface", "habitat": "\u043d\u043e\u0432\u044b\u0439 \u0443\u0447\u0435\u0431\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c",
     })
     assert mission.status_code == 200, mission.text
     second = run(app, crew_id)

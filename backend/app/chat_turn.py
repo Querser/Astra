@@ -15,8 +15,8 @@ from app.research_data import research_context_for
 NUM_CTX = 8192
 NUM_PREDICT = 1000
 INPUT_BUDGET = NUM_CTX - NUM_PREDICT - 392
-SUMMARY = re.compile(r"прогноз|динамик|проанализируй.*(?:измерения|показатели)|сводк|подведи итог|резюм|что (?:известно|выяснилось)|обобщи|forecast|trend|analys[ei]|summari[sz]e|summary|all (?:my )?(?:measurements|readings|indicators)", re.I)
-YES_NO = re.compile(r"(?:да|нет|неа|нету|ага|не было|не наблюдал[аи]?|yes|yeah|yep|no|nope)[.!\s]*", re.I)
+SUMMARY = re.compile(r"\u043f\u0440\u043e\u0433\u043d\u043e\u0437|\u0434\u0438\u043d\u0430\u043c\u0438\u043a|\u043f\u0440\u043e\u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0443\u0439.*(?:\u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f|\u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u0438)|\u0441\u0432\u043e\u0434\u043a|\u043f\u043e\u0434\u0432\u0435\u0434\u0438 \u0438\u0442\u043e\u0433|\u0440\u0435\u0437\u044e\u043c|\u0447\u0442\u043e (?:\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e|\u0432\u044b\u044f\u0441\u043d\u0438\u043b\u043e\u0441\u044c)|\u043e\u0431\u043e\u0431\u0449\u0438|forecast|trend|analys[ei]|summari[sz]e|summary|all (?:my )?(?:measurements|readings|indicators)", re.I)
+YES_NO = re.compile(r"(?:\u0434\u0430|\u043d\u0435\u0442|\u043d\u0435\u0430|\u043d\u0435\u0442\u0443|\u0430\u0433\u0430|\u043d\u0435 \u0431\u044b\u043b\u043e|\u043d\u0435 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u043b[\u0430\u0438]?|yes|yeah|yep|no|nope)[.!\s]*", re.I)
 LABELS = {
     "abdominal_pain": "Abdominal pain", "headache": "Headache", "pain_score": "Pain intensity",
     "pain_course": "Pain change", "onset": "Onset of pain", "blood_pressure": "Pressure",
@@ -63,9 +63,9 @@ def describe_fact(fact):
         detail = f"{value[0]}/{value[1]} mm Hg"
     else:
         detail = {
-            "прошла": "resolved", "почти нет": "almost none", "нет": "none",
-            "палец": "finger", "рука": "arm", "не уточнено": "not specified",
-            "сейчас": "now", "утром": "this morning", "час назад": "one hour ago",
+            "\u043f\u0440\u043e\u0448\u043b\u0430": "resolved", "\u043f\u043e\u0447\u0442\u0438 \u043d\u0435\u0442": "almost none", "\u043d\u0435\u0442": "none",
+            "\u043f\u0430\u043b\u0435\u0446": "finger", "\u0440\u0443\u043a\u0430": "arm", "\u043d\u0435 \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u043e": "not specified",
+            "\u0441\u0435\u0439\u0447\u0430\u0441": "now", "\u0443\u0442\u0440\u043e\u043c": "this morning", "\u0447\u0430\u0441 \u043d\u0430\u0437\u0430\u0434": "one hour ago",
         }.get(str(value), str(value))
     return f"{LABELS.get(key, key)}: {detail}"
 
@@ -135,7 +135,7 @@ class Turn:
             if retry_reason in RETRY_HINTS:
                 instruction += " " + RETRY_HINTS[retry_reason]
         materials = "\n".join([self.required, *self.evidence]).strip()
-        latest_for_model = "Hello" if self.move == "greet" and re.search(r"[А-Яа-яЁё]", self.latest) else self.latest
+        latest_for_model = "Hello" if self.move == "greet" and re.search(r"[\u0410-\u042f\u0430-\u044f\u0401\u0451]", self.latest) else self.latest
         return [{"role": "system", "content": instruction},
                 {"role": "user", "content": (materials + "\nLatest user message:\n" if materials else "") + latest_for_model}]
 
@@ -155,28 +155,28 @@ def prepare(latest, previous, memory, topic, observations, analysis, *, bp_reque
                                changed.intersection(candidate_question.get("targets", []))) else {}
     pair = bool(q and short_answer)
     summary = bool(kind == "summary" or SUMMARY.search(latest))
-    radiation_mentioned = bool(re.search(r"радиац|излучен|облуч|доз|radiat|irradiat|dose", latest, re.I))
+    radiation_mentioned = bool(re.search(r"\u0440\u0430\u0434\u0438\u0430\u0446|\u0438\u0437\u043b\u0443\u0447\u0435\u043d|\u043e\u0431\u043b\u0443\u0447|\u0434\u043e\u0437|radiat|irradiat|dose", latest, re.I))
     radiation_effect = radiation_mentioned and bool(re.search(
-        r"на (?:меня|мне)|м[оё] здоровье|как.*влия|вред|последств|риск для меня|что со мной|affect|impact|harm|risk|my health|to me", latest, re.I))
+        r"\u043d\u0430 (?:\u043c\u0435\u043d\u044f|\u043c\u043d\u0435)|\u043c[\u043e\u0451] \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u0435|\u043a\u0430\u043a.*\u0432\u043b\u0438\u044f|\u0432\u0440\u0435\u0434|\u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432|\u0440\u0438\u0441\u043a \u0434\u043b\u044f \u043c\u0435\u043d\u044f|\u0447\u0442\u043e \u0441\u043e \u043c\u043d\u043e\u0439|affect|impact|harm|risk|my health|to me", latest, re.I))
     source_question = bool(re.search(
-        r"архив|radlab|osd[- ]?575|исследован|публичн|набор данных|данные прибора|"
-        r"последн.{0,30}(?:запис|измер)|"
-        r"радиац\w*.{0,50}(?:данн|измер|запис|покаж|окружающ)|"
-        r"(?:данн|измер|запис|покаж).{0,50}радиац|"
+        r"\u0430\u0440\u0445\u0438\u0432|radlab|osd[- ]?575|\u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d|\u043f\u0443\u0431\u043b\u0438\u0447\u043d|\u043d\u0430\u0431\u043e\u0440 \u0434\u0430\u043d\u043d\u044b\u0445|\u0434\u0430\u043d\u043d\u044b\u0435 \u043f\u0440\u0438\u0431\u043e\u0440\u0430|"
+        r"\u043f\u043e\u0441\u043b\u0435\u0434\u043d.{0,30}(?:\u0437\u0430\u043f\u0438\u0441|\u0438\u0437\u043c\u0435\u0440)|"
+        r"\u0440\u0430\u0434\u0438\u0430\u0446\w*.{0,50}(?:\u0434\u0430\u043d\u043d|\u0438\u0437\u043c\u0435\u0440|\u0437\u0430\u043f\u0438\u0441|\u043f\u043e\u043a\u0430\u0436|\u043e\u043a\u0440\u0443\u0436\u0430\u044e\u0449)|"
+        r"(?:\u0434\u0430\u043d\u043d|\u0438\u0437\u043c\u0435\u0440|\u0437\u0430\u043f\u0438\u0441|\u043f\u043e\u043a\u0430\u0436).{0,50}\u0440\u0430\u0434\u0438\u0430\u0446|"
         r"archive|latest.{0,30}(?:radiation|reading|measurement)|"
         r"radiation.{0,50}(?:data|reading|measurement|record|show|environment)|"
         r"(?:data|reading|measurement|record|show).{0,50}radiation", latest, re.I))
     source_followup = bool(re.search(
-        r"\b(?:эти|это|т[аео]кие|они|значения|показания|данные|лично|ко мне|мои|"
-        r"покажи|выведи|где|these|those|show|display|where|values|readings|mine)\b|"
-        r"да\s*[,!.]?\s*покажи|yes\s*[,!.]?\s*show|какие\s+значения|последн.{0,20}запис", latest, re.I))
+        r"\b(?:\u044d\u0442\u0438|\u044d\u0442\u043e|\u0442[\u0430\u0435\u043e]\u043a\u0438\u0435|\u043e\u043d\u0438|\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f|\u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438\u044f|\u0434\u0430\u043d\u043d\u044b\u0435|\u043b\u0438\u0447\u043d\u043e|\u043a\u043e \u043c\u043d\u0435|\u043c\u043e\u0438|"
+        r"\u043f\u043e\u043a\u0430\u0436\u0438|\u0432\u044b\u0432\u0435\u0434\u0438|\u0433\u0434\u0435|these|those|show|display|where|values|readings|mine)\b|"
+        r"\u0434\u0430\s*[,!.]?\s*\u043f\u043e\u043a\u0430\u0436\u0438|yes\s*[,!.]?\s*show|\u043a\u0430\u043a\u0438\u0435\s+\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f|\u043f\u043e\u0441\u043b\u0435\u0434\u043d.{0,20}\u0437\u0430\u043f\u0438\u0441", latest, re.I))
     personal_topic = bool(re.search(
-        r"болит|температур|пульс|давлени|сон|сплю|травм|кровотеч|ран[аеу]|сердц|дыхан|"
-        r"радиац.*(?:меня|мне|здоров|влия|вред|риск)|headache|fever|pulse|pressure|sleep|injur|bleed|wound|heart|breath|radiation.*(?:me|my|health|affect|risk)", latest, re.I))
+        r"\u0431\u043e\u043b\u0438\u0442|\u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440|\u043f\u0443\u043b\u044c\u0441|\u0434\u0430\u0432\u043b\u0435\u043d\u0438|\u0441\u043e\u043d|\u0441\u043f\u043b\u044e|\u0442\u0440\u0430\u0432\u043c|\u043a\u0440\u043e\u0432\u043e\u0442\u0435\u0447|\u0440\u0430\u043d[\u0430\u0435\u0443]|\u0441\u0435\u0440\u0434\u0446|\u0434\u044b\u0445\u0430\u043d|"
+        r"\u0440\u0430\u0434\u0438\u0430\u0446.*(?:\u043c\u0435\u043d\u044f|\u043c\u043d\u0435|\u0437\u0434\u043e\u0440\u043e\u0432|\u0432\u043b\u0438\u044f|\u0432\u0440\u0435\u0434|\u0440\u0438\u0441\u043a)|headache|fever|pulse|pressure|sleep|injur|bleed|wound|heart|breath|radiation.*(?:me|my|health|affect|risk)", latest, re.I))
     research_query = latest if source_question else research_focus if source_followup and research_focus and not personal_topic else ""
     research_materials = research_context_for(research_query) if research_query else []
     missing_bp = "blood_pressure_description" in active and "blood_pressure" not in active
-    greeting = bool(kind == "greeting" or re.fullmatch(r"(привет|здравствуй(?:те)?|добрый (день|вечер)|hello|hi|hey)[!.\s]*", latest, re.I))
+    greeting = bool(kind == "greeting" or re.fullmatch(r"(\u043f\u0440\u0438\u0432\u0435\u0442|\u0437\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439(?:\u0442\u0435)?|\u0434\u043e\u0431\u0440\u044b\u0439 (\u0434\u0435\u043d\u044c|\u0432\u0435\u0447\u0435\u0440)|hello|hi|hey)[!.\s]*", latest, re.I))
     system = (
         "You are ASTRA, an onboard health assistant. Respond in clear, natural English, "
         "even when the user or prior conversation is in Russian. Use brief plain sentences without Markdown. "
@@ -229,25 +229,25 @@ def prepare(latest, previous, memory, topic, observations, analysis, *, bp_reque
             "Do not confirm the diagnosis without examination. Recommend immediate in-person medical evaluation; "
             "Do not mention bleeding if it was not present in the current episode."
         )
-    elif topic == "head" and ("head_impact" in active or re.search(r"ударил|стукнул|ушиб", latest, re.I)):
+    elif topic == "head" and ("head_impact" in active or re.search(r"\u0443\u0434\u0430\u0440\u0438\u043b|\u0441\u0442\u0443\u043a\u043d\u0443\u043b|\u0443\u0448\u0438\u0431", latest, re.I)):
         move, step = "head_impact_update", (
             "Take into account head injury, pain intensity, absence of blood and already applied ice, if mentioned. "
             "Give the next short step from the head injury card. If the person says they feel normal, "
             "accept the response and name the signs of deterioration to watch for; do not ask again about how they are feeling."
         )
-    elif topic in {"fever", "fever_headache"} and re.search(r"выполняю действия|прижимаю|обработал|наложил", latest, re.I):
+    elif topic in {"fever", "fever_headache"} and re.search(r"\u0432\u044b\u043f\u043e\u043b\u043d\u044f\u044e \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f|\u043f\u0440\u0438\u0436\u0438\u043c\u0430\u044e|\u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043b|\u043d\u0430\u043b\u043e\u0436\u0438\u043b", latest, re.I):
         move, step = "acknowledge_action", (
             "Confirm that you heard about actions with a small cut. Do not repeat previous instructions about the wound. "
             "Returning to the new complaint of fever, ask only what number the thermometer shows now."
         )
-    elif topic in {"fever", "fever_headache"} or re.search(r"темпиратур|температур|\bжар\b", latest, re.I):
+    elif topic in {"fever", "fever_headache"} or re.search(r"\u0442\u0435\u043c\u043f\u0438\u0440\u0430\u0442\u0443\u0440|\u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440|\b\u0436\u0430\u0440\b", latest, re.I):
         move, step = "temperature_update", (
             "This is a new complaint of fever. Do not attribute fever to the recent small cut and do not return to stopping the bleeding. "
             "Ask to measure temperature and name the number; feeling of heat on its own does not give an exact value."
         )
     elif summary:
         move, step = "summary", "Summarize briefly and coherently based on available records. Include explicitly named symptoms and denials, but do not claim there are no complaints if this is not stated."
-        if re.search(r"измерени|прогноз|динамик|показател|measurement|reading|forecast|trend|indicator", latest, re.I):
+        if re.search(r"\u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438|\u043f\u0440\u043e\u0433\u043d\u043e\u0437|\u0434\u0438\u043d\u0430\u043c\u0438\u043a|\u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b|measurement|reading|forecast|trend|indicator", latest, re.I):
             step += (" Answer three parts of the question in concise prose: what changed between the first and last measurement, "
                      "what requires attention based on the provided diagnostic candidates and why, "
                      "what numerical forecasts are available for explicitly stated horizons. "
@@ -264,7 +264,7 @@ def prepare(latest, previous, memory, topic, observations, analysis, *, bp_reque
                  if "pain_course" in changed or "pain_course" in q.get("targets", []) else
                  "Ask the user to choose a specific option, formulate the options from the question."))
     elif missing_bp and (changed.intersection({"associated_symptoms", "vomiting"}) or pair):
-        if bp_requested or re.search(r"тонометр|два числа|blood pressure monitor|two numbers", previous, re.I):
+        if bp_requested or re.search(r"\u0442\u043e\u043d\u043e\u043c\u0435\u0442\u0440|\u0434\u0432\u0430 \u0447\u0438\u0441\u043b\u0430|blood pressure monitor|two numbers", previous, re.I):
             move, step = "acknowledge", ("Start your response with the words «I took note of the clarification». Then, in one sentence, tell them "
                                          "which symptoms the interlocutor confirmed or excluded in the last reply.")
         else:
@@ -350,7 +350,7 @@ def prepare(latest, previous, memory, topic, observations, analysis, *, bp_reque
             if add("Reference", [excerpt.source_ref, excerpt.text]):
                 turn.references.append(excerpt.text)
                 turn.source_refs.append(excerpt.source_ref)
-    if move not in {"clarify", "ask_bp", "ask_symptoms", "greet"} and (move in {"research", "radiation_effect"} or re.search(r"космич|радиац|излучен|микрогравитац|орбит|стандарт|space|radiat|microgravity|orbit|standard", latest, re.I)):
+    if move not in {"clarify", "ask_bp", "ask_symptoms", "greet"} and (move in {"research", "radiation_effect"} or re.search(r"\u043a\u043e\u0441\u043c\u0438\u0447|\u0440\u0430\u0434\u0438\u0430\u0446|\u0438\u0437\u043b\u0443\u0447\u0435\u043d|\u043c\u0438\u043a\u0440\u043e\u0433\u0440\u0430\u0432\u0438\u0442\u0430\u0446|\u043e\u0440\u0431\u0438\u0442|\u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442|space|radiat|microgravity|orbit|standard", latest, re.I)):
         for excerpt in retrieve_space_science(topic, latest):
             if add("Science reference", [excerpt.source_ref, excerpt.text]):
                 turn.references.append(excerpt.text)
@@ -365,7 +365,7 @@ def prepare(latest, previous, memory, topic, observations, analysis, *, bp_reque
                 value = describe_fact(f)
                 if add("Known fact", value):
                     turn.user_facts.append(value)
-        profile_summary = summary and bool(re.search(r"измерени|прогноз|динамик|показател|measurement|reading|forecast|trend|indicator", latest, re.I))
+        profile_summary = summary and bool(re.search(r"\u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438|\u043f\u0440\u043e\u0433\u043d\u043e\u0437|\u0434\u0438\u043d\u0430\u043c\u0438\u043a|\u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b|measurement|reading|forecast|trend|indicator", latest, re.I))
         for data in profile_context(observations, analysis, topic, profile_summary):
             if topic == "fever_headache" and not profile_summary and "body_temperature" not in active and data.get("metric") == "body_temperature":
                 # A value recorded before this episode cannot establish the
@@ -391,12 +391,12 @@ def repeated_answer(text, previous):
 
 
 TIME = re.compile(
-    r"(?<!\w)(?:(?P<before>через|спустя|каждые|каждую|за|после|в течение|не менее|минимум|"
+    r"(?<!\w)(?:(?P<before>\u0447\u0435\u0440\u0435\u0437|\u0441\u043f\u0443\u0441\u0442\u044f|\u043a\u0430\u0436\u0434\u044b\u0435|\u043a\u0430\u0436\u0434\u0443\u044e|\u0437\u0430|\u043f\u043e\u0441\u043b\u0435|\u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435|\u043d\u0435 \u043c\u0435\u043d\u0435\u0435|\u043c\u0438\u043d\u0438\u043c\u0443\u043c|"
     r"in|after|within|every|for|at least)\s+)?"
     r"(?P<number>\d+(?:[.,]\d+)?|an?|one|two|three|four|five|six|seven|eight|nine|ten|twelve)\s*"
-    r"(?P<unit>минут\w*|мин\b|час\w*|ч\b|сут\w*|дн\w*|день\b|дня\b|дней\b|"
-    r"секунд\w*|minutes?\b|mins?\b|hours?\b|hrs?\b|days?\b|seconds?\b|secs?\b)"
-    r"(?:\s+(?P<after>ago|назад))?", re.I,
+    r"(?P<unit>\u043c\u0438\u043d\u0443\u0442\w*|\u043c\u0438\u043d\b|\u0447\u0430\u0441\w*|\u0447\b|\u0441\u0443\u0442\w*|\u0434\u043d\w*|\u0434\u0435\u043d\u044c\b|\u0434\u043d\u044f\b|\u0434\u043d\u0435\u0439\b|"
+    r"\u0441\u0435\u043a\u0443\u043d\u0434\w*|minutes?\b|mins?\b|hours?\b|hrs?\b|days?\b|seconds?\b|secs?\b)"
+    r"(?:\s+(?P<after>ago|\u043d\u0430\u0437\u0430\u0434))?", re.I,
 )
 
 
@@ -406,11 +406,11 @@ def time_constraints(text):
              "nine": "9", "ten": "10", "twelve": "12"}
     for match in TIME.finditer(text):
         unit = match["unit"].casefold()
-        if unit.startswith(("мин", "min")):
+        if unit.startswith(("\u043c\u0438\u043d", "min")):
             canonical = "min"
-        elif unit.startswith(("час", "ч", "hour", "hr")):
+        elif unit.startswith(("\u0447\u0430\u0441", "\u0447", "hour", "hr")):
             canonical = "h"
-        elif unit.startswith(("сут", "дн", "день", "дня", "дней", "day")):
+        elif unit.startswith(("\u0441\u0443\u0442", "\u0434\u043d", "\u0434\u0435\u043d\u044c", "\u0434\u043d\u044f", "\u0434\u043d\u0435\u0439", "day")):
             canonical = "day"
         else:
             canonical = "sec"
@@ -429,18 +429,18 @@ def validate(answer, turn):
     # complete point, rather than an empty "Showing" acknowledgement.
     if repeated_answer(answer, turn.previous) and turn.move != "research":
         return "repeated_answer"
-    if turn.move == "severe_headache" and not re.search(r"срочн|немедлен|без\s+промедлен|urgent|immediate|without delay", answer, re.I):
+    if turn.move == "severe_headache" and not re.search(r"\u0441\u0440\u043e\u0447\u043d|\u043d\u0435\u043c\u0435\u0434\u043b\u0435\u043d|\u0431\u0435\u0437\s+\u043f\u0440\u043e\u043c\u0435\u0434\u043b\u0435\u043d|urgent|immediate|without delay", answer, re.I):
         return "missing_severe_headache_response"
     if re.search(r"\*\*|^\s*#{1,3}\s|^\s*[-•]\s", answer, re.M):
         return "formatted_answer"
-    if re.search(r"\b(?:нормально|в порядке|хорошо|fine|okay|ok|well)\b", turn.latest, re.I) and re.search(r"как\s+(?:ты\s+|вы\s+)?себя\s+чувству|how (?:do|are) you feel", answer, re.I):
+    if re.search(r"\b(?:\u043d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u043e|\u0432 \u043f\u043e\u0440\u044f\u0434\u043a\u0435|\u0445\u043e\u0440\u043e\u0448\u043e|fine|okay|ok|well)\b", turn.latest, re.I) and re.search(r"\u043a\u0430\u043a\s+(?:\u0442\u044b\s+|\u0432\u044b\s+)?\u0441\u0435\u0431\u044f\s+\u0447\u0443\u0432\u0441\u0442\u0432\u0443|how (?:do|are) you feel", answer, re.I):
         return "repeated_checkin"
-    if any("Amount of blood: almost none" in row or "Количество крови: почти нет" in row for row in [*turn.user_facts, *turn.evidence]):
-        if re.search(r"сильн\w*\s+(?:наружн\w*\s+)?кровотеч|кровь\s+бь[её]т\s+(?:стру|фонтан)|severe (?:external )?bleeding|blood (?:is )?spurting", answer, re.I):
+    if any("Amount of blood: almost none" in row or "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u0440\u043e\u0432\u0438: \u043f\u043e\u0447\u0442\u0438 \u043d\u0435\u0442" in row for row in [*turn.user_facts, *turn.evidence]):
+        if re.search(r"\u0441\u0438\u043b\u044c\u043d\w*\s+(?:\u043d\u0430\u0440\u0443\u0436\u043d\w*\s+)?\u043a\u0440\u043e\u0432\u043e\u0442\u0435\u0447|\u043a\u0440\u043e\u0432\u044c\s+\u0431\u044c[\u0435\u0451]\u0442\s+(?:\u0441\u0442\u0440\u0443|\u0444\u043e\u043d\u0442\u0430\u043d)|severe (?:external )?bleeding|blood (?:is )?spurting", answer, re.I):
             return "unsupported_severity"
-    if re.match(r"^(?:я (?:не могу|отказываюсь) (?:отвечать|помочь|обсуждать)|i (?:cannot|can't) help)", answer, re.I):
+    if re.match(r"^(?:\u044f (?:\u043d\u0435 \u043c\u043e\u0433\u0443|\u043e\u0442\u043a\u0430\u0437\u044b\u0432\u0430\u044e\u0441\u044c) (?:\u043e\u0442\u0432\u0435\u0447\u0430\u0442\u044c|\u043f\u043e\u043c\u043e\u0447\u044c|\u043e\u0431\u0441\u0443\u0436\u0434\u0430\u0442\u044c)|i (?:cannot|can't) help)", answer, re.I):
         return "model_refusal"
-    if re.search(r"[А-Яа-яЁё]", answer):
+    if re.search(r"[\u0410-\u042f\u0430-\u044f\u0401\u0451]", answer):
         return "wrong_language"
     if re.search(r"Ask one still unanswered question|The meaning of the next move|Question related to this move", answer, re.I):
         return "instruction_echo"
@@ -451,46 +451,46 @@ def validate(answer, turn):
     for clock in re.findall(r"(?<!\d)([0-2]?\d:[0-5]\d(?::[0-5]\d)?)(?!\d)", answer):
         if clock not in materials:
             return "unsupported_clock"
-    if re.search(r"марсианск\w*\s+времен|Martian time", answer, re.I) and not re.search(r"марсианск\w*\s+времен|Martian time", materials, re.I):
+    if re.search(r"\u043c\u0430\u0440\u0441\u0438\u0430\u043d\u0441\u043a\w*\s+\u0432\u0440\u0435\u043c\u0435\u043d|Martian time", answer, re.I) and not re.search(r"\u043c\u0430\u0440\u0441\u0438\u0430\u043d\u0441\u043a\w*\s+\u0432\u0440\u0435\u043c\u0435\u043d|Martian time", materials, re.I):
         return "unsupported_clock"
     if turn.move == "research" and any(ref.startswith("research:RadLab") for ref in turn.source_refs):
         has_value = bool(re.search(r"\b6[.,]57\d*\b", answer))
-        has_unit = bool(re.search(r"(?:µ|мк)\s*Gy\s*/\s*(?:hour|h)|мкГр\s*/\s*ч", answer, re.I))
+        has_unit = bool(re.search(r"(?:µ|\u043c\u043a)\s*Gy\s*/\s*(?:hour|h)|\u043c\u043a\u0413\u0440\s*/\s*\u0447", answer, re.I))
         has_stamp = "2022-04-02" in answer and "01:04:40" in answer
         if not (has_value and has_unit and has_stamp):
             return "incomplete_research_answer"
     if turn.move == "radiation_effect":
-        if not (re.search(r"(?:личн|персонал)\w*.{0,50}доз|доз\w*.{0,50}(?:личн|персонал)|(?:personal|individual)\s+(?:radiation\s+)?dose|(?:personal|individual).{0,50}dosimetry", answer, re.I)
-                and re.search(r"рак|онколог|опухол|cancer|malignan", answer, re.I)):
+        if not (re.search(r"(?:\u043b\u0438\u0447\u043d|\u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b)\w*.{0,50}\u0434\u043e\u0437|\u0434\u043e\u0437\w*.{0,50}(?:\u043b\u0438\u0447\u043d|\u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b)|(?:personal|individual)\s+(?:radiation\s+)?dose|(?:personal|individual).{0,50}dosimetry", answer, re.I)
+                and re.search(r"\u0440\u0430\u043a|\u043e\u043d\u043a\u043e\u043b\u043e\u0433|\u043e\u043f\u0443\u0445\u043e\u043b|cancer|malignan", answer, re.I)):
             return "incomplete_radiation_effect"
-    if turn.move == "clarify" and (not re.search(r"\?|(?:напишите|уточните|скажите|укажите|выберите|ответьте|please tell|please choose|write|clarify)", answer, re.I) or len(answer) > 260):
+    if turn.move == "clarify" and (not re.search(r"\?|(?:\u043d\u0430\u043f\u0438\u0448\u0438\u0442\u0435|\u0443\u0442\u043e\u0447\u043d\u0438\u0442\u0435|\u0441\u043a\u0430\u0436\u0438\u0442\u0435|\u0443\u043a\u0430\u0436\u0438\u0442\u0435|\u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435|\u043e\u0442\u0432\u0435\u0442\u044c\u0442\u0435|please tell|please choose|write|clarify)", answer, re.I) or len(answer) > 260):
         return "ambiguous_answer"
-    if (turn.move == "clarify" and ("боль проходит или всё ещё держится" in turn.required or "pain gone or is it still present" in turn.required)
-            and not re.search(r"(?:проходит|стихает|прошла|ослаб)\b.*\bили\b.*(?:держится|остал|сохраня|болит|продолжа)|(?:gone|improv|better).{0,60}\bor\b.{0,60}(?:still|present|continues|hurts)", answer, re.I)):
+    if (turn.move == "clarify" and ("\u0431\u043e\u043b\u044c \u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442 \u0438\u043b\u0438 \u0432\u0441\u0451 \u0435\u0449\u0451 \u0434\u0435\u0440\u0436\u0438\u0442\u0441\u044f" in turn.required or "pain gone or is it still present" in turn.required)
+            and not re.search(r"(?:\u043f\u0440\u043e\u0445\u043e\u0434\u0438\u0442|\u0441\u0442\u0438\u0445\u0430\u0435\u0442|\u043f\u0440\u043e\u0448\u043b\u0430|\u043e\u0441\u043b\u0430\u0431)\b.*\b\u0438\u043b\u0438\b.*(?:\u0434\u0435\u0440\u0436\u0438\u0442\u0441\u044f|\u043e\u0441\u0442\u0430\u043b|\u0441\u043e\u0445\u0440\u0430\u043d\u044f|\u0431\u043e\u043b\u0438\u0442|\u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430)|(?:gone|improv|better).{0,60}\bor\b.{0,60}(?:still|present|continues|hurts)", answer, re.I)):
         return "ambiguous_answer"
     if turn.move == "ask_bp" and not (
-        re.search(r"числ|цифр|значени|показал|результат|верхн|number|reading|value|show", answer, re.I)
-        and re.search(r"когда|время|во сколько|when|what time", answer, re.I) and "?" in answer
+        re.search(r"\u0447\u0438\u0441\u043b|\u0446\u0438\u0444\u0440|\u0437\u043d\u0430\u0447\u0435\u043d\u0438|\u043f\u043e\u043a\u0430\u0437\u0430\u043b|\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442|\u0432\u0435\u0440\u0445\u043d|number|reading|value|show", answer, re.I)
+        and re.search(r"\u043a\u043e\u0433\u0434\u0430|\u0432\u0440\u0435\u043c\u044f|\u0432\u043e \u0441\u043a\u043e\u043b\u044c\u043a\u043e|when|what time", answer, re.I) and "?" in answer
     ):
         return "missing_measurement_question"
     if turn.move == "ask_symptoms" and not (
         answer.strip().endswith("?") and len(answer) < 180 and not re.search(r"[.!]", answer)
-        and re.search(r"симптом|тошн|рвот|головокруж|symptom|nausea|vomit|dizz", answer, re.I)
-        and not re.search(r"усилил|отсутствуют|нет симптомов|не наблюдается|no symptoms are present", answer, re.I)
+        and re.search(r"\u0441\u0438\u043c\u043f\u0442\u043e\u043c|\u0442\u043e\u0448\u043d|\u0440\u0432\u043e\u0442|\u0433\u043e\u043b\u043e\u0432\u043e\u043a\u0440\u0443\u0436|symptom|nausea|vomit|dizz", answer, re.I)
+        and not re.search(r"\u0443\u0441\u0438\u043b\u0438\u043b|\u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442|\u043d\u0435\u0442 \u0441\u0438\u043c\u043f\u0442\u043e\u043c\u043e\u0432|\u043d\u0435 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u0442\u0441\u044f|no symptoms are present", answer, re.I)
     ):
         return "missing_symptom_question"
-    if turn.move == "correction" and any(f.startswith(("Pain intensity:", "Сила боли:")) for f in turn.user_facts):
-        score = next(f.split(": ", 1)[1].split("/")[0] for f in turn.user_facts if f.startswith(("Pain intensity:", "Сила боли:")))
-        if not re.search(rf"\b{re.escape(score)}\s*(?:/\s*10|из\s+10|балл|out of 10|points?)", answer, re.I) or re.search(r"тонометр|давлен|два числа|blood pressure monitor|blood pressure", answer, re.I):
+    if turn.move == "correction" and any(f.startswith(("Pain intensity:", "\u0421\u0438\u043b\u0430 \u0431\u043e\u043b\u0438:")) for f in turn.user_facts):
+        score = next(f.split(": ", 1)[1].split("/")[0] for f in turn.user_facts if f.startswith(("Pain intensity:", "\u0421\u0438\u043b\u0430 \u0431\u043e\u043b\u0438:")))
+        if not re.search(rf"\b{re.escape(score)}\s*(?:/\s*10|\u0438\u0437\s+10|\u0431\u0430\u043b\u043b|out of 10|points?)", answer, re.I) or re.search(r"\u0442\u043e\u043d\u043e\u043c\u0435\u0442\u0440|\u0434\u0430\u0432\u043b\u0435\u043d|\u0434\u0432\u0430 \u0447\u0438\u0441\u043b\u0430|blood pressure monitor|blood pressure", answer, re.I):
             return "unacknowledged_correction"
     if turn.move == "reading":
-        clock = next((f.split(": ", 1)[1] for f in turn.user_facts if f.startswith(("Time of measurement:", "Время измерения:"))), "")
+        clock = next((f.split(": ", 1)[1] for f in turn.user_facts if f.startswith(("Time of measurement:", "\u0412\u0440\u0435\u043c\u044f \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f:"))), "")
         if clock and clock.casefold() not in answer.casefold():
             return "missing_measurement_time"
-    if turn.move == "acknowledge" and re.search(r"давлени|тонометр|цифры|показани|blood pressure|monitor reading", answer, re.I):
+    if turn.move == "acknowledge" and re.search(r"\u0434\u0430\u0432\u043b\u0435\u043d\u0438|\u0442\u043e\u043d\u043e\u043c\u0435\u0442\u0440|\u0446\u0438\u0444\u0440\u044b|\u043f\u043e\u043a\u0430\u0437\u0430\u043d\u0438|blood pressure|monitor reading", answer, re.I):
         return "unrelated_measurement"
-    if turn.move in {"food_update", "summary"} and any(f in turn.user_facts for f in ("Diarrhea: absent", "Диарея: нет")):
-        if re.search(r"(?:не\s*известно|неясно|уточни|есть ли|бы[лв]а ли)[^.?!\n]{0,48}(?:диаре|понос)|(?:unknown|unclear|do you have|have you had).{0,48}diarrh", answer, re.I):
+    if turn.move in {"food_update", "summary"} and any(f in turn.user_facts for f in ("Diarrhea: absent", "\u0414\u0438\u0430\u0440\u0435\u044f: \u043d\u0435\u0442")):
+        if re.search(r"(?:\u043d\u0435\s*\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e|\u043d\u0435\u044f\u0441\u043d\u043e|\u0443\u0442\u043e\u0447\u043d\u0438|\u0435\u0441\u0442\u044c \u043b\u0438|\u0431\u044b[\u043b\u0432]\u0430 \u043b\u0438)[^.?!\n]{0,48}(?:\u0434\u0438\u0430\u0440\u0435|\u043f\u043e\u043d\u043e\u0441)|(?:unknown|unclear|do you have|have you had).{0,48}diarrh", answer, re.I):
             return "contradicted_patient_fact"
     # Check each reported pressure pair against the actual material included on
     # this turn, not unrelated past turns or record identifiers.
@@ -517,21 +517,21 @@ def validate(answer, turn):
                        72: {("72", "h"), ("3", "day")},
                        168: {("168", "h"), ("7", "day")}}
     def direction(marker):
-        if marker in {"за", "before"}:
+        if marker in {"\u0437\u0430", "before"}:
             return "before"
-        if marker in {"через", "спустя", "после", "in", "after"}:
+        if marker in {"\u0447\u0435\u0440\u0435\u0437", "\u0441\u043f\u0443\u0441\u0442\u044f", "\u043f\u043e\u0441\u043b\u0435", "in", "after"}:
             return "after"
-        if marker in {"в течение", "within", "for"}:
+        if marker in {"\u0432 \u0442\u0435\u0447\u0435\u043d\u0438\u0435", "within", "for"}:
             return "duration"
         return marker
 
     clinical_values = {(direction(marker), number, unit) for marker, number, unit in clinical}
     reported_values = {(number, unit) for _, number, unit in reported}
-    if re.search(r"\b(?:час назад|one hour ago|an hour ago)\b", "\n".join([turn.latest, *turn.user_facts]), re.I):
+    if re.search(r"\b(?:\u0447\u0430\u0441 \u043d\u0430\u0437\u0430\u0434|one hour ago|an hour ago)\b", "\n".join([turn.latest, *turn.user_facts]), re.I):
         reported_values.add(("1", "h"))
     for sentence in re.split(r"(?<=[.?!;])\s+|\n", answer):
         directive = bool(re.search(
-            r"повтор|измерь|измерьте|обратит|сообщите|следует|проверь|ждите|подожд|нужно|наблюда|контрол|"
+            r"\u043f\u043e\u0432\u0442\u043e\u0440|\u0438\u0437\u043c\u0435\u0440\u044c|\u0438\u0437\u043c\u0435\u0440\u044c\u0442\u0435|\u043e\u0431\u0440\u0430\u0442\u0438\u0442|\u0441\u043e\u043e\u0431\u0449\u0438\u0442\u0435|\u0441\u043b\u0435\u0434\u0443\u0435\u0442|\u043f\u0440\u043e\u0432\u0435\u0440\u044c|\u0436\u0434\u0438\u0442\u0435|\u043f\u043e\u0434\u043e\u0436\u0434|\u043d\u0443\u0436\u043d\u043e|\u043d\u0430\u0431\u043b\u044e\u0434\u0430|\u043a\u043e\u043d\u0442\u0440\u043e\u043b|"
             r"\b(?:repeat|measure|contact|report|should|check|wait|monitor|return|seek)\b",
             sentence, re.I,
         ))

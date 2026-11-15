@@ -18,8 +18,8 @@ SOURCE_VERSION = "forecast-varied-demo-1"
 GRADUAL_NAME = "ASTRA — forecast: gradual change"
 RECOVERY_NAME = "ASTRA — forecast: recovery"
 LEGACY_NAMES = {
-    GRADUAL_NAME: "ASTRA — прогноз: постепенное изменение",
-    RECOVERY_NAME: "ASTRA — прогноз: восстановление",
+    GRADUAL_NAME: "ASTRA — \u043f\u0440\u043e\u0433\u043d\u043e\u0437: \u043f\u043e\u0441\u0442\u0435\u043f\u0435\u043d\u043d\u043e\u0435 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435",
+    RECOVERY_NAME: "ASTRA — \u043f\u0440\u043e\u0433\u043d\u043e\u0437: \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435",
 }
 PROFILES = {
     GRADUAL_NAME: ("moon", "surface", "fictional lunar habitat"),

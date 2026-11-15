@@ -32,11 +32,11 @@ def review_complaints(reports: list[dict[str, Any]]) -> tuple[list[dict[str, Any
         description = str(report.get("description", ""))
         codes = symptom_codes(description)
         normalized = normalize_english(description).casefold()
-        cut = bool(re.search(r"\b(?:порез\w*|ран\w*|царап\w*)\b", normalized))
-        finger = bool(re.search(r"\b(?:палец|пальц\w*|finger)\b", normalized))
-        arm = bool(re.search(r"\b(?:рук\w*|предплеч\w*|локт\w*|finger|hand|arm|wrist)\b", normalized))
-        elbow = bool(re.search(r"\bлокт\w*\b|\belbow\b", normalized))
-        dark = bool(re.search(r"\bт[её]мн\w*\s+кров\w*\b|\bdark blood\b", normalized))
+        cut = bool(re.search(r"\b(?:\u043f\u043e\u0440\u0435\u0437\w*|\u0440\u0430\u043d\w*|\u0446\u0430\u0440\u0430\u043f\w*)\b", normalized))
+        finger = bool(re.search(r"\b(?:\u043f\u0430\u043b\u0435\u0446|\u043f\u0430\u043b\u044c\u0446\w*|finger)\b", normalized))
+        arm = bool(re.search(r"\b(?:\u0440\u0443\u043a\w*|\u043f\u0440\u0435\u0434\u043f\u043b\u0435\u0447\w*|\u043b\u043e\u043a\u0442\w*|finger|hand|arm|wrist)\b", normalized))
+        elbow = bool(re.search(r"\b\u043b\u043e\u043a\u0442\w*\b|\belbow\b", normalized))
+        dark = bool(re.search(r"\b\u0442[\u0435\u0451]\u043c\u043d\w*\s+\u043a\u0440\u043e\u0432\w*\b|\bdark blood\b", normalized))
         visible_wound = cut and "external_bleeding" in codes
         location = "finger" if finger else "elbow area on the arm" if elbow and arm else "arm" if arm else None
         known = ["The complaint text is preserved verbatim; this is a message from the person, not the result of an examination."]

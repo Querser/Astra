@@ -43,12 +43,12 @@ def build_index() -> tuple[Excerpt, ...]:
 def retrieve(topic: str, latest: str, *, continuation: bool = False, pressure_detail: bool = False) -> list[Excerpt]:
     """Rank sections by the current information need, then take a bounded slice."""
     latest = latest.casefold()
-    if pressure_detail or re.search(r"давлени|тонометр|манжет|blood pressure|cuff", latest):
+    if pressure_detail or re.search(r"\u0434\u0430\u0432\u043b\u0435\u043d\u0438|\u0442\u043e\u043d\u043e\u043c\u0435\u0442\u0440|\u043c\u0430\u043d\u0436\u0435\u0442|blood pressure|cuff", latest):
         if topic not in {"head", "bleeding"}:
             topic = "blood_pressure"
-    if topic == "bleeding" and re.search(r"крови\s+почти\s+нет|кровь\s+почти\s+не|almost no blood|very little blood", latest):
+    if topic == "bleeding" and re.search(r"\u043a\u0440\u043e\u0432\u0438\s+\u043f\u043e\u0447\u0442\u0438\s+\u043d\u0435\u0442|\u043a\u0440\u043e\u0432\u044c\s+\u043f\u043e\u0447\u0442\u0438\s+\u043d\u0435|almost no blood|very little blood", latest):
         return [row for row in build_index() if row.topic == "bleeding" and row.section == "minor_actions"]
-    if topic == "headache" and re.search(r"(?:9|10)\s*/\s*10|что со мной|опух\w*\s+ше|ше[яию]\s+опух|what is wrong with me|swollen neck|neck swelling", latest):
+    if topic == "headache" and re.search(r"(?:9|10)\s*/\s*10|\u0447\u0442\u043e \u0441\u043e \u043c\u043d\u043e\u0439|\u043e\u043f\u0443\u0445\w*\s+\u0448\u0435|\u0448\u0435[\u044f\u0438\u044e]\s+\u043e\u043f\u0443\u0445|what is wrong with me|swollen neck|neck swelling", latest):
         return [row for row in build_index() if row.topic == "headache" and row.section in {"severe_differential", "red_flags"}]
     sections = {
         "blood_pressure": ["action_0"],
@@ -98,14 +98,14 @@ def retrieve_space_science(topic: str, latest: str, *, limit: int = 2) -> list[E
     """Choose cards for the current information need without loading a whole PDF."""
     query = latest.casefold()
     words = {word for word in re.findall(r"[\w₂]+", query) if len(word) >= 3}
-    inferred_topic = ("sleep" if re.search(r"\b(?:сплю|спал|спала|спать|высп\w*|бессон\w*|сон|сна|сне|sleep|slept|insomnia)\b", query)
-                      else "radiation" if re.search(r"радиац|излучен|облуч|доз|radiat|dose", query) else None)
+    inferred_topic = ("sleep" if re.search(r"\b(?:\u0441\u043f\u043b\u044e|\u0441\u043f\u0430\u043b|\u0441\u043f\u0430\u043b\u0430|\u0441\u043f\u0430\u0442\u044c|\u0432\u044b\u0441\u043f\w*|\u0431\u0435\u0441\u0441\u043e\u043d\w*|\u0441\u043e\u043d|\u0441\u043d\u0430|\u0441\u043d\u0435|sleep|slept|insomnia)\b", query)
+                      else "radiation" if re.search(r"\u0440\u0430\u0434\u0438\u0430\u0446|\u0438\u0437\u043b\u0443\u0447\u0435\u043d|\u043e\u0431\u043b\u0443\u0447|\u0434\u043e\u0437|radiat|dose", query) else None)
     scored = []
     for card in space_science_cards():
         terms = [str(item).casefold() for item in card.get("keywords", []) if len(str(item)) >= 3]
         topic_name = str(card.get("topic", "")).casefold()
         if topic_name == "environment" and topic != "environment":
-            if not re.search(r"co₂|co2|ppco2|кабин|атмосфер|воздух|отсек|сред[аыеу]|обитаем|скафандр|телеметр|стандарт|cabin|atmosphere|air|environment|spacesuit|telemetry|habitat|standard", latest.casefold()):
+            if not re.search(r"co₂|co2|ppco2|\u043a\u0430\u0431\u0438\u043d|\u0430\u0442\u043c\u043e\u0441\u0444\u0435\u0440|\u0432\u043e\u0437\u0434\u0443\u0445|\u043e\u0442\u0441\u0435\u043a|\u0441\u0440\u0435\u0434[\u0430\u044b\u0435\u0443]|\u043e\u0431\u0438\u0442\u0430\u0435\u043c|\u0441\u043a\u0430\u0444\u0430\u043d\u0434\u0440|\u0442\u0435\u043b\u0435\u043c\u0435\u0442\u0440|\u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442|cabin|atmosphere|air|environment|spacesuit|telemetry|habitat|standard", latest.casefold()):
                 continue
         title = str(card.get("title_ru", "")).casefold()
         score = sum(2 for term in terms if term in query)
@@ -115,9 +115,9 @@ def retrieve_space_science(topic: str, latest: str, *, limit: int = 2) -> list[E
         if topic_name == inferred_topic:
             score += 3
         stable_id = str(card.get("id", ""))
-        if stable_id == "HRP.RISK.RADIATION_CANCER" and re.search(r"влияет|вред|здоров|риск|последств|affect|harm|health|risk|consequence", query):
+        if stable_id == "HRP.RISK.RADIATION_CANCER" and re.search(r"\u0432\u043b\u0438\u044f\u0435\u0442|\u0432\u0440\u0435\u0434|\u0437\u0434\u043e\u0440\u043e\u0432|\u0440\u0438\u0441\u043a|\u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432|affect|harm|health|risk|consequence", query):
             score += 6
-        if stable_id == "CSA.RADIATION.CANS" and not re.search(r"cans|нейтрон|адаптер|будущ|разработ|neutron|adapter|future|develop", query):
+        if stable_id == "CSA.RADIATION.CANS" and not re.search(r"cans|\u043d\u0435\u0439\u0442\u0440\u043e\u043d|\u0430\u0434\u0430\u043f\u0442\u0435\u0440|\u0431\u0443\u0434\u0443\u0449|\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442|neutron|adapter|future|develop", query):
             score -= 3
         if score <= 0 and not any(word in title for word in words):
             continue

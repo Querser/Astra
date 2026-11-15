@@ -28,7 +28,7 @@ def request(app, method: str, path: str, data: dict | None = None) -> httpx.Resp
 
 
 def new_crew(app) -> str:
-    response = request(app, "POST", "/api/v1/crew", {"display_name": "Учебный профиль проверки"})
+    response = request(app, "POST", "/api/v1/crew", {"display_name": "\u0423\u0447\u0435\u0431\u043d\u044b\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438"})
     assert response.status_code == 201
     return response.json()["id"]
 
@@ -43,7 +43,7 @@ def add_manual_heart_rate(app, crew_id: str, value: float = 72) -> None:
 
 def test_elbow_report_preserves_provenance_and_conditional_steps(app) -> None:
     crew_id = new_crew(app)
-    complaint = "Порезал руку в районе локтя. Течет темная кровь"
+    complaint = "\u041f\u043e\u0440\u0435\u0437\u0430\u043b \u0440\u0443\u043a\u0443 \u0432 \u0440\u0430\u0439\u043e\u043d\u0435 \u043b\u043e\u043a\u0442\u044f. \u0422\u0435\u0447\u0435\u0442 \u0442\u0435\u043c\u043d\u0430\u044f \u043a\u0440\u043e\u0432\u044c"
     created = request(app, "POST", "/api/v1/manual/complaints", {
         "crew_member_id": crew_id, "description": complaint, "observed_at": "2030-01-01T01:02:00+00:00",
     })
@@ -70,7 +70,7 @@ def test_elbow_report_preserves_provenance_and_conditional_steps(app) -> None:
     assert "flight medic" in steps[-1]["statement"]
     assert "ambulance" not in str(steps).lower()
     assert report["scenario_comparison"]["status"] == "qualitative_conditional_not_individual_prediction"
-    assert "external_bleeding" not in symptom_codes("Не течет темная кровь")
+    assert "external_bleeding" not in symptom_codes("\u041d\u0435 \u0442\u0435\u0447\u0435\u0442 \u0442\u0435\u043c\u043d\u0430\u044f \u043a\u0440\u043e\u0432\u044c")
 
 
 def test_readiness_uses_explicit_criteria_and_unresolved_complaint(app) -> None:
@@ -79,7 +79,7 @@ def test_readiness_uses_explicit_criteria_and_unresolved_complaint(app) -> None:
     assert empty["status"] == "not_assessed"
     assert empty["criteria_configured"] is True
     mission = request(app, "PATCH", f"/api/v1/crew/{crew_id}/mission", {
-        "mission_location": "iss", "mission_phase": "orbit", "habitat": "учебный модуль",
+        "mission_location": "iss", "mission_phase": "orbit", "habitat": "\u0443\u0447\u0435\u0431\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c",
     })
     assert mission.status_code == 200
     add_manual_heart_rate(app, crew_id)
@@ -88,20 +88,20 @@ def test_readiness_uses_explicit_criteria_and_unresolved_complaint(app) -> None:
     assert clear["required_human_follow_up"] is True
     assert any("criticality" in value.lower() for value in clear["missing_data"])
     request(app, "POST", "/api/v1/manual/complaints", {
-        "crew_member_id": crew_id, "description": "Порезал руку в районе локтя. Течет темная кровь",
+        "crew_member_id": crew_id, "description": "\u041f\u043e\u0440\u0435\u0437\u0430\u043b \u0440\u0443\u043a\u0443 \u0432 \u0440\u0430\u0439\u043e\u043d\u0435 \u043b\u043e\u043a\u0442\u044f. \u0422\u0435\u0447\u0435\u0442 \u0442\u0435\u043c\u043d\u0430\u044f \u043a\u0440\u043e\u0432\u044c",
         "observed_at": "2030-01-01T01:02:00+00:00",
     })
     review = request(app, "GET", f"/api/v1/mission-readiness/{crew_id}").json()
     assert review["status"] == "conditional_review"
     bleeding = next(item for item in review["contributing_factors"] if item["criterion_id"] == "reported_bleeding")
     assert bleeding["met"] is False
-    assert "Порезал руку" in bleeding["evidence"]
+    assert "\u041f\u043e\u0440\u0435\u0437\u0430\u043b \u0440\u0443\u043a\u0443" in bleeding["evidence"]
     assert "not medical clearance" in review["criteria_scope"].lower()
 
 
 def test_forecast_has_independent_horizon_evaluation_and_russian_reasons(app) -> None:
     crew_id = new_crew(app)
-    source = request(app, "POST", "/api/v1/data-sources", {"title": "Синтетический ряд", "source_type": "synthetic"}).json()["id"]
+    source = request(app, "POST", "/api/v1/data-sources", {"title": "\u0421\u0438\u043d\u0442\u0435\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440\u044f\u0434", "source_type": "synthetic"}).json()["id"]
     for day in range(16):
         created = request(app, "POST", "/api/v1/observations", {
             "crew_member_id": crew_id, "source_id": source, "metric": "heart_rate",
@@ -123,10 +123,10 @@ def test_forecast_has_independent_horizon_evaluation_and_russian_reasons(app) ->
 def test_stale_last_value_prevents_clear_readiness(app) -> None:
     crew_id = new_crew(app)
     mission = request(app, "PATCH", f"/api/v1/crew/{crew_id}/mission", {
-        "mission_location": "moon", "mission_phase": "surface", "habitat": "учебный модуль",
+        "mission_location": "moon", "mission_phase": "surface", "habitat": "\u0443\u0447\u0435\u0431\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c",
     })
     assert mission.status_code == 200
-    source = request(app, "POST", "/api/v1/data-sources", {"title": "Тестовое измерение", "source_type": "synthetic"}).json()["id"]
+    source = request(app, "POST", "/api/v1/data-sources", {"title": "\u0422\u0435\u0441\u0442\u043e\u0432\u043e\u0435 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u0435", "source_type": "synthetic"}).json()["id"]
     record = request(app, "POST", "/api/v1/observations", {
         "crew_member_id": crew_id, "source_id": source, "metric": "heart_rate",
         "value": {"kind": "scalar", "amount": 73}, "unit": "bpm",

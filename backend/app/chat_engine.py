@@ -58,12 +58,12 @@ def reply_to_message(messages: list[str], observations: list[Observation], analy
                 "loss of consciousness, confusion, or a change in vision? When did the impact occur? "
                 "If symptoms are worsening, stop work and immediately call someone nearby and the flight medic.",
                 ["https://www.nhs.uk/conditions/head-injury-and-concussion/"])
-    if "external_bleeding" in codes or any(word in combined.casefold() for word in ("порез", "рана", "рану", "cut", "wound")):
+    if "external_bleeding" in codes or any(word in combined.casefold() for word in ("\u043f\u043e\u0440\u0435\u0437", "\u0440\u0430\u043d\u0430", "\u0440\u0430\u043d\u0443", "cut", "wound")):
         _, actions, _ = review_complaints([virtual_report])
         if actions:
             text = combined.casefold()
-            no_object = bool(re.search(r"(?:предмет\w*\s+в\s+ран\w*\s+нет|нет\s+(?:в\s+ран\w*\s+)?предмет\w*|предмет\w*\s+нет|no (?:object|foreign body) in the wound)", text))
-            embedded = not no_object and bool(re.search(r"(?:торчит|застрял|застрявш\w*)\s+(?:\w+\s+){0,2}(?:предмет|осколок)|предмет\s+в\s+ран\w*|(?:lodged|embedded) object", text))
+            no_object = bool(re.search(r"(?:\u043f\u0440\u0435\u0434\u043c\u0435\u0442\w*\s+\u0432\s+\u0440\u0430\u043d\w*\s+\u043d\u0435\u0442|\u043d\u0435\u0442\s+(?:\u0432\s+\u0440\u0430\u043d\w*\s+)?\u043f\u0440\u0435\u0434\u043c\u0435\u0442\w*|\u043f\u0440\u0435\u0434\u043c\u0435\u0442\w*\s+\u043d\u0435\u0442|no (?:object|foreign body) in the wound)", text))
+            embedded = not no_object and bool(re.search(r"(?:\u0442\u043e\u0440\u0447\u0438\u0442|\u0437\u0430\u0441\u0442\u0440\u044f\u043b|\u0437\u0430\u0441\u0442\u0440\u044f\u0432\u0448\w*)\s+(?:\w+\s+){0,2}(?:\u043f\u0440\u0435\u0434\u043c\u0435\u0442|\u043e\u0441\u043a\u043e\u043b\u043e\u043a)|\u043f\u0440\u0435\u0434\u043c\u0435\u0442\s+\u0432\s+\u0440\u0430\u043d\w*|(?:lodged|embedded) object", text))
             first_aid = ("You reported no object in the wound. Apply continuous direct pressure with a clean cloth. "
                          if no_object else "If an object is embedded, do not remove it; press around the wound edges. "
                          if embedded else "If there is no embedded object, press the wound with a clean cloth. If there is one, do not remove it; press around it. ")
@@ -79,7 +79,7 @@ def reply_to_message(messages: list[str], observations: list[Observation], analy
                 "If you measured blood pressure or temperature, provide the values with units. "
                 "In case of sudden severe pain or neurological symptoms, call for help immediately.",
                 ["https://www.nhs.uk/symptoms/headaches/"])
-    if any(token in current for token in ("spo2", "spо2", "spo₂", "spо₂", "сатурац", "кислород")):
+    if any(token in current for token in ("spo2", "sp\u043e2", "spo₂", "sp\u043e₂", "\u0441\u0430\u0442\u0443\u0440\u0430\u0446", "\u043a\u0438\u0441\u043b\u043e\u0440\u043e\u0434")):
         history = _oxygen_history(observations)
         return ((history or "There are no SpO₂ records in this profile yet. Please provide the values and dates of measurements.") +
                 " A published reference for most healthy people is 95–100%, but readings depend on measurement conditions and symptoms.", [FDA_URL])
@@ -91,7 +91,7 @@ def reply_to_message(messages: list[str], observations: list[Observation], analy
                 [source["url"] for source in candidate["sources"]])
     report = analysis.get("integrated_report") or {}
     saved = report.get("diagnostic_candidates") or []
-    if any(token in current for token in ("состояни", "анализ", "результат", "показател", "condition", "analysis", "result", "indicator")) and saved:
+    if any(token in current for token in ("\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438", "\u0430\u043d\u0430\u043b\u0438\u0437", "\u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442", "\u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b", "condition", "analysis", "result", "indicator")) and saved:
         candidate = saved[0]
         return (f"Preliminary assessment based on the profile history: {candidate['name']}. {candidate['evidence']} "
                 f"What to clarify: {' '.join(candidate['missing_confirmation'][:2])}",

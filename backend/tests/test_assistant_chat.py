@@ -50,18 +50,18 @@ def test_followup_head_injury_and_profile_isolation(app):
 
 def test_chat_episode_is_recorded_and_resolved_for_analysis(app):
     crew_id = call(app, "POST", "/api/v1/crew", {"display_name": "Resolution example"}).json()["id"]
-    opening = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "Болит голова"})
+    opening = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430"})
     assert opening.status_code == 201, opening.text
     source_id = opening.json()["messages"][0]["source_report_id"]
     assert source_id
-    update = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "Приложил лёд"})
+    update = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "\u041f\u0440\u0438\u043b\u043e\u0436\u0438\u043b \u043b\u0451\u0434"})
     assert update.status_code == 201, update.text
-    resolved = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "Боль прошла"})
+    resolved = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "\u0411\u043e\u043b\u044c \u043f\u0440\u043e\u0448\u043b\u0430"})
     assert resolved.status_code == 201, resolved.text
     episode = call(app, "GET", f"/api/v1/assistant/chat/{crew_id}/memory").json()["medical_history"][-1]
     assert episode["source_report_id"] == source_id
     assert episode["status"] == "resolved_by_user_report"
-    assert "Приложил лёд" in episode["helped"]
+    assert "\u041f\u0440\u0438\u043b\u043e\u0436\u0438\u043b \u043b\u0451\u0434" in episode["helped"]
     assert episode["assessment"]
     assert call(app, "GET", f"/api/v1/assistant/chat/{crew_id}").json()[0]["source_report_id"] == source_id
     refreshed = call(app, "POST", "/api/v1/analysis/run", {"crew_member_id": crew_id})
@@ -71,12 +71,12 @@ def test_chat_episode_is_recorded_and_resolved_for_analysis(app):
 
 def test_one_resolved_symptom_does_not_clear_another_active_symptom(app):
     crew_id = call(app, "POST", "/api/v1/crew", {"display_name": "Partial resolution example"}).json()["id"]
-    for message in ("Болит голова", "Шея опухла", "Боль прошла"):
+    for message in ("\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430", "\u0428\u0435\u044f \u043e\u043f\u0443\u0445\u043b\u0430", "\u0411\u043e\u043b\u044c \u043f\u0440\u043e\u0448\u043b\u0430"):
         result = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": message})
         assert result.status_code == 201, result.text
     episode = call(app, "GET", f"/api/v1/assistant/chat/{crew_id}/memory").json()["medical_history"][-1]
     assert episode["status"] == "active"
-    final = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "Всё прошло"})
+    final = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "\u0412\u0441\u0451 \u043f\u0440\u043e\u0448\u043b\u043e"})
     assert final.status_code == 201, final.text
     episode = call(app, "GET", f"/api/v1/assistant/chat/{crew_id}/memory").json()["medical_history"][-1]
     assert episode["status"] == "resolved_by_user_report"
@@ -85,14 +85,14 @@ def test_one_resolved_symptom_does_not_clear_another_active_symptom(app):
 def test_abdominal_complaint_closes_and_recurs_as_new_medical_episode(app):
     crew_id = call(app, "POST", "/api/v1/crew", {"display_name": "Abdominal recurrence example"}).json()["id"]
     first = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id,
-                                                   "message": "Болит живот, съел несвежую еду, боль 5/10"})
+                                                   "message": "\u0411\u043e\u043b\u0438\u0442 \u0436\u0438\u0432\u043e\u0442, \u0441\u044a\u0435\u043b \u043d\u0435\u0441\u0432\u0435\u0436\u0443\u044e \u0435\u0434\u0443, \u0431\u043e\u043b\u044c 5/10"})
     assert first.status_code == 201, first.text
-    resolved = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "живот прошел"})
+    resolved = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "\u0436\u0438\u0432\u043e\u0442 \u043f\u0440\u043e\u0448\u0435\u043b"})
     assert resolved.status_code == 201, resolved.text
     episodes = call(app, "GET", f"/api/v1/assistant/chat/{crew_id}/memory").json()["medical_history"]
     assert episodes[-1]["status"] == "resolved_by_user_report"
     again = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id,
-                                                   "message": "Снова болит живот, боль 2/10"})
+                                                   "message": "\u0421\u043d\u043e\u0432\u0430 \u0431\u043e\u043b\u0438\u0442 \u0436\u0438\u0432\u043e\u0442, \u0431\u043e\u043b\u044c 2/10"})
     assert again.status_code == 201, again.text
     episodes = call(app, "GET", f"/api/v1/assistant/chat/{crew_id}/memory").json()["medical_history"]
     assert len(episodes) == 2
@@ -103,11 +103,11 @@ def test_abdominal_complaint_closes_and_recurs_as_new_medical_episode(app):
 
 def test_old_same_topic_recurrence_is_repaired_before_new_summary(app):
     crew_id = call(app, "POST", "/api/v1/crew", {"display_name": "Legacy recurrence example"}).json()["id"]
-    first = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "Болит живот"})
+    first = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id, "message": "\u0411\u043e\u043b\u0438\u0442 \u0436\u0438\u0432\u043e\u0442"})
     assert first.status_code == 201
     old_id = first.json()["messages"][0]["source_report_id"]
     assert call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id,
-                                                         "message": "живот прошел"}).status_code == 201
+                                                         "message": "\u0436\u0438\u0432\u043e\u0442 \u043f\u0440\u043e\u0448\u0435\u043b"}).status_code == 201
     with app.state.database.session_factory() as session:
         row = session.get(ChatMemory, crew_id)
         memory = json.loads(row.content_json)
@@ -116,15 +116,15 @@ def test_old_same_topic_recurrence_is_repaired_before_new_summary(app):
         row.content_json = json.dumps(memory, ensure_ascii=False)
         latest = session.query(ChatMessage).filter(ChatMessage.crew_member_id == crew_id).order_by(ChatMessage.created_at.desc()).first()
         later_at = latest.created_at + timedelta(seconds=1)
-        repeated = ChatMessage(crew_member_id=crew_id, role="user", body="Снова болит живот, боль 2/10",
+        repeated = ChatMessage(crew_member_id=crew_id, role="user", body="\u0421\u043d\u043e\u0432\u0430 \u0431\u043e\u043b\u0438\u0442 \u0436\u0438\u0432\u043e\u0442, \u0431\u043e\u043b\u044c 2/10",
                                source_report_id=old_id, created_at=later_at)
-        reply = ChatMessage(crew_member_id=crew_id, role="assistant", body="Ты уже пил?",
+        reply = ChatMessage(crew_member_id=crew_id, role="assistant", body="\u0422\u044b \u0443\u0436\u0435 \u043f\u0438\u043b?",
                             source_report_id=old_id, engine="local_model:qwen3:8b",
                             created_at=later_at + timedelta(seconds=1))
         session.add_all([repeated, reply])
         session.commit()
     summary = call(app, "POST", "/api/v1/assistant/chat", {"crew_member_id": crew_id,
-                                                      "message": "Проанализируй мои измерения и прогнозы"})
+                                                      "message": "\u041f\u0440\u043e\u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0443\u0439 \u043c\u043e\u0438 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f \u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u044b"})
     assert summary.status_code == 201, summary.text
     episodes = call(app, "GET", f"/api/v1/assistant/chat/{crew_id}/memory").json()["medical_history"]
     assert len(episodes) == 2
@@ -159,7 +159,7 @@ def test_bleeding_word_order_negation_and_no_embedded_object():
 
 
 def test_spoiled_food_is_analyzed_on_first_turn_and_repetition():
-    message = "Утром я съел пасту, которая показалась тухлой. Спустя пять часов начал крутить живот."
+    message = "\u0423\u0442\u0440\u043e\u043c \u044f \u0441\u044a\u0435\u043b \u043f\u0430\u0441\u0442\u0443, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u043e\u043a\u0430\u0437\u0430\u043b\u0430\u0441\u044c \u0442\u0443\u0445\u043b\u043e\u0439. \u0421\u043f\u0443\u0441\u0442\u044f \u043f\u044f\u0442\u044c \u0447\u0430\u0441\u043e\u0432 \u043d\u0430\u0447\u0430\u043b \u043a\u0440\u0443\u0442\u0438\u0442\u044c \u0436\u0438\u0432\u043e\u0442."
     first, sources, engine = respond([message], [], {}, None)
     second, _, _ = respond([message, message], [], {}, None)
     assert "food poisoning" in first.lower() and "5 h" in first
@@ -169,9 +169,9 @@ def test_spoiled_food_is_analyzed_on_first_turn_and_repetition():
 
 
 def test_head_impact_followup_merges_severity_and_negated_bleeding_without_food_context():
-    food = "Съел тухлую пасту, крутит живот"
-    head = "Болит голова, ударился пару минут назад, крови нет. Головокружение, состояние в норме."
-    followup = "Боль 4 из 10, больше ничего из перечисленного нет."
+    food = "\u0421\u044a\u0435\u043b \u0442\u0443\u0445\u043b\u0443\u044e \u043f\u0430\u0441\u0442\u0443, \u043a\u0440\u0443\u0442\u0438\u0442 \u0436\u0438\u0432\u043e\u0442"
+    head = "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0443\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u043f\u0430\u0440\u0443 \u043c\u0438\u043d\u0443\u0442 \u043d\u0430\u0437\u0430\u0434, \u043a\u0440\u043e\u0432\u0438 \u043d\u0435\u0442. \u0413\u043e\u043b\u043e\u0432\u043e\u043a\u0440\u0443\u0436\u0435\u043d\u0438\u0435, \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432 \u043d\u043e\u0440\u043c\u0435."
+    followup = "\u0411\u043e\u043b\u044c 4 \u0438\u0437 10, \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0438\u0447\u0435\u0433\u043e \u0438\u0437 \u043f\u0435\u0440\u0435\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u043e\u0433\u043e \u043d\u0435\u0442."
     topic, episode = current_episode([food, head, followup])
     assert topic == "head" and episode == [head, followup]
     answer, sources, _ = respond([food, head, followup], [], {}, None)
@@ -193,7 +193,7 @@ def test_model_cannot_insert_an_unreported_pain_score():
                     "bleeding": False, "severity_0_10": 4,
                     "food_to_symptoms_hours": None, "explicitly_no_other_symptoms": True}
 
-    head = "Болит голова, ударился пару минут назад, крови нет. Головокружение, состояние в норме."
+    head = "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0443\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u043f\u0430\u0440\u0443 \u043c\u0438\u043d\u0443\u0442 \u043d\u0430\u0437\u0430\u0434, \u043a\u0440\u043e\u0432\u0438 \u043d\u0435\u0442. \u0413\u043e\u043b\u043e\u0432\u043e\u043a\u0440\u0443\u0436\u0435\u043d\u0438\u0435, \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432 \u043d\u043e\u0440\u043c\u0435."
     answer, _, engine = respond([head], [], {}, InventingModel())
     assert "4/10" not in answer
     assert "no other listed symptoms" not in answer.lower()
@@ -201,8 +201,8 @@ def test_model_cannot_insert_an_unreported_pain_score():
 
 
 def test_spurting_bleeding_followup_changes_urgency_and_next_action():
-    opening = "Порезал руку возле запястья, кровь идёт. Предмета в ране нет."
-    followup = "Кровь бьёт фонтаном, приложил чистый бинт, онемения нет, рана неглубокая, помощь в пути."
+    opening = "\u041f\u043e\u0440\u0435\u0437\u0430\u043b \u0440\u0443\u043a\u0443 \u0432\u043e\u0437\u043b\u0435 \u0437\u0430\u043f\u044f\u0441\u0442\u044c\u044f, \u043a\u0440\u043e\u0432\u044c \u0438\u0434\u0451\u0442. \u041f\u0440\u0435\u0434\u043c\u0435\u0442\u0430 \u0432 \u0440\u0430\u043d\u0435 \u043d\u0435\u0442."
+    followup = "\u041a\u0440\u043e\u0432\u044c \u0431\u044c\u0451\u0442 \u0444\u043e\u043d\u0442\u0430\u043d\u043e\u043c, \u043f\u0440\u0438\u043b\u043e\u0436\u0438\u043b \u0447\u0438\u0441\u0442\u044b\u0439 \u0431\u0438\u043d\u0442, \u043e\u043d\u0435\u043c\u0435\u043d\u0438\u044f \u043d\u0435\u0442, \u0440\u0430\u043d\u0430 \u043d\u0435\u0433\u043b\u0443\u0431\u043e\u043a\u0430\u044f, \u043f\u043e\u043c\u043e\u0449\u044c \u0432 \u043f\u0443\u0442\u0438."
     first, _, _ = respond([opening], [], {}, None)
     second, _, _ = respond([opening, followup], [], {}, None)
     assert first != second
@@ -212,11 +212,11 @@ def test_spurting_bleeding_followup_changes_urgency_and_next_action():
 
 
 def test_headache_with_subjective_fever_is_a_distinct_current_episode():
-    message = "Болит голова, повышенная температура."
+    message = "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u043f\u043e\u0432\u044b\u0448\u0435\u043d\u043d\u0430\u044f \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430."
     assert explicit_topic(message) == "fever_headache"
-    topic, episode = current_episode(["Привет", message])
+    topic, episode = current_episode(["\u041f\u0440\u0438\u0432\u0435\u0442", message])
     assert topic == "fever_headache"
-    assert episode == ["Привет", message]
+    assert episode == ["\u041f\u0440\u0438\u0432\u0435\u0442", message]
 
 
 def test_enabled_model_failure_is_not_disguised_as_an_offline_medical_answer():
@@ -228,7 +228,7 @@ def test_enabled_model_failure_is_not_disguised_as_an_offline_medical_answer():
             return None
 
     answer, sources, engine = respond(
-        ["Болит голова, повышенная температура."], [], {}, FailingEnabledModel(),
+        ["\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u043f\u043e\u0432\u044b\u0448\u0435\u043d\u043d\u0430\u044f \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430."], [], {}, FailingEnabledModel(),
     )
     assert "analysis not performed" in answer.lower()
     assert sources == []
@@ -246,9 +246,9 @@ def test_headache_retries_incomplete_response_without_requiring_json_from_model(
         return io.BytesIO(next(responses))
 
     monkeypatch.setattr("app.smart_chat.urlopen", local_call)
-    answer, _, engine = respond(["Привет", "Болит голова"], [], {}, LocalChatModel(enabled=True))
+    answer, _, engine = respond(["\u041f\u0440\u0438\u0432\u0435\u0442", "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430"], [], {}, LocalChatModel(enabled=True))
     assert answer == question and engine.startswith("local_model:")
     assert len(calls) == 2
     for payload in calls:
         assert "format" not in payload
-        assert payload["messages"][-1]["content"].endswith("Болит голова")
+        assert payload["messages"][-1]["content"].endswith("\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430")

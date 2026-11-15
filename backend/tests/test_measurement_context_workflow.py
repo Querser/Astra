@@ -26,10 +26,10 @@ def test_manual_conditions_create_revision_reload_analysis(tmp_path):
         old = send(app, "POST", "/api/v1/manual/observations", base)
         assert old.status_code == 201
         assert old.json()["measurement_context"] is None
-        context = {"method": "Подсчёт вручную", "device": "Часы", "site": "запястье",
-                   "activity_state": "покой", "posture": "сидя", "mission_phase": "orbit",
-                   "habitat": "Модуль", "subjective": False, "baseline_status": "candidate",
-                   "notes": "После отдыха"}
+        context = {"method": "\u041f\u043e\u0434\u0441\u0447\u0451\u0442 \u0432\u0440\u0443\u0447\u043d\u0443\u044e", "device": "\u0427\u0430\u0441\u044b", "site": "\u0437\u0430\u043f\u044f\u0441\u0442\u044c\u0435",
+                   "activity_state": "\u043f\u043e\u043a\u043e\u0439", "posture": "\u0441\u0438\u0434\u044f", "mission_phase": "orbit",
+                   "habitat": "\u041c\u043e\u0434\u0443\u043b\u044c", "subjective": False, "baseline_status": "candidate",
+                   "notes": "\u041f\u043e\u0441\u043b\u0435 \u043e\u0442\u0434\u044b\u0445\u0430"}
         created = send(app, "POST", "/api/v1/manual/observations", {**base,
             "observed_at": "2026-11-14T12:10:00+03:00", "measurement_context": context})
         assert created.status_code == 201, created.text

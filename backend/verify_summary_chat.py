@@ -27,12 +27,12 @@ def main():
         with TestClient(app) as client:
             with app.state.database.session_factory() as session:
                 profile = seed_demo_profiles(session)[0]
-            for message in ("Болит живот, съел несвежую еду, боль 5/10", "нет"):
+            for message in ("\u0411\u043e\u043b\u0438\u0442 \u0436\u0438\u0432\u043e\u0442, \u0441\u044a\u0435\u043b \u043d\u0435\u0441\u0432\u0435\u0436\u0443\u044e \u0435\u0434\u0443, \u0431\u043e\u043b\u044c 5/10", "\u043d\u0435\u0442"):
                 earlier = client.post("/api/v1/assistant/chat", json={"crew_member_id": profile["crew_id"], "message": message})
                 earlier.raise_for_status()
             response = client.post("/api/v1/assistant/chat", json={
                 "crew_member_id": profile["crew_id"],
-                "message": "Проанализируй все мои измерения и прогнозы: что изменилось, что требует внимания и почему?",
+                "message": "\u041f\u0440\u043e\u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u0443\u0439 \u0432\u0441\u0435 \u043c\u043e\u0438 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f \u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u044b: \u0447\u0442\u043e \u0438\u0437\u043c\u0435\u043d\u0438\u043b\u043e\u0441\u044c, \u0447\u0442\u043e \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u0432\u043d\u0438\u043c\u0430\u043d\u0438\u044f \u0438 \u043f\u043e\u0447\u0435\u043c\u0443?",
             })
             response.raise_for_status()
             result = response.json()["messages"][1]

@@ -194,7 +194,7 @@ def research_context_for(query: str) -> list[dict[str, str]]:
     """Bounded public context only; no mapping from subjects/instruments to crew."""
     low = query.lower()
     snippets: list[dict[str, str]] = []
-    if any(word in low for word in ("радиац", "облуч", "доз", "radlab", "radiation")):
+    if any(word in low for word in ("\u0440\u0430\u0434\u0438\u0430\u0446", "\u043e\u0431\u043b\u0443\u0447", "\u0434\u043e\u0437", "radlab", "radiation")):
         meta, points = parse_radlab()
         values = [point["absorbed_dose_rate"] for point in points if point["absorbed_dose_rate"] is not None]
         snippets.append({"id": meta["dataset_id"], "source_url": meta["documentation_url"],
@@ -203,7 +203,7 @@ def research_context_for(query: str) -> list[dict[str, str]]:
                                   f"{len(points)} points; absorbed dose power {min(values):.2f}–{max(values):.2f} µGy/hour. "
                                   f"Last entry: {points[-1]['timestamp']}, {points[-1]['absorbed_dose_rate']:.6f} µGy/hour. "
                                   "Equivalent dose power for this sample is not available. This is an environmental measurement by the device, not the crew's personal dose.")})
-    if any(word in low for word in ("лаборатор", "анализ крови", "биомаркер", "глюкоз", "osd-575", "креатинин")):
+    if any(word in low for word in ("\u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440", "\u0430\u043d\u0430\u043b\u0438\u0437 \u043a\u0440\u043e\u0432\u0438", "\u0431\u0438\u043e\u043c\u0430\u0440\u043a\u0435\u0440", "\u0433\u043b\u044e\u043a\u043e\u0437", "osd-575", "\u043a\u0440\u0435\u0430\u0442\u0438\u043d\u0438\u043d")):
         meta, rows = parse_osd_575()
         snippets.append({"id": "OSD-575-v3-CMP", "source_url": meta["source_url"],
                          "text": (f"Public OSD-575 v{meta['version']} dataset: comprehensive metabolic panel (CMP) on serum samples, 4 anonymized participants, "

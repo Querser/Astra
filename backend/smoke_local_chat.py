@@ -30,10 +30,10 @@ async def main() -> None:
                 "observed_at": (datetime.now(timezone.utc) - timedelta(hours=8)).isoformat(),
             })
             assert observation.status_code == 201, observation.text
-            greeting = await client.post("/api/v1/assistant/chat", json={"crew_member_id": regression_crew, "message": "Привет"})
+            greeting = await client.post("/api/v1/assistant/chat", json={"crew_member_id": regression_crew, "message": "\u041f\u0440\u0438\u0432\u0435\u0442"})
             complaint = await client.post("/api/v1/assistant/chat", json={
                 "crew_member_id": regression_crew,
-                "message": "Болит голова, повышенная температура.",
+                "message": "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u043f\u043e\u0432\u044b\u0448\u0435\u043d\u043d\u0430\u044f \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430.",
             })
             assert greeting.status_code == 201, greeting.text
             assert complaint.status_code == 201, complaint.text
@@ -47,12 +47,12 @@ async def main() -> None:
             assert "temperatur" in complaint_answer["body"].casefold()
             assert "temperature is normal" not in complaint_answer["body"].casefold()
             messages = [
-                "Утром я съел пасту, которая показалась тухлой. Спустя пять часов начал крутить живот.",
-                "Утром я съел пасту, которая показалась тухлой. Спустя пять часов начал крутить живот.",
-                "Болит голова, ударился пару минут назад, крови нет. Головокружение, состояние в норме.",
-                "Боль 4 из 10, больше ничего из перечисленного нет.",
-                "У меня идёт кровотечение. Порезал руку возле запястья, кровь идёт. Предмета в ране нет.",
-                "Кровь бьёт фонтаном, приложил чистый бинт. Онемения нет, рана неглубокая, помощь в пути.",
+                "\u0423\u0442\u0440\u043e\u043c \u044f \u0441\u044a\u0435\u043b \u043f\u0430\u0441\u0442\u0443, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u043e\u043a\u0430\u0437\u0430\u043b\u0430\u0441\u044c \u0442\u0443\u0445\u043b\u043e\u0439. \u0421\u043f\u0443\u0441\u0442\u044f \u043f\u044f\u0442\u044c \u0447\u0430\u0441\u043e\u0432 \u043d\u0430\u0447\u0430\u043b \u043a\u0440\u0443\u0442\u0438\u0442\u044c \u0436\u0438\u0432\u043e\u0442.",
+                "\u0423\u0442\u0440\u043e\u043c \u044f \u0441\u044a\u0435\u043b \u043f\u0430\u0441\u0442\u0443, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u043e\u043a\u0430\u0437\u0430\u043b\u0430\u0441\u044c \u0442\u0443\u0445\u043b\u043e\u0439. \u0421\u043f\u0443\u0441\u0442\u044f \u043f\u044f\u0442\u044c \u0447\u0430\u0441\u043e\u0432 \u043d\u0430\u0447\u0430\u043b \u043a\u0440\u0443\u0442\u0438\u0442\u044c \u0436\u0438\u0432\u043e\u0442.",
+                "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0443\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u043f\u0430\u0440\u0443 \u043c\u0438\u043d\u0443\u0442 \u043d\u0430\u0437\u0430\u0434, \u043a\u0440\u043e\u0432\u0438 \u043d\u0435\u0442. \u0413\u043e\u043b\u043e\u0432\u043e\u043a\u0440\u0443\u0436\u0435\u043d\u0438\u0435, \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432 \u043d\u043e\u0440\u043c\u0435.",
+                "\u0411\u043e\u043b\u044c 4 \u0438\u0437 10, \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0438\u0447\u0435\u0433\u043e \u0438\u0437 \u043f\u0435\u0440\u0435\u0447\u0438\u0441\u043b\u0435\u043d\u043d\u043e\u0433\u043e \u043d\u0435\u0442.",
+                "\u0423 \u043c\u0435\u043d\u044f \u0438\u0434\u0451\u0442 \u043a\u0440\u043e\u0432\u043e\u0442\u0435\u0447\u0435\u043d\u0438\u0435. \u041f\u043e\u0440\u0435\u0437\u0430\u043b \u0440\u0443\u043a\u0443 \u0432\u043e\u0437\u043b\u0435 \u0437\u0430\u043f\u044f\u0441\u0442\u044c\u044f, \u043a\u0440\u043e\u0432\u044c \u0438\u0434\u0451\u0442. \u041f\u0440\u0435\u0434\u043c\u0435\u0442\u0430 \u0432 \u0440\u0430\u043d\u0435 \u043d\u0435\u0442.",
+                "\u041a\u0440\u043e\u0432\u044c \u0431\u044c\u0451\u0442 \u0444\u043e\u043d\u0442\u0430\u043d\u043e\u043c, \u043f\u0440\u0438\u043b\u043e\u0436\u0438\u043b \u0447\u0438\u0441\u0442\u044b\u0439 \u0431\u0438\u043d\u0442. \u041e\u043d\u0435\u043c\u0435\u043d\u0438\u044f \u043d\u0435\u0442, \u0440\u0430\u043d\u0430 \u043d\u0435\u0433\u043b\u0443\u0431\u043e\u043a\u0430\u044f, \u043f\u043e\u043c\u043e\u0449\u044c \u0432 \u043f\u0443\u0442\u0438.",
             ]
             if os.getenv("ASTRA_SMOKE_BLEEDING_ONLY") == "1":
                 messages = messages[-2:]

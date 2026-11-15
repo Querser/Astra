@@ -19,22 +19,22 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT / "docs" / "model-led"
 SYSTEM_PROMPT = (
-    "Ты ASTRA, исследовательский автономный ассистент для вымышленного экипажа. "
-    "Прочти все реплики как один эпизод, учитывай новые факты и отрицания. "
-    "Решение о диагностических версиях и вопросах прими сам на основании только переданных локальных карточек. "
-    "Если факты не поддерживают карточку, не называй её. При нормальных данных candidate_ids=[]. "
-    "Конкретную болезнь называй только предварительной версией, объясни факты за и неопределённость. "
-    "Не придумывай измерения, диагнозы, дозы, лекарства, источники. "
-    "При очевидной угрозе сначала назови следующий практический шаг. "
-    "Не повторяй уже сообщённое как вопрос и не дублируй прежний ответ. "
-    "Верни только JSON: candidate_ids (массив ID локальных карточек), "
-    "urgency (routine|prompt_review|emergency), answer_ru (3–6 предложений), "
-    "used_knowledge_ids (массив ID)."
+    "\u0422\u044b ASTRA, \u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0438\u0439 \u0430\u0432\u0442\u043e\u043d\u043e\u043c\u043d\u044b\u0439 \u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442 \u0434\u043b\u044f \u0432\u044b\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0433\u043e \u044d\u043a\u0438\u043f\u0430\u0436\u0430. "
+    "\u041f\u0440\u043e\u0447\u0442\u0438 \u0432\u0441\u0435 \u0440\u0435\u043f\u043b\u0438\u043a\u0438 \u043a\u0430\u043a \u043e\u0434\u0438\u043d \u044d\u043f\u0438\u0437\u043e\u0434, \u0443\u0447\u0438\u0442\u044b\u0432\u0430\u0439 \u043d\u043e\u0432\u044b\u0435 \u0444\u0430\u043a\u0442\u044b \u0438 \u043e\u0442\u0440\u0438\u0446\u0430\u043d\u0438\u044f. "
+    "\u0420\u0435\u0448\u0435\u043d\u0438\u0435 \u043e \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0432\u0435\u0440\u0441\u0438\u044f\u0445 \u0438 \u0432\u043e\u043f\u0440\u043e\u0441\u0430\u0445 \u043f\u0440\u0438\u043c\u0438 \u0441\u0430\u043c \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0445 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u043a\u0430\u0440\u0442\u043e\u0447\u0435\u043a. "
+    "\u0415\u0441\u043b\u0438 \u0444\u0430\u043a\u0442\u044b \u043d\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0442 \u043a\u0430\u0440\u0442\u043e\u0447\u043a\u0443, \u043d\u0435 \u043d\u0430\u0437\u044b\u0432\u0430\u0439 \u0435\u0451. \u041f\u0440\u0438 \u043d\u043e\u0440\u043c\u0430\u043b\u044c\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 candidate_ids=[]. "
+    "\u041a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0443\u044e \u0431\u043e\u043b\u0435\u0437\u043d\u044c \u043d\u0430\u0437\u044b\u0432\u0430\u0439 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u0432\u0435\u0440\u0441\u0438\u0435\u0439, \u043e\u0431\u044a\u044f\u0441\u043d\u0438 \u0444\u0430\u043a\u0442\u044b \u0437\u0430 \u0438 \u043d\u0435\u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u043e\u0441\u0442\u044c. "
+    "\u041d\u0435 \u043f\u0440\u0438\u0434\u0443\u043c\u044b\u0432\u0430\u0439 \u0438\u0437\u043c\u0435\u0440\u0435\u043d\u0438\u044f, \u0434\u0438\u0430\u0433\u043d\u043e\u0437\u044b, \u0434\u043e\u0437\u044b, \u043b\u0435\u043a\u0430\u0440\u0441\u0442\u0432\u0430, \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438. "
+    "\u041f\u0440\u0438 \u043e\u0447\u0435\u0432\u0438\u0434\u043d\u043e\u0439 \u0443\u0433\u0440\u043e\u0437\u0435 \u0441\u043d\u0430\u0447\u0430\u043b\u0430 \u043d\u0430\u0437\u043e\u0432\u0438 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0448\u0430\u0433. "
+    "\u041d\u0435 \u043f\u043e\u0432\u0442\u043e\u0440\u044f\u0439 \u0443\u0436\u0435 \u0441\u043e\u043e\u0431\u0449\u0451\u043d\u043d\u043e\u0435 \u043a\u0430\u043a \u0432\u043e\u043f\u0440\u043e\u0441 \u0438 \u043d\u0435 \u0434\u0443\u0431\u043b\u0438\u0440\u0443\u0439 \u043f\u0440\u0435\u0436\u043d\u0438\u0439 \u043e\u0442\u0432\u0435\u0442. "
+    "\u0412\u0435\u0440\u043d\u0438 \u0442\u043e\u043b\u044c\u043a\u043e JSON: candidate_ids (\u043c\u0430\u0441\u0441\u0438\u0432 ID \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u043a\u0430\u0440\u0442\u043e\u0447\u0435\u043a), "
+    "urgency (routine|prompt_review|emergency), answer_ru (3–6 \u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u0439), "
+    "used_knowledge_ids (\u043c\u0430\u0441\u0441\u0438\u0432 ID)."
 )
 
 
 def tokens(text: str) -> set[str]:
-    return {word[:5] for word in re.findall(r"[а-яёa-z0-9]{5,}", text.casefold())}
+    return {word[:5] for word in re.findall(r"[\u0430-\u044f\u0451a-z0-9]{5,}", text.casefold())}
 
 
 def retrieve(message: str, cards: list[dict], count: int = 6) -> list[dict]:
@@ -92,13 +92,13 @@ def evaluate(case: dict, parsed: dict | None, retrieved: list[str]) -> dict:
         return {"parse_ok": False, "ids_exact": False, "urgency_ok": False,
                 "mentions_ok": False, "exclusions_ok": False, "grounding_ok": False,
                 "retrieval_hit": retrieval_hit}
-    lowered = answer.casefold().replace("ё", "е")
+    lowered = answer.casefold().replace("\u0451", "\u0435")
     return {
         "parse_ok": True,
         "ids_exact": set(ids) == set(case["expected_ids"]),
         "urgency_ok": parsed.get("urgency") == case["urgency"],
-        "mentions_ok": all(term.casefold().replace("ё", "е") in lowered for term in case["must_mention"]),
-        "exclusions_ok": all(term.casefold().replace("ё", "е") not in lowered for term in case["must_not"]),
+        "mentions_ok": all(term.casefold().replace("\u0451", "\u0435") in lowered for term in case["must_mention"]),
+        "exclusions_ok": all(term.casefold().replace("\u0451", "\u0435") not in lowered for term in case["must_not"]),
         "grounding_ok": set(ids + used).issubset(set(retrieved)),
         "retrieval_hit": retrieval_hit,
     }

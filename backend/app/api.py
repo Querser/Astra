@@ -1041,7 +1041,7 @@ def repair_legacy_recurrence(session: Session, crew_id: str, memory: dict) -> di
                 row.source_report_id = report.id
                 if replay["last_update"].get("keys") or symptom_codes(row.body):
                     replay["medical_history"][-1]["symptoms"].append(row.body)
-                if re.search(r"приложил|помогл|полегчал|обработал|принял|выполняю|applied|helped|relieved|treated|took|taking", row.body, re.I):
+                if re.search(r"\u043f\u0440\u0438\u043b\u043e\u0436\u0438\u043b|\u043f\u043e\u043c\u043e\u0433\u043b|\u043f\u043e\u043b\u0435\u0433\u0447\u0430\u043b|\u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043b|\u043f\u0440\u0438\u043d\u044f\u043b|\u0432\u044b\u043f\u043e\u043b\u043d\u044f\u044e|applied|helped|relieved|treated|took|taking", row.body, re.I):
                     replay["medical_history"][-1]["helped"].append(row.body)
                 if last_kind in {"resolution", "resolution_confirmed"}:
                     replay["medical_history"][-1]["status"] = "resolved_by_user_report"
@@ -1112,7 +1112,7 @@ def process_chat(payload: ChatCreate, request: Request, session: Session, crew_i
                           for f in memory.get("facts", []))
         if (history_items and history_items[-1].get("status") == "active"
                 and resolved_complaint(recent_user, memory.get("topic"))
-                and (not neck_active or re.search(r"вс[её]\s+прошло|everything (?:is |has )?gone|all symptoms (?:are |have )?gone", recent_user, re.I))):
+                and (not neck_active or re.search(r"\u0432\u0441[\u0435\u0451]\s+\u043f\u0440\u043e\u0448\u043b\u043e|everything (?:is |has )?gone|all symptoms (?:are |have )?gone", recent_user, re.I))):
             history_items[-1]["status"] = "resolved_by_user_report"
             memory["episode_resolved"] = True
         user_turn = ChatMessage(crew_member_id=crew_id, role="user", body=message, request_id=request_id)
@@ -1120,7 +1120,7 @@ def process_chat(payload: ChatCreate, request: Request, session: Session, crew_i
         session.flush()
         memory = advance(memory, user_turn.id, message)
         clinical = bool(memory.get("last_update", {}).get("keys") or symptom_codes(message) or re.search(
-            r"порез|ран[ауеы]|шея\s+опух|опухла\s+шея|болит\s+(?:рука|нога|спина|шея)|"
+            r"\u043f\u043e\u0440\u0435\u0437|\u0440\u0430\u043d[\u0430\u0443\u0435\u044b]|\u0448\u0435\u044f\s+\u043e\u043f\u0443\u0445|\u043e\u043f\u0443\u0445\u043b\u0430\s+\u0448\u0435\u044f|\u0431\u043e\u043b\u0438\u0442\s+(?:\u0440\u0443\u043a\u0430|\u043d\u043e\u0433\u0430|\u0441\u043f\u0438\u043d\u0430|\u0448\u0435\u044f)|"
             r"\b(?:cut|wound|swollen neck|neck swelling|arm pain|leg pain|back pain)\b|\d+\s*/\s*10", message, re.I))
         history_items = memory.setdefault("medical_history", [])
         if clinical and (memory.get("last_update", {}).get("kind") == "new_topic" or not history_items):
@@ -1138,7 +1138,7 @@ def process_chat(payload: ChatCreate, request: Request, session: Session, crew_i
             user_turn.source_report_id = history_items[-1].get("source_report_id")
         elif history_items and memory.get("last_update", {}).get("kind") not in {"summary", "greeting"}:
             user_turn.source_report_id = history_items[-1].get("source_report_id")
-        if history_items and re.search(r"приложил|помогл|полегчал|обработал|принял|выполняю|applied|helped|relieved|treated|took|taking", message, re.I):
+        if history_items and re.search(r"\u043f\u0440\u0438\u043b\u043e\u0436\u0438\u043b|\u043f\u043e\u043c\u043e\u0433\u043b|\u043f\u043e\u043b\u0435\u0433\u0447\u0430\u043b|\u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043b|\u043f\u0440\u0438\u043d\u044f\u043b|\u0432\u044b\u043f\u043e\u043b\u043d\u044f\u044e|applied|helped|relieved|treated|took|taking", message, re.I):
             history_items[-1].setdefault("helped", []).append(message)
         if history_items and memory.get("last_update", {}).get("kind") == "resolution":
             history_items[-1]["status"] = "resolved_by_user_report"

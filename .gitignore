@@ -31,6 +31,9 @@ backend/data/research/*
 !training/data/multiturn_sft_v2.jsonl
 !training/data/multiturn_sft_v3_balanced.jsonl
 training/artifacts/
+submission/_build/
+submission/_build_ru/
+.codex-deck-validation.json
 
 # IDE and operating-system files
 .vscode/

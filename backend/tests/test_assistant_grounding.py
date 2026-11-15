@@ -31,7 +31,7 @@ def test_model_cannot_add_claim_even_with_valid_json_and_citation(monkeypatch) -
 
         def read(self):
             reply = {
-                "summary": "У космонавта подтверждено заболевание; требуется лечение.",
+                "summary": "\u0423 \u043a\u043e\u0441\u043c\u043e\u043d\u0430\u0432\u0442\u0430 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043e \u0437\u0430\u0431\u043e\u043b\u0435\u0432\u0430\u043d\u0438\u0435; \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043b\u0435\u0447\u0435\u043d\u0438\u0435.",
                 "citation": assistant_module.REFERENCE_CITATION,
                 "not_a_diagnosis": True,
             }

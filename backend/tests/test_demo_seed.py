@@ -114,21 +114,21 @@ def test_independent_sourced_hypertension_and_sleep_apnea_case() -> None:
                     observed_offset_minutes=0, synthetic=True, quality_flags_json="[]")
         for index, (day, systolic, diastolic) in enumerate(((1, 146, 94), (1, 148, 95), (0, 151, 96), (0, 149, 94)))
     ]
-    complaint = "Напарник заметил громкий храп и остановки дыхания во сне, днём сильная сонливость."
+    complaint = "\u041d\u0430\u043f\u0430\u0440\u043d\u0438\u043a \u0437\u0430\u043c\u0435\u0442\u0438\u043b \u0433\u0440\u043e\u043c\u043a\u0438\u0439 \u0445\u0440\u0430\u043f \u0438 \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0438 \u0434\u044b\u0445\u0430\u043d\u0438\u044f \u0432\u043e \u0441\u043d\u0435, \u0434\u043d\u0451\u043c \u0441\u0438\u043b\u044c\u043d\u0430\u044f \u0441\u043e\u043d\u043b\u0438\u0432\u043e\u0441\u0442\u044c."
     actual = {item["id"] for item in evaluate_candidates(pressures, [{"id": "case-1", "description": complaint}])}
     assert actual == {"D.POSSIBLE_HYPERTENSION", "D.POSSIBLE_SLEEP_APNEA"}
     assert {item["id"] for item in evaluate_candidates(pressures[:2], [{"id": "case-1", "description": complaint}])} == {"D.POSSIBLE_SLEEP_APNEA"}
-    denied = "Храпа нет, остановок дыхания не отмечали, сонливости нет."
+    denied = "\u0425\u0440\u0430\u043f\u0430 \u043d\u0435\u0442, \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043e\u043a \u0434\u044b\u0445\u0430\u043d\u0438\u044f \u043d\u0435 \u043e\u0442\u043c\u0435\u0447\u0430\u043b\u0438, \u0441\u043e\u043d\u043b\u0438\u0432\u043e\u0441\u0442\u0438 \u043d\u0435\u0442."
     assert symptom_codes(denied) == []
     assert {item["id"] for item in evaluate_candidates(pressures, [{"id": "case-2", "description": denied}])} == {"D.POSSIBLE_HYPERTENSION"}
-    assert explicit_measurements("Болит голова, давление 150/95, пульс 90") == [
+    assert explicit_measurements("\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0434\u0430\u0432\u043b\u0435\u043d\u0438\u0435 150/95, \u043f\u0443\u043b\u044c\u0441 90") == [
         {"metric": "blood_pressure", "value_kind": "blood_pressure", "systolic": 150, "diastolic": 95, "unit": "mmHg"},
         {"metric": "heart_rate", "value_kind": "scalar", "scalar_value": 90.0, "unit": "bpm"},
     ]
 
 
 def test_head_injury_complaint_changes_analysis_actions_and_scenario() -> None:
-    complaint = "Болит голова. Ударился ею. Течет кровь, тошнит"
+    complaint = "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430. \u0423\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u0435\u044e. \u0422\u0435\u0447\u0435\u0442 \u043a\u0440\u043e\u0432\u044c, \u0442\u043e\u0448\u043d\u0438\u0442"
     codes = set(symptom_codes(complaint))
     assert codes == {"headache", "head_impact", "external_bleeding", "nausea"}
     reports = [{"id": "head-event", "description": complaint}]
@@ -152,10 +152,10 @@ def test_head_injury_complaint_changes_analysis_actions_and_scenario() -> None:
 
 
 @pytest.mark.parametrize("complaint", [
-    "Не ударялся головой. Болит голова, тошнит",
-    "Ударился ногой, болит голова, тошнит",
-    "Болит голова. Не ударился ею. Тошнит",
-    "Ударился головой, но тошноты нет и головная боль отсутствует",
+    "\u041d\u0435 \u0443\u0434\u0430\u0440\u044f\u043b\u0441\u044f \u0433\u043e\u043b\u043e\u0432\u043e\u0439. \u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0442\u043e\u0448\u043d\u0438\u0442",
+    "\u0423\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u043d\u043e\u0433\u043e\u0439, \u0431\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430, \u0442\u043e\u0448\u043d\u0438\u0442",
+    "\u0411\u043e\u043b\u0438\u0442 \u0433\u043e\u043b\u043e\u0432\u0430. \u041d\u0435 \u0443\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u0435\u044e. \u0422\u043e\u0448\u043d\u0438\u0442",
+    "\u0423\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u0433\u043e\u043b\u043e\u0432\u043e\u0439, \u043d\u043e \u0442\u043e\u0448\u043d\u043e\u0442\u044b \u043d\u0435\u0442 \u0438 \u0433\u043e\u043b\u043e\u0432\u043d\u0430\u044f \u0431\u043e\u043b\u044c \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442",
 ])
 def test_head_injury_rule_does_not_infer_impact_or_negated_symptoms(complaint: str) -> None:
     assert not any(item["id"] == "D.POSSIBLE_HEAD_INJURY" for item in evaluate_candidates([], [{"id": "event", "description": complaint}]))
@@ -163,7 +163,7 @@ def test_head_injury_rule_does_not_infer_impact_or_negated_symptoms(complaint: s
 
 def test_head_injury_rule_does_not_join_unrelated_reports() -> None:
     reports = [
-        {"id": "impact", "description": "Ударился головой, симптомов нет"},
-        {"id": "nausea", "description": "Позже тошнит, голова не травмирована"},
+        {"id": "impact", "description": "\u0423\u0434\u0430\u0440\u0438\u043b\u0441\u044f \u0433\u043e\u043b\u043e\u0432\u043e\u0439, \u0441\u0438\u043c\u043f\u0442\u043e\u043c\u043e\u0432 \u043d\u0435\u0442"},
+        {"id": "nausea", "description": "\u041f\u043e\u0437\u0436\u0435 \u0442\u043e\u0448\u043d\u0438\u0442, \u0433\u043e\u043b\u043e\u0432\u0430 \u043d\u0435 \u0442\u0440\u0430\u0432\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0430"},
     ]
     assert not any(item["id"] == "D.POSSIBLE_HEAD_INJURY" for item in evaluate_candidates([], reports))

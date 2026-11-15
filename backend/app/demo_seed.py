@@ -20,11 +20,11 @@ RESPIRATORY_NAME = "ASTRA — respiratory changes"
 SLEEP_NAME = "ASTRA — sleep and exertion changes"
 PRESSURE_NAME = "ASTRA — elevated blood pressure"
 LEGACY_NAMES = {
-    STABLE_NAME: "ASTRA — стабильный учебный профиль",
-    RESPIRATORY_NAME: "ASTRA — дыхательные изменения",
-    SLEEP_NAME: "ASTRA — изменения сна и нагрузки",
-    PRESSURE_NAME: "ASTRA — повышенное давление",
-    RECOVERY_NAME: "ASTRA — единичное снижение SpO₂",
+    STABLE_NAME: "ASTRA — \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439 \u0443\u0447\u0435\u0431\u043d\u044b\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c",
+    RESPIRATORY_NAME: "ASTRA — \u0434\u044b\u0445\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f",
+    SLEEP_NAME: "ASTRA — \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0441\u043d\u0430 \u0438 \u043d\u0430\u0433\u0440\u0443\u0437\u043a\u0438",
+    PRESSURE_NAME: "ASTRA — \u043f\u043e\u0432\u044b\u0448\u0435\u043d\u043d\u043e\u0435 \u0434\u0430\u0432\u043b\u0435\u043d\u0438\u0435",
+    RECOVERY_NAME: "ASTRA — \u0435\u0434\u0438\u043d\u0438\u0447\u043d\u043e\u0435 \u0441\u043d\u0438\u0436\u0435\u043d\u0438\u0435 SpO₂",
 }
 METRICS = (
     ("heart_rate", "bpm"),

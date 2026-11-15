@@ -10,7 +10,7 @@
 | Autonomous operation | API, database, model, cards, and data snapshots work locally; internet is needed only to open a link to the source. Instructions: [offline-demo.md](offline-demo.md). | Ready |
 | Verifiability of scientific claims | Names of organizations and campaigns are not used as formatting or free text. They are displayed only within links to sources. Model responses are checked for unconfirmed numbers, time, personal dose, and source names in plain text. | Ready |
 | Working prototype | Backend tests, production interface build, browser scenario, and conversation through a real local model are included in the check before presentation. | Ready |
-| English description | Project history draft and seven-slide scenario: [submission-overview.en.md](submission-overview.en.md). | Ready as a draft |
+| English description | The project description and launch instructions are maintained in the repository README. | Ready as a draft |
 | Open licensing and attribution | Original project materials use [Apache-2.0](../LICENSE). External software, model weights, publications, and the packaged research datasets are identified in [third-party notices](../THIRD_PARTY_NOTICES.md); source metadata and checksums are in the [manifest](../backend/data/research/manifest.json). | Code and source documentation ready; confirm rights in the reference image used for the AI-generated illustration before public submission. |
 | Public Demonstration | There is a script in the repository, but a public link to the video/slides is created by the project owner outside of the code. | Requires team action |
 | Public link to code | The local folder is ready; visibility of the remote repository and the link are checked by the project owner. | Requires team action |

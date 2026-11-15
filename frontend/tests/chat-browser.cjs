@@ -173,7 +173,7 @@ async function main({api, web, live, replay}) {
         const answer = rows.at(-1);
         assert.equal(rows.at(-2).body, message);
         assert.equal(answer.engine, "local_model:" + (process.env.ASTRA_OLLAMA_MODEL || "qwen3:8b"));
-        assert.doesNotMatch(answer.body, /[А-Яа-яЁё]/);
+        assert.doesNotMatch(answer.body, /[\u0410-\u042f\u0430-\u044f\u0401\u0451]/);
         assert.notEqual(answer.body, previous);
         assert.deepEqual(await history(b), []);
         previous = answer.body;

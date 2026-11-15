@@ -8,6 +8,33 @@ is in English and accepts symptom reports in English or Russian.
 ASTRA is a hackathon prototype. Its medical assessments and forecasts have not
 been clinically validated and must not be used as a substitute for medical care.
 
+## Quick start
+
+After cloning the repository on Windows, run:
+
+```powershell
+.\Setup_ASTRA.cmd
+.\Launch_ASTRA.exe
+```
+
+The setup command creates the Python environment, installs locked backend and
+frontend dependencies, initializes SQLite, installs Ollama through Windows
+Package Manager when necessary, and downloads the configured local model once.
+Later launches reuse the installed runtime and model cache.
+
+On macOS or Linux, install Ollama from its official download page if the local
+assistant is required, then run:
+
+```bash
+chmod +x scripts/setup.sh scripts/launch.sh launch_astra.sh
+./scripts/setup.sh
+./launch_astra.sh
+```
+
+The launcher waits for both services and opens the browser automatically. See
+[the installation guide](docs/installation.md) for offline mode, diagnostics,
+logs, manual startup and executable-building details.
+
 ## Features
 
 - Create and switch between crew profiles, each with its own measurements,
@@ -39,15 +66,16 @@ Research datasets are kept separate from personal profile measurements.
 
 ## Requirements
 
-- Windows with PowerShell, Python 3.10–3.13, Node.js 24 and npm.
-- Ollama running locally, with `qwen3:8b` available for the assistant.
+- Windows 10 or newer, macOS or Linux; Python 3.10–3.13; Node.js 22 or 24 LTS; npm.
+- Ollama with the configured local model for the assistant. The rest of ASTRA
+  remains available when Ollama is offline.
 - Internet access for the initial installation and model download, if needed.
 
 The steps below use two PowerShell terminals. They assume the current directory
 is the project root. If a service is already running on a listed port, reuse it
 or stop it before starting another instance.
 
-## Run locally
+## Manual launch
 
 ### 1. Prepare the local model
 
